@@ -1,0 +1,340 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://addons/xeen/assets/fonts/NotoSans-Regular.tres" type="DynamicFont" id=1]
+[ext_resource path="res://addons/xeen/assets/fonts/NotoSans-Bold.tres" type="DynamicFont" id=2]
+[ext_resource path="res://addons/xeen/assets/icons/select-mode.png" type="Texture" id=3]
+[ext_resource path="res://addons/xeen/assets/materials/wall.jpg" type="Texture" id=4]
+[ext_resource path="res://addons/xeen/assets/materials/floor.jpg" type="Texture" id=5]
+[ext_resource path="res://addons/xeen/assets/materials/ceiling.png" type="Texture" id=6]
+[ext_resource path="res://addons/xeen/assets/icons/brush-mode.png" type="Texture" id=7]
+[ext_resource path="res://addons/xeen/gui/mode_group.tres" type="ButtonGroup" id=8]
+[ext_resource path="res://addons/xeen/assets/icons/settings.png" type="Texture" id=9]
+
+[node name="Xeen Map Editor" type="Panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchor_right = 1.0
+margin_left = 16.0
+margin_top = 16.0
+margin_right = 272.0
+margin_bottom = 384.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+margin_right = 1280.0
+margin_bottom = 548.0
+
+[node name="Mode" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+margin_right = 1280.0
+margin_bottom = 56.0
+
+[node name="ToolButton" type="ToolButton" parent="MarginContainer/VBoxContainer/Mode"]
+margin_right = 60.0
+margin_bottom = 56.0
+rect_min_size = Vector2( 48, 48 )
+toggle_mode = true
+pressed = true
+group = ExtResource( 8 )
+icon = ExtResource( 7 )
+icon_align = 1
+
+[node name="ToolButton2" type="ToolButton" parent="MarginContainer/VBoxContainer/Mode"]
+margin_left = 64.0
+margin_right = 124.0
+margin_bottom = 56.0
+rect_min_size = Vector2( 60, 0 )
+toggle_mode = true
+group = ExtResource( 8 )
+icon = ExtResource( 3 )
+icon_align = 1
+
+[node name="ToolButton3" type="ToolButton" parent="MarginContainer/VBoxContainer/Mode"]
+margin_left = 128.0
+margin_right = 188.0
+margin_bottom = 56.0
+toggle_mode = true
+group = ExtResource( 8 )
+icon = ExtResource( 9 )
+icon_align = 1
+
+[node name="Brush" type="GridContainer" parent="MarginContainer/VBoxContainer"]
+margin_top = 60.0
+margin_right = 1280.0
+margin_bottom = 548.0
+columns = 3
+
+[node name="7" type="VSplitContainer" parent="MarginContainer/VBoxContainer/Brush"]
+margin_right = 128.0
+margin_bottom = 160.0
+dragger_visibility = 2
+
+[node name="Label" type="RichTextLabel" parent="MarginContainer/VBoxContainer/Brush/7"]
+margin_right = 128.0
+margin_bottom = 32.0
+size_flags_vertical = 5
+custom_fonts/bold_font = ExtResource( 2 )
+custom_fonts/normal_font = ExtResource( 1 )
+bbcode_enabled = true
+bbcode_text = "[b]7[/b] Ceiling"
+text = "7 Ceiling"
+fit_content_height = true
+
+[node name="Button" type="Button" parent="MarginContainer/VBoxContainer/Brush/7"]
+margin_top = 32.0
+margin_right = 128.0
+margin_bottom = 160.0
+rect_min_size = Vector2( 128, 128 )
+rect_pivot_offset = Vector2( 64, 75 )
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer/Brush/7/Button"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 8.0
+margin_top = 8.0
+margin_right = -8.0
+margin_bottom = -8.0
+texture = ExtResource( 6 )
+expand = true
+stretch_mode = 1
+
+[node name="8" type="VSplitContainer" parent="MarginContainer/VBoxContainer/Brush"]
+margin_left = 132.0
+margin_right = 260.0
+margin_bottom = 160.0
+dragger_visibility = 2
+
+[node name="Label" type="RichTextLabel" parent="MarginContainer/VBoxContainer/Brush/8"]
+margin_right = 128.0
+margin_bottom = 32.0
+size_flags_vertical = 5
+custom_fonts/bold_font = ExtResource( 2 )
+custom_fonts/normal_font = ExtResource( 1 )
+bbcode_enabled = true
+bbcode_text = "[b]8[/b] North"
+text = "8 North"
+fit_content_height = true
+
+[node name="Button2" type="Button" parent="MarginContainer/VBoxContainer/Brush/8"]
+margin_top = 32.0
+margin_right = 128.0
+margin_bottom = 160.0
+rect_min_size = Vector2( 128, 128 )
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer/Brush/8/Button2"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 8.0
+margin_top = 8.0
+margin_right = -8.0
+margin_bottom = -8.0
+texture = ExtResource( 4 )
+expand = true
+stretch_mode = 1
+
+[node name="9" type="VSplitContainer" parent="MarginContainer/VBoxContainer/Brush"]
+margin_left = 264.0
+margin_right = 392.0
+margin_bottom = 160.0
+dragger_visibility = 2
+
+[node name="Label" type="RichTextLabel" parent="MarginContainer/VBoxContainer/Brush/9"]
+margin_right = 128.0
+margin_bottom = 32.0
+size_flags_vertical = 5
+custom_fonts/bold_font = ExtResource( 2 )
+custom_fonts/normal_font = ExtResource( 1 )
+bbcode_enabled = true
+bbcode_text = "[b]9[/b] Special"
+text = "9 Special"
+fit_content_height = true
+
+[node name="Button2" type="Button" parent="MarginContainer/VBoxContainer/Brush/9"]
+margin_top = 32.0
+margin_right = 128.0
+margin_bottom = 160.0
+rect_min_size = Vector2( 128, 128 )
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer/Brush/9/Button2"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 8.0
+margin_top = 8.0
+margin_right = -8.0
+margin_bottom = -8.0
+texture = ExtResource( 4 )
+expand = true
+stretch_mode = 1
+
+[node name="4" type="VSplitContainer" parent="MarginContainer/VBoxContainer/Brush"]
+margin_top = 164.0
+margin_right = 128.0
+margin_bottom = 324.0
+dragger_visibility = 2
+
+[node name="Label" type="RichTextLabel" parent="MarginContainer/VBoxContainer/Brush/4"]
+margin_right = 128.0
+margin_bottom = 32.0
+size_flags_vertical = 5
+custom_fonts/bold_font = ExtResource( 2 )
+custom_fonts/normal_font = ExtResource( 1 )
+bbcode_enabled = true
+bbcode_text = "[b]4[/b] West"
+text = "4 West"
+fit_content_height = true
+
+[node name="Button2" type="Button" parent="MarginContainer/VBoxContainer/Brush/4"]
+margin_top = 32.0
+margin_right = 128.0
+margin_bottom = 160.0
+rect_min_size = Vector2( 128, 128 )
+
+[node name="TextureRect2" type="TextureRect" parent="MarginContainer/VBoxContainer/Brush/4/Button2"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 8.0
+margin_top = 8.0
+margin_right = -8.0
+margin_bottom = -8.0
+texture = ExtResource( 4 )
+expand = true
+stretch_mode = 1
+
+[node name="5" type="VSplitContainer" parent="MarginContainer/VBoxContainer/Brush"]
+margin_left = 132.0
+margin_top = 164.0
+margin_right = 260.0
+margin_bottom = 324.0
+dragger_visibility = 2
+
+[node name="Label" type="RichTextLabel" parent="MarginContainer/VBoxContainer/Brush/5"]
+margin_right = 128.0
+margin_bottom = 32.0
+size_flags_vertical = 5
+custom_fonts/bold_font = ExtResource( 2 )
+custom_fonts/normal_font = ExtResource( 1 )
+bbcode_enabled = true
+bbcode_text = "[b]5[/b] Walls"
+text = "5 Walls"
+fit_content_height = true
+
+[node name="Button2" type="Button" parent="MarginContainer/VBoxContainer/Brush/5"]
+margin_top = 32.0
+margin_right = 128.0
+margin_bottom = 160.0
+rect_min_size = Vector2( 128, 128 )
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer/Brush/5/Button2"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 8.0
+margin_top = 8.0
+margin_right = -8.0
+margin_bottom = -8.0
+texture = ExtResource( 4 )
+expand = true
+stretch_mode = 1
+
+[node name="6" type="VSplitContainer" parent="MarginContainer/VBoxContainer/Brush"]
+margin_left = 264.0
+margin_top = 164.0
+margin_right = 392.0
+margin_bottom = 324.0
+dragger_visibility = 2
+
+[node name="Label" type="RichTextLabel" parent="MarginContainer/VBoxContainer/Brush/6"]
+margin_right = 128.0
+margin_bottom = 32.0
+size_flags_vertical = 5
+custom_fonts/bold_font = ExtResource( 2 )
+custom_fonts/normal_font = ExtResource( 1 )
+bbcode_enabled = true
+bbcode_text = "[b]6[/b] East"
+text = "6 East"
+fit_content_height = true
+
+[node name="Button2" type="Button" parent="MarginContainer/VBoxContainer/Brush/6"]
+margin_top = 32.0
+margin_right = 128.0
+margin_bottom = 160.0
+rect_min_size = Vector2( 128, 128 )
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer/Brush/6/Button2"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 8.0
+margin_top = 8.0
+margin_right = -8.0
+margin_bottom = -8.0
+texture = ExtResource( 4 )
+expand = true
+stretch_mode = 1
+
+[node name="1" type="VSplitContainer" parent="MarginContainer/VBoxContainer/Brush"]
+margin_top = 328.0
+margin_right = 128.0
+margin_bottom = 488.0
+dragger_visibility = 2
+
+[node name="Label" type="RichTextLabel" parent="MarginContainer/VBoxContainer/Brush/1"]
+margin_right = 128.0
+margin_bottom = 32.0
+size_flags_vertical = 5
+custom_fonts/bold_font = ExtResource( 2 )
+custom_fonts/normal_font = ExtResource( 1 )
+bbcode_enabled = true
+bbcode_text = "[b]1[/b] Floor"
+text = "1 Floor"
+fit_content_height = true
+
+[node name="Button2" type="Button" parent="MarginContainer/VBoxContainer/Brush/1"]
+margin_top = 32.0
+margin_right = 128.0
+margin_bottom = 160.0
+rect_min_size = Vector2( 128, 128 )
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer/Brush/1/Button2"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 8.0
+margin_top = 8.0
+margin_right = -8.0
+margin_bottom = -8.0
+texture = ExtResource( 5 )
+expand = true
+stretch_mode = 1
+
+[node name="2" type="VSplitContainer" parent="MarginContainer/VBoxContainer/Brush"]
+margin_left = 132.0
+margin_top = 328.0
+margin_right = 260.0
+margin_bottom = 488.0
+dragger_visibility = 2
+
+[node name="Label" type="RichTextLabel" parent="MarginContainer/VBoxContainer/Brush/2"]
+margin_right = 128.0
+margin_bottom = 32.0
+size_flags_vertical = 5
+custom_fonts/bold_font = ExtResource( 2 )
+custom_fonts/normal_font = ExtResource( 1 )
+bbcode_enabled = true
+bbcode_text = "[b]2[/b] South"
+text = "2 South"
+fit_content_height = true
+
+[node name="Button2" type="Button" parent="MarginContainer/VBoxContainer/Brush/2"]
+margin_top = 32.0
+margin_right = 128.0
+margin_bottom = 160.0
+rect_min_size = Vector2( 128, 128 )
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer/Brush/2/Button2"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 8.0
+margin_top = 8.0
+margin_right = -8.0
+margin_bottom = -8.0
+texture = ExtResource( 4 )
+expand = true
+stretch_mode = 1

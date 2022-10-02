@@ -1,0 +1,130 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=4
+
+_global_script_classes=[ {
+"base": "Spatial",
+"class": "Cell",
+"language": "GDScript",
+"path": "res://addons/xeen/map/cells/cell.gd"
+}, {
+"base": "Spatial",
+"class": "CellMapNode",
+"language": "GDScript",
+"path": "res://addons/xeen/map/cell_map_node.gd"
+}, {
+"base": "Spatial",
+"class": "GameScene",
+"language": "GDScript",
+"path": "res://runtime/game_scene.gd"
+}, {
+"base": "Spatial",
+"class": "PlayerSpatial",
+"language": "GDScript",
+"path": "res://runtime/objects/player/player_spatial.gd"
+}, {
+"base": "Object",
+"class": "Units",
+"language": "GDScript",
+"path": "res://addons/xeen/editor/units.gd"
+}, {
+"base": "Reference",
+"class": "XeenEditor",
+"language": "GDScript",
+"path": "res://addons/xeen/editor/editor.gd"
+}, {
+"base": "Control",
+"class": "XeenEditorPanel",
+"language": "GDScript",
+"path": "res://addons/xeen/gui/editor_panel.gd"
+}, {
+"base": "EditorPlugin",
+"class": "XeenEditorPlugin",
+"language": "GDScript",
+"path": "res://addons/xeen/plugin.gd"
+}, {
+"base": "Reference",
+"class": "XeenEditorUtil",
+"language": "GDScript",
+"path": "res://addons/xeen/editor/util.gd"
+}, {
+"base": "EditorSpatialGizmo",
+"class": "XeenMapGridGizmo",
+"language": "GDScript",
+"path": "res://addons/xeen/editor/gizmos/grid_gizmo.gd"
+}, {
+"base": "EditorSpatialGizmoPlugin",
+"class": "XeenMapGridGizmoPlugin",
+"language": "GDScript",
+"path": "res://addons/xeen/editor/gizmos/grid_gizmo_plugin.gd"
+} ]
+_global_script_class_icons={
+"Cell": "",
+"CellMapNode": "",
+"GameScene": "",
+"PlayerSpatial": "",
+"Units": "",
+"XeenEditor": "",
+"XeenEditorPanel": "",
+"XeenEditorPlugin": "",
+"XeenEditorUtil": "",
+"XeenMapGridGizmo": "",
+"XeenMapGridGizmoPlugin": ""
+}
+
+[application]
+
+config/name="Xeen"
+run/main_scene="res://addons/xeen/editor.tscn"
+config/icon="res://icon.png"
+
+[editor_plugins]
+
+enabled=PoolStringArray( "res://addons/xeen/plugin.cfg" )
+
+[input]
+
+move_forward={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":0,"physical_scancode":87,"unicode":0,"echo":false,"script":null)
+ ]
+}
+move_back={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":0,"physical_scancode":83,"unicode":0,"echo":false,"script":null)
+ ]
+}
+strafe_left={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":0,"physical_scancode":81,"unicode":0,"echo":false,"script":null)
+ ]
+}
+strafe_right={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":0,"physical_scancode":69,"unicode":0,"echo":false,"script":null)
+ ]
+}
+turn_left={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":0,"physical_scancode":65,"unicode":0,"echo":false,"script":null)
+ ]
+}
+turn_right={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":0,"physical_scancode":68,"unicode":0,"echo":false,"script":null)
+ ]
+}
+
+[physics]
+
+common/enable_pause_aware_picking=true
+
+[rendering]
+
+environment/default_environment="res://default_env.tres"
