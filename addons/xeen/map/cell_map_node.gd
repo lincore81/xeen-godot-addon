@@ -8,8 +8,8 @@ const ICON: Texture = preload("res://addons/xeen/map/cell_map_node.png")
 
 #FIXME: use setget
 export var size := Vector3(100, 1, 100)
-export var cells: Array
-
+var cells: Dictionary = {}
+export var data: Resource
 
 func get_bounds() -> AABB:
 	var it = AABB()
@@ -18,7 +18,7 @@ func get_bounds() -> AABB:
 	return it
 
 func _enter_tree():
-	initialise_cells()
+	pass
 
 func _exit_tree():
 	pass
@@ -28,29 +28,24 @@ func is_wall_passable(pos: Vector3, dir: int):
 	print("cell at %s = %s" % [str(pos), str(c)])
 	return c.is_wall_passable(dir) if c != null else false
 
+func serialise():
+	var mapdata := data as MapData
+	assert(mapdata, "Invalid map resource.")
+	mapdata.size = size
+	var f = funcref(self, "_serialise_cell")
+	iterate_over_area(f, get_bounds(), true)
+	MapData.write_to_disk(mapdata)
 
-func initialise_cells():
-	cells = Array()
-	cells.resize(size.x)
-	for x in range(size.x):
-		var zs = Array()
-		zs.resize(size.z)
-		cells[x] = zs
-	#TODO: Find a better way to 'deserialise' the map
-	for c in get_children():
-		if c is Cell:
-			var x := int(c.translation.x)
-			var z := int(c.translation.z)
-			print("Found cell at %d,%d." % [x, z])
-			cells[x][z] = c
-
-
-
-func iterate_over_area(callback: FuncRef, bounds: AABB):
+func _serialise_cell(cell, pos: Vector3, _x) -> bool:
+	print("serialising cell %s at %s " % [str(cell), str(pos)])
+	MapData.store_cell(data, pos, cell)
+	return true
+			
+func iterate_over_area(callback: FuncRef, bounds: AABB, skip_null = false, context = null):
 	"""
 		Iterate over all cells within the given AABB (floored) until the
 		callback function returns false. Will not exceed map bounds.
-		callback signature: (Cell, Vector3) -> bool
+		callback signature: (Cell, Vector3, context: Variant) -> bool
 	"""
 	bounds = bounds.abs()
 	var x0 = max(0, bounds.position.x)
@@ -60,8 +55,10 @@ func iterate_over_area(callback: FuncRef, bounds: AABB):
 	for x in range(x0, x1):
 		for z in range(z0, z1):
 			var v := Vector3(x, 0, z)
-			if not callback.call_func(cell_at(v), v):
-				return
+			var cell = cell_at(v)
+			if not skip_null or cell != null:
+				if not callback.call_func(cell, v, context):
+					return
 	
 
 
@@ -74,37 +71,44 @@ func get_cardinal_neighbours(pos: Vector3) -> Array:
 	]
 
 func put_cell(pos: Vector3, cell_template: PackedScene, update_faces: bool = true) -> bool:
-	var cell := cell_template.instance() as Cell
-	assert(cell, "not a cell?")
+	pos = pos.floor()
+	if data == null:
+		push_error("No MapData resource!")
+		return false
+	var cell = cell_template.instance()
 	cell.set_meta("_edit_lock_", true)
 	add_child(cell, true)
-	# FIXME: setting the owner doesn't solve all problems with persistance
-	cell.owner = self.owner
 	cell.name = "Cell (%d,%d,%d)" % [int(pos.x), int(pos.y), int(pos.z)]
 	cell.translation = pos
-	cells[int(pos.x)][int(pos.z)] = cell
-	if update_faces: update_cell_faces(pos)
+	cell.owner = self.owner
+	cells[pos] = cell
+	if update_faces: 
+		update_cell_faces(pos)
+	serialise()
+	# FIXME: setting the owner doesn't solve all problems with persistance
+	#cell.owner = self.owner
 	#emit_signal("cell_changed", pos, cell)
 	return true
 
 
 func clear_cell(pos: Vector3, update_faces := true) -> bool:
-	var x = int(pos.x)
-	var z = int(pos.z)
-	var cell = cells[x][z]
-	if cell != null: 
-		cells[x][z] = null
+	pos = pos.floor()
+	if pos in cells:
+		var cell = cells[pos]
+		cells.erase(pos)
 		cell.queue_free()
 		if update_faces: 
 			update_cell_faces(pos, true)
-	#emit_signal("cell_changed", pos, null)
-	return true
+		serialise()
+		return true
+	else:
+		return false
 	   
 # TODO: cells should probably update faces themselves, so the behaviour can be changed in subclasses.
 func update_cell_faces(pos: Vector3, removed := false):
 	var neighbours := get_cardinal_neighbours(pos)
 	var face_mask: int = Cell.Face.TOP + Cell.Face.BOTTOM
-	var neighbour: Cell 
+	var neighbour
 	# north
 	neighbour = neighbours[0]
 	if neighbour != null:
@@ -136,9 +140,17 @@ func update_cell_faces(pos: Vector3, removed := false):
 		cell.set_faces(face_mask)
 
 func cell_at(pos: Vector3) -> Cell:
-	var x = int(pos.x)
-	var z = int(pos.z)
-	return cells[x][z] if in_bounds(pos) else null
+	pos = pos.floor()
+	return cells[pos] if pos in cells else null
 
 func in_bounds(pos: Vector3):
 	return pos.x >= 0 && pos.x < size.x && pos.z >= 0 && pos.z < size.z
+
+#func _pos2idx(pos: Vector3) -> int:
+#	return int(pos.z) * int(size.x) + int(pos.x)
+#
+#func _idx2pos(idx: int) -> Vector3:
+#	var x := idx % int(size.x)
+#	var z := (idx - x) / int(size.x)
+#	return Vector3(x, 0, z)
+#

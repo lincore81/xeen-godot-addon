@@ -13,7 +13,6 @@ onready var north := $North as MeshInstance
 onready var south := $South as MeshInstance
 onready var east := $East as MeshInstance
 onready var west := $West as MeshInstance
-onready var special := get_node_or_null("Special") as MeshInstance
 
 export var face_mask: int = -0xFFFF
 
@@ -32,10 +31,7 @@ func is_wall_passable(dir: int) -> bool:
             return false
 
 func _ready():
-    if face_mask >= 0:
-        set_faces(face_mask)
-    else:
-        _calc_face_mask()
+    _calc_face_mask()
 
 func _calc_face_mask():
     face_mask = 0
@@ -53,8 +49,6 @@ func set_faces(mask: int):
     south.visible  = Face.SOUTH & mask == Face.SOUTH
     east.visible   = Face.EAST & mask == Face.EAST
     west.visible   = Face.WEST & mask == Face.WEST
-    if special != null:
-        special.visible = Face.SPECIAL & mask == Face.SPECIAL
     face_mask = mask
 
 
@@ -71,8 +65,6 @@ func set_material(f: int, mat: Material, surface: int = 0):
         east.set_surface_material(surface, mat)
     elif f == Face.WEST:     
         west.set_surface_material(surface, mat)
-    elif f == Face.SPECIAL && special != null:     
-        special.set_surface_material(surface, mat)
     elif f == Face.WALLS:
         north.set_surface_material(surface, mat)
         south.set_surface_material(surface, mat)
@@ -130,3 +122,24 @@ func set_face(f: int, state: bool):
         face_mask += f
     elif not state and has_bit:
         face_mask -= f
+
+func get_face_data() -> Array:
+    var faces = [[top, Face.TOP], [bottom, Face.BOTTOM], [north, Face.NORTH],
+            [east, Face.EAST], [west, Face.WEST], [south, Face.SOUTH]]
+    var result = []
+    for f in faces:
+        var data = {}
+        data.visible = f[0].visible
+        data.material = f[0].get_surface_material(0)
+        data.id = f[1]
+        result.append(data)
+    return result
+    
+func set_face_data(data) -> void:
+    var faces = [top, bottom, north, east, west, south]
+    for f in faces:
+        var face := f as MeshInstance
+        face.visible = data.visible
+        if data.material:
+            face.set_surface_material(0, data.material)
+    _calc_face_mask()
