@@ -14,6 +14,7 @@ var is_dragging := false
 
 func _enter_tree():
     editor = XeenEditor.new()
+    editor.panel = panel
     gizmo_plugin = GridGizmoPlugin.new(editor)
 
     add_control_to_dock(EditorPlugin.DOCK_SLOT_RIGHT_BR, panel)
@@ -44,11 +45,17 @@ func _handle_click(_cam: Camera, ev: InputEventMouseButton):
             var scene_root = get_editor_interface().get_edited_scene_root()
             editor.try_put_cell(scene_root, get_undo_redo())
 
+func unedit():
+    editor.map = null
+    editing = null
+
 func edit(obj: Object):
     if obj is CellMapNode:
         editing = obj as CellMapNode
         assert(editing, "The given object not a CellMapNode.")
         editor.map = editing
+        if not editing.is_connected("tree_exited", self, "unedit"):
+            editing.connect("tree_exited", self, "unedit")
         print("Editing %s" % editing.name)
 
 func handles(obj: Object) -> bool:

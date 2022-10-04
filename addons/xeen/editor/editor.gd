@@ -1,5 +1,5 @@
 tool
-extends Reference
+extends Object
 class_name XeenEditor
 
 #signal selection_changed(from, to, is_empty)
@@ -8,7 +8,8 @@ class_name XeenEditor
 #var has_selection := false setget , _get_has_selection 
 #var _selection := AABB() 
 var cursor := Vector3()
-var map: CellMapNode = null setget _setmap, _getmap
+var map:  CellMapNode = null setget _setmap, _getmap
+var panel: XeenEditorPanel = null
 
 var cursor_in_bounds := false
 var interface: EditorInterface = null
@@ -65,6 +66,9 @@ func update_cursor(cam: Camera, mouse_pos: Vector2) -> void:
             cursor = pos
             #emit_signal("cursor_changed", cursor, cursor_in_bounds)
             map.gizmo.redraw()
+    if panel != null:
+        panel.update_cursor_pos(cursor, cursor_in_bounds)
+            
 
 
 func _setmap(v: CellMapNode):

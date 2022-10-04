@@ -6,11 +6,27 @@ export var size: Vector3 = Vector3.ZERO
 export var materials: Array = []
 export var cells: Dictionary = {}
 
+func is_empty() -> bool:
+    return cells.empty()
+
+func clear():
+    size = Vector3.ZERO
+    materials = []
+    cells = {}
+
+# Callback function: (celldata: Dictionary, pos: Vector3, context: Variant) -> void
+static func iter_over_cell_data(data: MapData, callback: FuncRef, context = null):
+    for pos in data.cells.keys():
+        var celldata = data.cells[pos]
+        if celldata == null:
+            push_warning("celldata is null: %s" % str(pos))
+        else:
+            callback.call_func(celldata, pos, context)
+                
+
 static func write_to_disk(data: MapData):
-    for k in data.cells.keys():
-        print("%s=%s" % [str(k), str(data.cells[k])])
     var result = ResourceSaver.save(data.resource_path, data)
-    print("Map saved to '%s', result: %d " % [data.resource_path, result])
+    #print("Map saved to '%s', result: %d " % [data.resource_path, result])
 
 
 static func restore_cell(data: MapData, pos: Vector3, cell):
@@ -19,14 +35,13 @@ static func restore_cell(data: MapData, pos: Vector3, cell):
     for k in celldata.faces.keys():
         var f = celldata.faces[k]
         var mat := _restore_material(data, f.material)
-        cell.set_face_data({"material": mat, "visible": f.visible})
+        cell.set_face_data({"id": k, "material": mat, "visible": f.visible})
 
 
 static func store_cell(mapdata: MapData, pos: Vector3, cell):
     if cell == null: 
-        print("cell is null")
+        push_error("Refusing to store `null` cell.")
         return
-    print("in store_cell, pos=%s, cell=%s" % [str(pos), str(cell)])
     var facedata = cell.get_face_data()
     var celldata = {"faces": {}}
     for f in facedata:

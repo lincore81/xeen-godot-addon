@@ -5,11 +5,13 @@ class_name CellMapNode
 Maintain references to the cells, allow checking for, iterating over, adding and removing cells.
 """
 const ICON: Texture = preload("res://addons/xeen/map/cell_map_node.png")
+var cell_template: PackedScene = preload("res://addons/xeen/map/cells/cell.tscn")
 
 #FIXME: use setget
 export var size := Vector3(100, 1, 100)
 var cells: Dictionary = {}
-export var data: Resource
+export var data: Resource setget _set_map_data, _get_map_data
+var marshalling := false
 
 func get_bounds() -> AABB:
 	var it = AABB()
@@ -17,27 +19,47 @@ func get_bounds() -> AABB:
 	it.size = size
 	return it
 
-func _enter_tree():
-	pass
+func _ready():
+	var mapdata = data as MapData
+	if not mapdata.is_empty():
+		deserialise()
 
-func _exit_tree():
-	pass
-
-func is_wall_passable(pos: Vector3, dir: int):
+func is_wall_passable(pos: Vector3, abs_dir: int):
 	var c := cell_at(pos)
-	print("cell at %s = %s" % [str(pos), str(c)])
-	return c.is_wall_passable(dir) if c != null else false
+	print("cell at %s: %s" % [str(pos), str(c)])
+	return c.is_wall_passable(abs_dir) if c != null else false
 
-func serialise():
+
+func deserialise():
+	if marshalling: return
 	var mapdata := data as MapData
 	assert(mapdata, "Invalid map resource.")
+	marshalling = true
+	cells.clear()
+	size = mapdata.size
+	var f = funcref(self, "_deserialise_cell")
+	MapData.iter_over_cell_data(mapdata, f, mapdata)
+	marshalling = false
+	print("Deserialised map")
+
+func _deserialise_cell(celldata, pos: Vector3, mapdata: MapData) -> void:
+	var cell = put_cell(pos, cell_template, false)
+	MapData.restore_cell(mapdata, pos, cell)
+
+func serialise():
+	if not Engine.editor_hint: return
+	if marshalling: return
+	var mapdata := data as MapData
+	assert(mapdata, "Invalid map resource.")
+	marshalling = true
+	mapdata.clear()
 	mapdata.size = size
 	var f = funcref(self, "_serialise_cell")
 	iterate_over_area(f, get_bounds(), true)
 	MapData.write_to_disk(mapdata)
+	marshalling = false
 
 func _serialise_cell(cell, pos: Vector3, _x) -> bool:
-	print("serialising cell %s at %s " % [str(cell), str(pos)])
 	MapData.store_cell(data, pos, cell)
 	return true
 			
@@ -49,9 +71,9 @@ func iterate_over_area(callback: FuncRef, bounds: AABB, skip_null = false, conte
 	"""
 	bounds = bounds.abs()
 	var x0 = max(0, bounds.position.x)
-	var x1 = min(size.x-1, bounds.end.x)
+	var x1 = min(size.x, bounds.end.x + 1)
 	var z0 = max(0, bounds.position.z)
-	var z1 = min(size.z-1, bounds.end.z)
+	var z1 = min(size.z, bounds.end.z + 1)
 	for x in range(x0, x1):
 		for z in range(z0, z1):
 			var v := Vector3(x, 0, z)
@@ -70,25 +92,21 @@ func get_cardinal_neighbours(pos: Vector3) -> Array:
 		cell_at(pos + Vector3.LEFT)
 	]
 
-func put_cell(pos: Vector3, cell_template: PackedScene, update_faces: bool = true) -> bool:
+func put_cell(pos: Vector3, cell_template: PackedScene, update_faces: bool = true) -> Cell:
 	pos = pos.floor()
 	if data == null:
 		push_error("No MapData resource!")
-		return false
+		return null
 	var cell = cell_template.instance()
 	cell.set_meta("_edit_lock_", true)
 	add_child(cell, true)
-	cell.name = "Cell (%d,%d,%d)" % [int(pos.x), int(pos.y), int(pos.z)]
+	cell.name = "Cell (%d,%d,%d)" % [pos.x, pos.y, pos.z]
 	cell.translation = pos
-	cell.owner = self.owner
 	cells[pos] = cell
 	if update_faces: 
 		update_cell_faces(pos)
 	serialise()
-	# FIXME: setting the owner doesn't solve all problems with persistance
-	#cell.owner = self.owner
-	#emit_signal("cell_changed", pos, cell)
-	return true
+	return cell
 
 
 func clear_cell(pos: Vector3, update_faces := true) -> bool:
@@ -146,11 +164,9 @@ func cell_at(pos: Vector3) -> Cell:
 func in_bounds(pos: Vector3):
 	return pos.x >= 0 && pos.x < size.x && pos.z >= 0 && pos.z < size.z
 
-#func _pos2idx(pos: Vector3) -> int:
-#	return int(pos.z) * int(size.x) + int(pos.x)
-#
-#func _idx2pos(idx: int) -> Vector3:
-#	var x := idx % int(size.x)
-#	var z := (idx - x) / int(size.x)
-#	return Vector3(x, 0, z)
-#
+func _set_map_data(v: Resource):
+	assert(v is MapData, "Map Node: Wrong resource type, expected MapData.")
+	data = v as MapData
+
+func _get_map_data() -> Resource:
+	return data
