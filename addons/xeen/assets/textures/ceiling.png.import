@@ -2,8 +2,8 @@
 
 importer="texture"
 type="StreamTexture"
-path.s3tc="res://.import/wall.jpg-87560eeb2b921709e9ada9d7f87e08fa.s3tc.stex"
-path.etc2="res://.import/wall.jpg-87560eeb2b921709e9ada9d7f87e08fa.etc2.stex"
+path.s3tc="res://.import/ceiling.png-23f717a54862b66d964a235842877c38.s3tc.stex"
+path.etc2="res://.import/ceiling.png-23f717a54862b66d964a235842877c38.etc2.stex"
 metadata={
 "imported_formats": [ "s3tc", "etc2" ],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://addons/xeen/assets/materials/wall.jpg"
-dest_files=[ "res://.import/wall.jpg-87560eeb2b921709e9ada9d7f87e08fa.s3tc.stex", "res://.import/wall.jpg-87560eeb2b921709e9ada9d7f87e08fa.etc2.stex" ]
+source_file="res://addons/xeen/assets/textures/ceiling.png"
+dest_files=[ "res://.import/ceiling.png-23f717a54862b66d964a235842877c38.s3tc.stex", "res://.import/ceiling.png-23f717a54862b66d964a235842877c38.etc2.stex" ]
 
 [params]
 
@@ -21,12 +21,12 @@ compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
-flags/repeat=true
+flags/repeat=1
 flags/filter=true
 flags/mipmaps=true
 flags/anisotropic=false
 flags/srgb=1
-process/fix_alpha_border=true
+process/fix_alpha_border=false
 process/premult_alpha=false
 process/HDR_as_SRGB=false
 process/invert_color=false

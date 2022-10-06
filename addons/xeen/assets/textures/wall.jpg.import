@@ -2,8 +2,8 @@
 
 importer="texture"
 type="StreamTexture"
-path.s3tc="res://.import/floor.jpg-c9144f2b76e4e7b7471d1c3cc771d009.s3tc.stex"
-path.etc2="res://.import/floor.jpg-c9144f2b76e4e7b7471d1c3cc771d009.etc2.stex"
+path.s3tc="res://.import/wall.jpg-c43e437af9427d16d219d86900047988.s3tc.stex"
+path.etc2="res://.import/wall.jpg-c43e437af9427d16d219d86900047988.etc2.stex"
 metadata={
 "imported_formats": [ "s3tc", "etc2" ],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://addons/xeen/assets/materials/floor.jpg"
-dest_files=[ "res://.import/floor.jpg-c9144f2b76e4e7b7471d1c3cc771d009.s3tc.stex", "res://.import/floor.jpg-c9144f2b76e4e7b7471d1c3cc771d009.etc2.stex" ]
+source_file="res://addons/xeen/assets/textures/wall.jpg"
+dest_files=[ "res://.import/wall.jpg-c43e437af9427d16d219d86900047988.s3tc.stex", "res://.import/wall.jpg-c43e437af9427d16d219d86900047988.etc2.stex" ]
 
 [params]
 

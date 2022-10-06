@@ -13,7 +13,6 @@ var lmb_down := false
 var is_dragging := false
 
 func _enter_tree():
-    panel.previewer = get_editor_interface().get_resource_previewer()
     editor = XeenEditor.new()
     editor.panel = panel
     gizmo_plugin = GridGizmoPlugin.new(editor)
@@ -21,6 +20,12 @@ func _enter_tree():
     add_control_to_dock(EditorPlugin.DOCK_SLOT_RIGHT_BR, panel)
     add_custom_type("CellMap", "Spatial", cellmapnode_script, CellMapNode.ICON)
     add_spatial_gizmo_plugin(gizmo_plugin)
+
+func _ready():
+    panel.setup(get_editor_interface().get_resource_previewer(), editor.brush)
+    editor.on_ready()
+    panel.connect("brush_material_selected", editor, "set_brush_material")
+
 
 func _exit_tree():
     remove_control_from_docks(panel)

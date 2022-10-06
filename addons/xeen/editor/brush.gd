@@ -2,6 +2,7 @@ extends Resource
 class_name CellBrush
 
 #enum FACE_VISIBILITY {ALWAYS, NEVER, AUTO}
+const WALLS = [Cell.FACE.NORTH, Cell.FACE.EAST, Cell.FACE.SOUTH, Cell.FACE.WEST]
 
 export var cell_template: PackedScene = preload("res://addons/xeen/map/cells/cell.tscn")
 export var faces: Dictionary = {
@@ -13,6 +14,20 @@ export var faces: Dictionary = {
     Cell.FACE.WEST:     null,
     Cell.FACE.WALLS:    null,
 }
+
+signal face_changed(face, material)
+
+func is_empty(face := -1):
+    if faces.has(face):
+        return faces[face] == null
+    elif face == -1:
+        print(faces)
+        for key in faces.keys():
+            if faces[key] != null:
+                return false
+    else:
+        push_error("Invalid face id: %d" % face)
+
 
 func put_cell(pos: Vector3, map: CellMapNode):
     var cell := map.put_cell(pos, cell_template)
@@ -29,6 +44,11 @@ func update_cell(cell: Cell, map: CellMapNode):
 func set_material(face: int, material: Material):
     if face in faces:
         faces[face] = material
+        emit_signal("face_changed", face, material)
+        if face == Cell.FACE.WALLS:
+            for f in WALLS: 
+                faces[f] = material
+                emit_signal("face_changed", f, material)
     else:
         push_error("Invalid face: %d" % face)
 

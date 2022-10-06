@@ -2,30 +2,32 @@ tool
 extends Control
 class_name XeenEditorPanel
 
+
 onready var cursor_label := $Margin/VBox/Info/CursorPosition as Label
-onready var ceiling_btn := $Margin/VBox/Brush/C7/Button
-onready var ceiling_texture := $Margin/VBox/Brush/C7/Button/TextureRect as TextureRect
-onready var vbox := $Margin/VBox
+onready var asset_browser := $Margin/VBox/Materials/Browser as AssetBrowser
+onready var btn_refresh := $Margin/VBox/Materials/HBox/Refresh as Button
 
-var mat = preload("res://addons/xeen/assets/materials/ceiling.tres")
-var previewer: EditorResourcePreview = null
+# shows all face materials currently on the cell brush
+onready var brush_view: BrushView = $Margin/VBox/Brush as BrushView
 
-#func _ready():
-    #ceiling_btn.connect("pressed", self, "on_click")
-    #var picker := EditorResourcePicker.new()
-    #picker.base_type = "Texture"
-    #vbox.add_child(picker)
-    
+signal brush_material_selected(face, material)
 
-func on_click():
-    ceiling_texture.texture = mat.albedo_texture
-    #previewer.queue_edited_resource_preview(mat, self, "update_preview", [])
+func setup(resource_preview: EditorResourcePreview, brush: CellBrush):
+    asset_browser.set_resource_preview(resource_preview)
+    asset_browser.update()
+    brush_view.set_brush(brush) 
+    brush_view.connect("face_selected", self, "_on_brush_face_selected")
+    btn_refresh.connect("pressed", asset_browser, "update")
 
 func update_cursor_pos(pos: Vector3, in_bounds: bool):
     if in_bounds:
+        # TAG: 2D
         cursor_label.text = "x: %d, z: %d" % [int(pos.x), int(pos.z)]
     else:
         cursor_label.text = ""
 
-func update_preview(_p, preview: Texture, _t, _u):
-    ceiling_texture.texture = preview
+func _on_brush_face_selected(face: int):
+    if asset_browser.selected_resource_path != null:
+        var mat = ResourceLoader.load(asset_browser.selected_resource_path,
+                asset_browser.resource_class_name)
+        emit_signal("brush_material_selected", face, mat)

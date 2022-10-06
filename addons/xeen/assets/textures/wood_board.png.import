@@ -2,8 +2,8 @@
 
 importer="texture"
 type="StreamTexture"
-path.s3tc="res://.import/ceiling.png-f23ee562e6945dea454082884bf62a8a.s3tc.stex"
-path.etc2="res://.import/ceiling.png-f23ee562e6945dea454082884bf62a8a.etc2.stex"
+path.s3tc="res://.import/wood_board.png-0e845792582b118e6c78b9bb4e27a108.s3tc.stex"
+path.etc2="res://.import/wood_board.png-0e845792582b118e6c78b9bb4e27a108.etc2.stex"
 metadata={
 "imported_formats": [ "s3tc", "etc2" ],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://addons/xeen/assets/materials/ceiling.png"
-dest_files=[ "res://.import/ceiling.png-f23ee562e6945dea454082884bf62a8a.s3tc.stex", "res://.import/ceiling.png-f23ee562e6945dea454082884bf62a8a.etc2.stex" ]
+source_file="res://addons/xeen/assets/textures/wood_board.png"
+dest_files=[ "res://.import/wood_board.png-0e845792582b118e6c78b9bb4e27a108.s3tc.stex", "res://.import/wood_board.png-0e845792582b118e6c78b9bb4e27a108.etc2.stex" ]
 
 [params]
 
@@ -21,12 +21,12 @@ compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
-flags/repeat=1
+flags/repeat=true
 flags/filter=true
 flags/mipmaps=true
 flags/anisotropic=false
 flags/srgb=1
-process/fix_alpha_border=false
+process/fix_alpha_border=true
 process/premult_alpha=false
 process/HDR_as_SRGB=false
 process/invert_color=false

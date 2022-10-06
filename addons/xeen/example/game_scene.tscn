@@ -39,7 +39,6 @@ light_color = Color( 0.882353, 0.815686, 0.556863, 1 )
 shadow_enabled = true
 
 [node name="OmniLight2" type="OmniLight" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 0.5, 1.5 )
-visible = false
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 0.5, 2.5 )
 light_color = Color( 0.882353, 0.815686, 0.556863, 1 )
 shadow_enabled = true
