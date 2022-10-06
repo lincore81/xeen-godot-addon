@@ -10,10 +10,10 @@ class_name XeenEditor
 var cursor := Vector3()
 var map:  CellMapNode = null setget _setmap, _getmap
 var panel: XeenEditorPanel = null
+var brush := CellBrush.new()
 
 var cursor_in_bounds := false
 var interface: EditorInterface = null
-var cell_template: PackedScene = preload("res://addons/xeen/map/cells/cell.tscn")
 
 #func clear_selection():
 #    _selection.position = Vector3.ZERO 
@@ -35,8 +35,8 @@ func try_put_cell(owner: Node, undo: UndoRedo) -> bool:
     var empty = map.cell_at(cursor) == null
     if empty: 
         undo.create_action("put cell")
-        undo.add_do_method(map, "put_cell", cursor, cell_template)
-        undo.add_undo_method(map, "clear_cell", cursor)
+        undo.add_do_method(brush, "put_cell", cursor, map)
+        undo.add_undo_method(brush, "clear_cell", cursor, map)
         undo.commit_action()
     return empty
 
@@ -45,8 +45,8 @@ func try_clear_cell(undo: UndoRedo) -> bool:
     var empty = map.cell_at(cursor)
     if empty != null:
         undo.create_action("clear cell")
-        undo.add_do_method(map, "clear_cell", cursor)
-        undo.add_undo_method(map, "clear_cell", cursor, cell_template)
+        undo.add_do_method(brush, "clear_cell", cursor, map)
+        undo.add_undo_method(map, "put_cell", cursor, map)
         undo.commit_action()
     return empty != null
 

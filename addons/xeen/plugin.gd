@@ -13,6 +13,7 @@ var lmb_down := false
 var is_dragging := false
 
 func _enter_tree():
+    panel.previewer = get_editor_interface().get_resource_previewer()
     editor = XeenEditor.new()
     editor.panel = panel
     gizmo_plugin = GridGizmoPlugin.new(editor)

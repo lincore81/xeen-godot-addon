@@ -34,8 +34,7 @@ size = Vector3( 10, 1, 10 )
 data = ExtResource( 2 )
 
 [node name="OmniLight" type="OmniLight" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.5, 0.5, 4.5 )
-visible = false
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8.5, 0.5, 5.5 )
 light_color = Color( 0.882353, 0.815686, 0.556863, 1 )
 shadow_enabled = true
 

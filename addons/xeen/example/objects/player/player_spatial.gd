@@ -12,7 +12,7 @@ var tween_time: float
 
 
 func get_map_position() -> Vector3:
-    # TODO: consider map position
+    # TODO: consider map translation
     return translation.floor()
 
 func _enter_tree():
@@ -22,23 +22,6 @@ func _enter_tree():
 
 func is_moving():
     return tween.is_active()
-
-#func _physics_process(_delta):
-#    var forward = Vector3.FORWARD
-#    if camera:
-#        forward = Vector3.ZERO
-#        var cam_forward = -camera.transform.basis.z.normalized()
-#        var cam_axis = cam_forward.abs().max_axis()
-#        forward[cam_axis] = sign(cam_forward[cam_axis])
-#
-#    if Input.is_action_pressed("up"):
-#        roll(forward)
-#    if Input.is_action_pressed("down"):
-#        roll(-forward)
-#    if Input.is_action_pressed("right"):
-#        roll(forward.cross(Vector3.UP))
-#    if Input.is_action_pressed("left"):
-#        roll(-forward.cross(Vector3.UP))
 
 func move(target: Vector3):
     tween_time = move_speed

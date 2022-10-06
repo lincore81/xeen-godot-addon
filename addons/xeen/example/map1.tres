@@ -7,7 +7,7 @@ script = ExtResource( 1 )
 size = Vector3( 10, 1, 10 )
 materials = [ "res://addons/xeen/assets/materials/ceiling.tres", "res://addons/xeen/assets/materials/floor.tres", "res://addons/xeen/assets/materials/wall.tres" ]
 cells = {
-Vector3( 4, 0, 4 ): {
+Vector3( 2, 0, 2 ): {
 "faces": {
 1: {
 "id": 1,
@@ -33,6 +33,278 @@ Vector3( 4, 0, 4 ): {
 "id": 16,
 "material": 2,
 "visible": true
+},
+32: {
+"id": 32,
+"material": 2,
+"visible": false
+}
+}
+},
+Vector3( 2, 0, 3 ): {
+"faces": {
+1: {
+"id": 1,
+"material": 1,
+"visible": true
+},
+2: {
+"id": 2,
+"material": 0,
+"visible": true
+},
+4: {
+"id": 4,
+"material": 2,
+"visible": false
+},
+8: {
+"id": 8,
+"material": 2,
+"visible": false
+},
+16: {
+"id": 16,
+"material": 2,
+"visible": true
+},
+32: {
+"id": 32,
+"material": 2,
+"visible": true
+}
+}
+},
+Vector3( 2, 0, 4 ): {
+"faces": {
+1: {
+"id": 1,
+"material": 1,
+"visible": true
+},
+2: {
+"id": 2,
+"material": 0,
+"visible": true
+},
+4: {
+"id": 4,
+"material": 2,
+"visible": false
+},
+8: {
+"id": 8,
+"material": 2,
+"visible": false
+},
+16: {
+"id": 16,
+"material": 2,
+"visible": true
+},
+32: {
+"id": 32,
+"material": 2,
+"visible": true
+}
+}
+},
+Vector3( 2, 0, 5 ): {
+"faces": {
+1: {
+"id": 1,
+"material": 1,
+"visible": true
+},
+2: {
+"id": 2,
+"material": 0,
+"visible": true
+},
+4: {
+"id": 4,
+"material": 2,
+"visible": false
+},
+8: {
+"id": 8,
+"material": 2,
+"visible": true
+},
+16: {
+"id": 16,
+"material": 2,
+"visible": true
+},
+32: {
+"id": 32,
+"material": 2,
+"visible": false
+}
+}
+},
+Vector3( 3, 0, 2 ): {
+"faces": {
+1: {
+"id": 1,
+"material": 1,
+"visible": true
+},
+2: {
+"id": 2,
+"material": 0,
+"visible": true
+},
+4: {
+"id": 4,
+"material": 2,
+"visible": true
+},
+8: {
+"id": 8,
+"material": 2,
+"visible": true
+},
+16: {
+"id": 16,
+"material": 2,
+"visible": false
+},
+32: {
+"id": 32,
+"material": 2,
+"visible": false
+}
+}
+},
+Vector3( 3, 0, 5 ): {
+"faces": {
+1: {
+"id": 1,
+"material": 1,
+"visible": true
+},
+2: {
+"id": 2,
+"material": 0,
+"visible": true
+},
+4: {
+"id": 4,
+"material": 2,
+"visible": true
+},
+8: {
+"id": 8,
+"material": 2,
+"visible": false
+},
+16: {
+"id": 16,
+"material": 2,
+"visible": false
+},
+32: {
+"id": 32,
+"material": 2,
+"visible": false
+}
+}
+},
+Vector3( 3, 0, 6 ): {
+"faces": {
+1: {
+"id": 1,
+"material": 1,
+"visible": true
+},
+2: {
+"id": 2,
+"material": 0,
+"visible": true
+},
+4: {
+"id": 4,
+"material": 2,
+"visible": false
+},
+8: {
+"id": 8,
+"material": 2,
+"visible": false
+},
+16: {
+"id": 16,
+"material": 2,
+"visible": true
+},
+32: {
+"id": 32,
+"material": 2,
+"visible": true
+}
+}
+},
+Vector3( 3, 0, 7 ): {
+"faces": {
+1: {
+"id": 1,
+"material": 1,
+"visible": true
+},
+2: {
+"id": 2,
+"material": 0,
+"visible": true
+},
+4: {
+"id": 4,
+"material": 2,
+"visible": false
+},
+8: {
+"id": 8,
+"material": 2,
+"visible": true
+},
+16: {
+"id": 16,
+"material": 2,
+"visible": true
+},
+32: {
+"id": 32,
+"material": 2,
+"visible": false
+}
+}
+},
+Vector3( 4, 0, 2 ): {
+"faces": {
+1: {
+"id": 1,
+"material": 1,
+"visible": true
+},
+2: {
+"id": 2,
+"material": 0,
+"visible": true
+},
+4: {
+"id": 4,
+"material": 2,
+"visible": true
+},
+8: {
+"id": 8,
+"material": 2,
+"visible": true
+},
+16: {
+"id": 16,
+"material": 2,
+"visible": false
 },
 32: {
 "id": 32,
@@ -56,41 +328,7 @@ Vector3( 4, 0, 5 ): {
 4: {
 "id": 4,
 "material": 2,
-"visible": false
-},
-8: {
-"id": 8,
-"material": 2,
-"visible": false
-},
-16: {
-"id": 16,
-"material": 2,
 "visible": true
-},
-32: {
-"id": 32,
-"material": 2,
-"visible": true
-}
-}
-},
-Vector3( 4, 0, 6 ): {
-"faces": {
-1: {
-"id": 1,
-"material": 1,
-"visible": true
-},
-2: {
-"id": 2,
-"material": 0,
-"visible": true
-},
-4: {
-"id": 4,
-"material": 2,
-"visible": false
 },
 8: {
 "id": 8,
@@ -100,7 +338,7 @@ Vector3( 4, 0, 6 ): {
 16: {
 "id": 16,
 "material": 2,
-"visible": true
+"visible": false
 },
 32: {
 "id": 32,
@@ -109,7 +347,7 @@ Vector3( 4, 0, 6 ): {
 }
 }
 },
-Vector3( 5, 0, 1 ): {
+Vector3( 4, 0, 7 ): {
 "faces": {
 1: {
 "id": 1,
@@ -129,17 +367,17 @@ Vector3( 5, 0, 1 ): {
 8: {
 "id": 8,
 "material": 2,
-"visible": false
+"visible": true
 },
 16: {
 "id": 16,
 "material": 2,
-"visible": true
+"visible": false
 },
 32: {
 "id": 32,
 "material": 2,
-"visible": true
+"visible": false
 }
 }
 },
@@ -158,7 +396,7 @@ Vector3( 5, 0, 2 ): {
 4: {
 "id": 4,
 "material": 2,
-"visible": false
+"visible": true
 },
 8: {
 "id": 8,
@@ -168,12 +406,12 @@ Vector3( 5, 0, 2 ): {
 16: {
 "id": 16,
 "material": 2,
-"visible": true
+"visible": false
 },
 32: {
 "id": 32,
 "material": 2,
-"visible": true
+"visible": false
 }
 }
 },
@@ -231,7 +469,41 @@ Vector3( 5, 0, 4 ): {
 8: {
 "id": 8,
 "material": 2,
+"visible": false
+},
+16: {
+"id": 16,
+"material": 2,
 "visible": true
+},
+32: {
+"id": 32,
+"material": 2,
+"visible": true
+}
+}
+},
+Vector3( 5, 0, 5 ): {
+"faces": {
+1: {
+"id": 1,
+"material": 1,
+"visible": true
+},
+2: {
+"id": 2,
+"material": 0,
+"visible": true
+},
+4: {
+"id": 4,
+"material": 2,
+"visible": false
+},
+8: {
+"id": 8,
+"material": 2,
+"visible": false
 },
 16: {
 "id": 16,
@@ -260,7 +532,7 @@ Vector3( 5, 0, 6 ): {
 4: {
 "id": 4,
 "material": 2,
-"visible": true
+"visible": false
 },
 8: {
 "id": 8,
@@ -270,12 +542,12 @@ Vector3( 5, 0, 6 ): {
 16: {
 "id": 16,
 "material": 2,
-"visible": false
+"visible": true
 },
 32: {
 "id": 32,
 "material": 2,
-"visible": false
+"visible": true
 }
 }
 },
@@ -304,12 +576,12 @@ Vector3( 5, 0, 7 ): {
 16: {
 "id": 16,
 "material": 2,
-"visible": true
+"visible": false
 },
 32: {
 "id": 32,
 "material": 2,
-"visible": true
+"visible": false
 }
 }
 },
@@ -381,7 +653,7 @@ Vector3( 5, 0, 9 ): {
 }
 }
 },
-Vector3( 6, 0, 4 ): {
+Vector3( 6, 0, 2 ): {
 "faces": {
 1: {
 "id": 1,
@@ -401,7 +673,7 @@ Vector3( 6, 0, 4 ): {
 8: {
 "id": 8,
 "material": 2,
-"visible": false
+"visible": true
 },
 16: {
 "id": 16,
@@ -411,7 +683,7 @@ Vector3( 6, 0, 4 ): {
 32: {
 "id": 32,
 "material": 2,
-"visible": true
+"visible": false
 }
 }
 },
@@ -430,6 +702,142 @@ Vector3( 6, 0, 5 ): {
 4: {
 "id": 4,
 "material": 2,
+"visible": true
+},
+8: {
+"id": 8,
+"material": 2,
+"visible": true
+},
+16: {
+"id": 16,
+"material": 2,
+"visible": false
+},
+32: {
+"id": 32,
+"material": 2,
+"visible": false
+}
+}
+},
+Vector3( 6, 0, 7 ): {
+"faces": {
+1: {
+"id": 1,
+"material": 1,
+"visible": true
+},
+2: {
+"id": 2,
+"material": 0,
+"visible": true
+},
+4: {
+"id": 4,
+"material": 2,
+"visible": true
+},
+8: {
+"id": 8,
+"material": 2,
+"visible": true
+},
+16: {
+"id": 16,
+"material": 2,
+"visible": false
+},
+32: {
+"id": 32,
+"material": 2,
+"visible": false
+}
+}
+},
+Vector3( 7, 0, 2 ): {
+"faces": {
+1: {
+"id": 1,
+"material": 1,
+"visible": true
+},
+2: {
+"id": 2,
+"material": 0,
+"visible": true
+},
+4: {
+"id": 4,
+"material": 2,
+"visible": true
+},
+8: {
+"id": 8,
+"material": 2,
+"visible": true
+},
+16: {
+"id": 16,
+"material": 2,
+"visible": false
+},
+32: {
+"id": 32,
+"material": 2,
+"visible": false
+}
+}
+},
+Vector3( 7, 0, 5 ): {
+"faces": {
+1: {
+"id": 1,
+"material": 1,
+"visible": true
+},
+2: {
+"id": 2,
+"material": 0,
+"visible": true
+},
+4: {
+"id": 4,
+"material": 2,
+"visible": true
+},
+8: {
+"id": 8,
+"material": 2,
+"visible": false
+},
+16: {
+"id": 16,
+"material": 2,
+"visible": false
+},
+32: {
+"id": 32,
+"material": 2,
+"visible": false
+}
+}
+},
+Vector3( 7, 0, 6 ): {
+"faces": {
+1: {
+"id": 1,
+"material": 1,
+"visible": true
+},
+2: {
+"id": 2,
+"material": 0,
+"visible": true
+},
+4: {
+"id": 4,
+"material": 2,
 "visible": false
 },
 8: {
@@ -449,7 +857,143 @@ Vector3( 6, 0, 5 ): {
 }
 }
 },
-Vector3( 6, 0, 6 ): {
+Vector3( 7, 0, 7 ): {
+"faces": {
+1: {
+"id": 1,
+"material": 1,
+"visible": true
+},
+2: {
+"id": 2,
+"material": 0,
+"visible": true
+},
+4: {
+"id": 4,
+"material": 2,
+"visible": false
+},
+8: {
+"id": 8,
+"material": 2,
+"visible": true
+},
+16: {
+"id": 16,
+"material": 2,
+"visible": false
+},
+32: {
+"id": 32,
+"material": 2,
+"visible": true
+}
+}
+},
+Vector3( 8, 0, 2 ): {
+"faces": {
+1: {
+"id": 1,
+"material": 1,
+"visible": true
+},
+2: {
+"id": 2,
+"material": 0,
+"visible": true
+},
+4: {
+"id": 4,
+"material": 2,
+"visible": true
+},
+8: {
+"id": 8,
+"material": 2,
+"visible": false
+},
+16: {
+"id": 16,
+"material": 2,
+"visible": false
+},
+32: {
+"id": 32,
+"material": 2,
+"visible": true
+}
+}
+},
+Vector3( 8, 0, 3 ): {
+"faces": {
+1: {
+"id": 1,
+"material": 1,
+"visible": true
+},
+2: {
+"id": 2,
+"material": 0,
+"visible": true
+},
+4: {
+"id": 4,
+"material": 2,
+"visible": false
+},
+8: {
+"id": 8,
+"material": 2,
+"visible": false
+},
+16: {
+"id": 16,
+"material": 2,
+"visible": true
+},
+32: {
+"id": 32,
+"material": 2,
+"visible": true
+}
+}
+},
+Vector3( 8, 0, 4 ): {
+"faces": {
+1: {
+"id": 1,
+"material": 1,
+"visible": true
+},
+2: {
+"id": 2,
+"material": 0,
+"visible": true
+},
+4: {
+"id": 4,
+"material": 2,
+"visible": false
+},
+8: {
+"id": 8,
+"material": 2,
+"visible": false
+},
+16: {
+"id": 16,
+"material": 2,
+"visible": true
+},
+32: {
+"id": 32,
+"material": 2,
+"visible": true
+}
+}
+},
+Vector3( 8, 0, 5 ): {
 "faces": {
 1: {
 "id": 1,

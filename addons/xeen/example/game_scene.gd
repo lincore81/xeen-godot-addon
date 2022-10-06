@@ -12,7 +12,7 @@ var cooldown = 0
 var queued_action: String = ""
 
 
-func _check_action(name: String) -> bool:
+func _check_and_queue_action(name: String) -> bool:
     #var perform_queued = queued_action == name and progress >= 1
     return Input.is_action_pressed(name)
     #if progress < 1 and progress >= 0.25:
@@ -38,17 +38,17 @@ func _process(d):
     var rot_left := false
     var rot_right := false
         
-    if _check_action("move_forward"):
+    if _check_and_queue_action("move_forward"):
         rel_dir = Units.REL_DIR.FORWARD
-    elif _check_action("move_back"):
+    elif _check_and_queue_action("move_back"):
         rel_dir = Units.REL_DIR.BACK
-    elif _check_action("strafe_left"):
+    elif _check_and_queue_action("strafe_left"):
         rel_dir = Units.REL_DIR.LEFT
-    elif _check_action("strafe_right"):
+    elif _check_and_queue_action("strafe_right"):
         rel_dir = Units.REL_DIR.RIGHT
-    elif _check_action("turn_left"):
+    elif _check_and_queue_action("turn_left"):
         rot_left = true
-    elif _check_action("turn_right"):
+    elif _check_and_queue_action("turn_right"):
         rot_right = true
 
     if rel_dir >= 0:

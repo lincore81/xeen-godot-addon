@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://addons/xeen/assets/fonts/NotoSans-Regular.tres" type="DynamicFont" id=1]
 [ext_resource path="res://addons/xeen/assets/fonts/NotoSans-Bold.tres" type="DynamicFont" id=2]
@@ -10,10 +10,13 @@
 [ext_resource path="res://addons/xeen/gui/mode_group.tres" type="ButtonGroup" id=8]
 [ext_resource path="res://addons/xeen/assets/icons/settings.png" type="Texture" id=9]
 [ext_resource path="res://addons/xeen/gui/editor_panel.gd" type="Script" id=10]
+[ext_resource path="res://addons/xeen/gui/shaders/linear2srgb_canvas.tres" type="Material" id=11]
+[ext_resource path="res://addons/xeen/gui/controls/material_btn.gd" type="Script" id=12]
 
 [node name="Xeen Map Editor" type="Panel"]
 anchor_right = 1.0
-anchor_bottom = 1.0
+anchor_bottom = 1.713
+margin_bottom = 0.199951
 script = ExtResource( 10 )
 
 [node name="Margin" type="MarginContainer" parent="."]
@@ -25,7 +28,7 @@ margin_bottom = 384.0
 
 [node name="VBox" type="VBoxContainer" parent="Margin"]
 margin_right = 1280.0
-margin_bottom = 583.0
+margin_bottom = 651.0
 
 [node name="Mode" type="HBoxContainer" parent="Margin/VBox"]
 margin_right = 1280.0
@@ -66,12 +69,12 @@ margin_right = 1280.0
 margin_bottom = 548.0
 columns = 3
 
-[node name="7" type="VSplitContainer" parent="Margin/VBox/Brush"]
+[node name="C7" type="VSplitContainer" parent="Margin/VBox/Brush"]
 margin_right = 128.0
 margin_bottom = 160.0
 dragger_visibility = 2
 
-[node name="Label" type="RichTextLabel" parent="Margin/VBox/Brush/7"]
+[node name="Label" type="RichTextLabel" parent="Margin/VBox/Brush/C7"]
 margin_right = 128.0
 margin_bottom = 32.0
 size_flags_vertical = 5
@@ -82,31 +85,34 @@ bbcode_text = "[b]7[/b] Ceiling"
 text = "7 Ceiling"
 fit_content_height = true
 
-[node name="Button" type="Button" parent="Margin/VBox/Brush/7"]
+[node name="Button" type="TextureButton" parent="Margin/VBox/Brush/C7"]
 margin_top = 32.0
 margin_right = 128.0
 margin_bottom = 160.0
 rect_min_size = Vector2( 128, 128 )
 rect_pivot_offset = Vector2( 64, 75 )
+script = ExtResource( 12 )
 
-[node name="TextureRect" type="TextureRect" parent="Margin/VBox/Brush/7/Button"]
+[node name="TextureRect" type="TextureRect" parent="Margin/VBox/Brush/C7/Button"]
+material = ExtResource( 11 )
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 8.0
 margin_top = 8.0
 margin_right = -8.0
 margin_bottom = -8.0
+mouse_filter = 2
 texture = ExtResource( 6 )
 expand = true
 stretch_mode = 1
 
-[node name="8" type="VSplitContainer" parent="Margin/VBox/Brush"]
+[node name="C8" type="VSplitContainer" parent="Margin/VBox/Brush"]
 margin_left = 132.0
 margin_right = 260.0
 margin_bottom = 160.0
 dragger_visibility = 2
 
-[node name="Label" type="RichTextLabel" parent="Margin/VBox/Brush/8"]
+[node name="Label" type="RichTextLabel" parent="Margin/VBox/Brush/C8"]
 margin_right = 128.0
 margin_bottom = 32.0
 size_flags_vertical = 5
@@ -117,13 +123,13 @@ bbcode_text = "[b]8[/b] North"
 text = "8 North"
 fit_content_height = true
 
-[node name="Button2" type="Button" parent="Margin/VBox/Brush/8"]
+[node name="Button2" type="Button" parent="Margin/VBox/Brush/C8"]
 margin_top = 32.0
 margin_right = 128.0
 margin_bottom = 160.0
 rect_min_size = Vector2( 128, 128 )
 
-[node name="TextureRect" type="TextureRect" parent="Margin/VBox/Brush/8/Button2"]
+[node name="TextureRect" type="TextureRect" parent="Margin/VBox/Brush/C8/Button2"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 8.0
@@ -134,13 +140,13 @@ texture = ExtResource( 4 )
 expand = true
 stretch_mode = 1
 
-[node name="9" type="VSplitContainer" parent="Margin/VBox/Brush"]
+[node name="C9" type="VSplitContainer" parent="Margin/VBox/Brush"]
 margin_left = 264.0
 margin_right = 392.0
 margin_bottom = 160.0
 dragger_visibility = 2
 
-[node name="Label" type="RichTextLabel" parent="Margin/VBox/Brush/9"]
+[node name="Label" type="RichTextLabel" parent="Margin/VBox/Brush/C9"]
 margin_right = 128.0
 margin_bottom = 32.0
 size_flags_vertical = 5
@@ -151,13 +157,13 @@ bbcode_text = "[b]9[/b] Special"
 text = "9 Special"
 fit_content_height = true
 
-[node name="Button2" type="Button" parent="Margin/VBox/Brush/9"]
+[node name="Button2" type="Button" parent="Margin/VBox/Brush/C9"]
 margin_top = 32.0
 margin_right = 128.0
 margin_bottom = 160.0
 rect_min_size = Vector2( 128, 128 )
 
-[node name="TextureRect" type="TextureRect" parent="Margin/VBox/Brush/9/Button2"]
+[node name="TextureRect" type="TextureRect" parent="Margin/VBox/Brush/C9/Button2"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 8.0
@@ -351,3 +357,15 @@ margin_right = 127.0
 margin_bottom = 31.0
 custom_fonts/font = ExtResource( 2 )
 text = "Cursor: N/A"
+
+[node name="MaterialBrowser" type="GridContainer" parent="Margin/VBox"]
+margin_top = 587.0
+margin_right = 1280.0
+margin_bottom = 651.0
+
+[node name="TextureButton" type="TextureButton" parent="Margin/VBox/MaterialBrowser"]
+margin_right = 64.0
+margin_bottom = 64.0
+rect_min_size = Vector2( 64, 64 )
+texture_normal = ExtResource( 6 )
+expand = true

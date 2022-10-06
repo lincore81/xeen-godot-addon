@@ -43,7 +43,7 @@ func deserialise():
 	print("Deserialised map")
 
 func _deserialise_cell(celldata, pos: Vector3, mapdata: MapData) -> void:
-	var cell = put_cell(pos, cell_template, false)
+	var cell = put_cell(pos, cell_template, {}, false)
 	MapData.restore_cell(mapdata, pos, cell)
 
 func serialise():
@@ -92,7 +92,7 @@ func get_cardinal_neighbours(pos: Vector3) -> Array:
 		cell_at(pos + Vector3.LEFT)
 	]
 
-func put_cell(pos: Vector3, cell_template: PackedScene, update_faces: bool = true) -> Cell:
+func put_cell(pos: Vector3, cell_template: PackedScene, materials: Dictionary = {}, update_faces: bool = true) -> Cell:
 	pos = pos.floor()
 	if data == null:
 		push_error("No MapData resource!")
@@ -125,32 +125,32 @@ func clear_cell(pos: Vector3, update_faces := true) -> bool:
 # TODO: cells should probably update faces themselves, so the behaviour can be changed in subclasses.
 func update_cell_faces(pos: Vector3, removed := false):
 	var neighbours := get_cardinal_neighbours(pos)
-	var face_mask: int = Cell.Face.TOP + Cell.Face.BOTTOM
+	var face_mask: int = Cell.FACE.TOP + Cell.FACE.BOTTOM
 	var neighbour
 	# north
 	neighbour = neighbours[0]
 	if neighbour != null:
-		neighbour.set_face(Cell.Face.SOUTH, removed)
+		neighbour.set_face(Cell.FACE.SOUTH, removed)
 	else:
-		face_mask += Cell.Face.NORTH
+		face_mask += Cell.FACE.NORTH
 	# east
 	neighbour = neighbours[1]
 	if neighbour != null:
-		neighbour.set_face(Cell.Face.WEST, removed)
+		neighbour.set_face(Cell.FACE.WEST, removed)
 	else:
-		face_mask += Cell.Face.EAST
+		face_mask += Cell.FACE.EAST
 	# south
 	neighbour = neighbours[2]
 	if neighbour != null:
-		neighbour.set_face(Cell.Face.NORTH, removed)
+		neighbour.set_face(Cell.FACE.NORTH, removed)
 	else:
-		face_mask += Cell.Face.SOUTH
+		face_mask += Cell.FACE.SOUTH
 	# west
 	neighbour = neighbours[3]
 	if neighbour != null:
-		neighbour.set_face(Cell.Face.EAST, removed)
+		neighbour.set_face(Cell.FACE.EAST, removed)
 	else:
-		face_mask += Cell.Face.WEST
+		face_mask += Cell.FACE.WEST
 
 	if !removed:
 		var cell := cell_at(pos)

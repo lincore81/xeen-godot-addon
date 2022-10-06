@@ -5,7 +5,7 @@ class_name Cell
 	Maintains references to walls, floor and ceiling and their state.
 """
 
-enum Face {BOTTOM = 1, TOP = 2, NORTH = 4, SOUTH = 8, WEST = 16, EAST = 32, WALLS = 4+8+16+32}
+enum FACE {BOTTOM = 1, TOP = 2, NORTH = 4, SOUTH = 8, WEST = 16, EAST = 32, WALLS = 4+8+16+32}
 
 onready var bottom := $Bottom as MeshInstance
 onready var top := $Top as MeshInstance
@@ -20,16 +20,16 @@ func is_wall_passable(dir: int) -> bool:
 	var result: bool = false
 	match dir:
 		Units.ABS_DIR.NORTH: 
-			result = not face_mask & Face.NORTH == Face.NORTH
+			result = not face_mask & FACE.NORTH == FACE.NORTH
 			print("North passable? " , result)
 		Units.ABS_DIR.EAST: 
-			result = not face_mask & Face.EAST == Face.EAST
+			result = not face_mask & FACE.EAST == FACE.EAST
 			print("East passable? " , result)
 		Units.ABS_DIR.SOUTH: 
-			result = not face_mask & Face.SOUTH == Face.SOUTH
+			result = not face_mask & FACE.SOUTH == FACE.SOUTH
 			print("South passable? ", result)
 		Units.ABS_DIR.WEST: 
-			result = not face_mask & Face.WEST == Face.WEST
+			result = not face_mask & FACE.WEST == FACE.WEST
 			print("West passable? " , result)
 		_: 
 			push_error("Invalid direction: %d" % dir)
@@ -40,37 +40,37 @@ func _ready():
 
 func _calc_face_mask():
 	face_mask = 0
-	if bottom.visible: face_mask += Face.BOTTOM
-	if top.visible: face_mask += Face.TOP
-	if north.visible: face_mask += Face.NORTH
-	if east.visible: face_mask += Face.EAST
-	if south.visible: face_mask += Face.SOUTH
-	if west.visible: face_mask += Face.WEST
+	if bottom.visible: face_mask += FACE.BOTTOM
+	if top.visible: face_mask += FACE.TOP
+	if north.visible: face_mask += FACE.NORTH
+	if east.visible: face_mask += FACE.EAST
+	if south.visible: face_mask += FACE.SOUTH
+	if west.visible: face_mask += FACE.WEST
 
 func set_faces(mask: int):
-	bottom.visible = Face.BOTTOM & mask == Face.BOTTOM
-	top.visible    = Face.TOP & mask == Face.TOP
-	north.visible  = Face.NORTH & mask == Face.NORTH
-	south.visible  = Face.SOUTH & mask == Face.SOUTH
-	east.visible   = Face.EAST & mask == Face.EAST
-	west.visible   = Face.WEST & mask == Face.WEST
+	bottom.visible = FACE.BOTTOM & mask == FACE.BOTTOM
+	top.visible    = FACE.TOP & mask == FACE.TOP
+	north.visible  = FACE.NORTH & mask == FACE.NORTH
+	south.visible  = FACE.SOUTH & mask == FACE.SOUTH
+	east.visible   = FACE.EAST & mask == FACE.EAST
+	west.visible   = FACE.WEST & mask == FACE.WEST
 	face_mask = mask
 
 
 func set_material(f: int, mat: Material, surface: int = 0):
-	if f == Face.BOTTOM:  
+	if f == FACE.BOTTOM:  
 		bottom.set_surface_material(surface, mat)
-	elif f == Face.TOP:     
+	elif f == FACE.TOP:     
 		top.set_surface_material(surface, mat)
-	elif f == Face.NORTH:     
+	elif f == FACE.NORTH:     
 		north.set_surface_material(surface, mat)
-	elif f == Face.SOUTH:     
+	elif f == FACE.SOUTH:     
 		south.set_surface_material(surface, mat)
-	elif f == Face.EAST:     
+	elif f == FACE.EAST:     
 		east.set_surface_material(surface, mat)
-	elif f == Face.WEST:     
+	elif f == FACE.WEST:     
 		west.set_surface_material(surface, mat)
-	elif f == Face.WALLS:
+	elif f == FACE.WALLS:
 		north.set_surface_material(surface, mat)
 		south.set_surface_material(surface, mat)
 		east.set_surface_material(surface, mat)
@@ -83,45 +83,45 @@ func set_material(f: int, mat: Material, surface: int = 0):
 #    set_face_visibility(f, not is_face_visible(f))
 
 func is_face_visible(f: int):
-	if f == Face.BOTTOM:
+	if f == FACE.BOTTOM:
 		return bottom.visible
-	elif f == Face.TOP:
+	elif f == FACE.TOP:
 		return top.visible
-	elif f == Face.NORTH:
+	elif f == FACE.NORTH:
 		return north.visible
-	elif f == Face.EAST:
+	elif f == FACE.EAST:
 		return east.visible
-	elif f == Face.SOUTH:
+	elif f == FACE.SOUTH:
 		return south.visible
-	elif f == Face.WEST:
+	elif f == FACE.WEST:
 		return west.visible
-	elif f == Face.WALLS:
+	elif f == FACE.WALLS:
 		return north.visible or west.visible or south.visible or east.visible
 	else:
 		push_error("invalid face id: " + str(f))
 
 func set_face(f: int, state: bool):
-	#print("set_face: %d=%s" % [f, str(state)])
-	if f == Face.BOTTOM:
-		bottom.visible = state
-	elif f == Face.TOP:
-		top.visible = state
-	elif f == Face.NORTH:
-		north.visible = state
-	elif f == Face.EAST:
-		east.visible = state
-	elif f == Face.SOUTH:
-		south.visible = state
-	elif f == Face.WEST:
-		west.visible = state
-	elif f == Face.WALLS:
-		north.visible = state
-		west.visible = state
-		south.visible = state
-		east.visible = state
-	else:
-		push_error("invalid face id: " + str(f))
-		return
+	match f:
+		FACE.BOTTOM:
+			bottom.visible = state
+		FACE.TOP:
+			top.visible = state
+		FACE.NORTH:
+			north.visible = state
+		FACE.EAST:
+			east.visible = state
+		FACE.SOUTH:
+			south.visible = state
+		FACE.WEST:
+			west.visible = state
+		FACE.WALLS:
+			north.visible = state
+			west.visible = state
+			south.visible = state
+			east.visible = state
+		_:
+			push_error("invalid face id: " + str(f))
+			return
 	var has_bit := face_mask & f == f
 	if state and not has_bit:
 		face_mask += f
@@ -129,8 +129,8 @@ func set_face(f: int, state: bool):
 		face_mask -= f
 
 func get_face_data() -> Array:
-	var faces = [[top, Face.TOP], [bottom, Face.BOTTOM], [north, Face.NORTH],
-			[east, Face.EAST], [west, Face.WEST], [south, Face.SOUTH]]
+	var faces = [[top, FACE.TOP], [bottom, FACE.BOTTOM], [north, FACE.NORTH],
+			[east, FACE.EAST], [west, FACE.WEST], [south, FACE.SOUTH]]
 	var result = []
 	for f in faces:
 		var data = {}
@@ -142,21 +142,29 @@ func get_face_data() -> Array:
 	
 func get_child_by_face(id: int) -> MeshInstance:
 	match id:
-		Face.BOTTOM: return bottom
-		Face.TOP: return top
-		Face.NORTH: return north
-		Face.SOUTH: return south
-		Face.EAST: return east
-		Face.WEST: return west
+		FACE.BOTTOM: return bottom
+		FACE.TOP: return top
+		FACE.NORTH: return north
+		FACE.SOUTH: return south
+		FACE.EAST: return east
+		FACE.WEST: return west
 		_: return null
 
 func set_face_data(data) -> void:
-	var child := get_child_by_face(data.id)
-	if child == null:
-		push_error("cell face is null")
-		return
+	if data.id == FACE.WALLS:
+		var visible = data.visible if "visible" in data else null
+		var material = data.material if "material" in data else null
+		set_face_data({"id": FACE.NORTH, "visible": visible, "material": material})
+		set_face_data({"id": FACE.SOUTH, "visible": visible, "material": material})
+		set_face_data({"id": FACE.WEST, "visible": visible, "material": material})
+		set_face_data({"id": FACE.EAST, "visible": visible, "material": material})
 	else:
-		child.visible = data.visible
-		if data.material:
-			child.set_surface_material(0, data.material)
-	_calc_face_mask()
+		var child := get_child_by_face(data.id)
+		if child == null:
+			push_error("cell face is null: %d" % data.id)
+		else:
+			if "visible" in data and data.visible != null:
+				child.visible = data.visible
+			if "material" in data and data.material:
+				child.set_surface_material(0, data.material)
+			_calc_face_mask()
