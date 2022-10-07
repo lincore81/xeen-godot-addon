@@ -139,6 +139,11 @@ func get_face_data() -> Array:
 		data.id = f[1]
 		result.append(data)
 	return result
+
+func restore_face_data(data: Array) -> void:
+	for face in data:
+		if face.id != FACE.WALLS:
+			set_face_data(face)
 	
 func get_child_by_face(id: int) -> MeshInstance:
 	match id:

@@ -4,6 +4,7 @@ class_name CellBrush
 #enum FACE_VISIBILITY {ALWAYS, NEVER, AUTO}
 const WALLS = [Cell.FACE.NORTH, Cell.FACE.EAST, Cell.FACE.SOUTH, Cell.FACE.WEST]
 
+
 export var cell_template: PackedScene = preload("res://addons/xeen/map/cells/cell.tscn")
 export var faces: Dictionary = {
     Cell.FACE.TOP:      null,
@@ -36,9 +37,14 @@ func put_cell(pos: Vector3, map: CellMapNode):
 func clear_cell(pos: Vector3, map: CellMapNode):
     map.clear_cell(pos)
 
+# FIXME: Circumvents serialisation
 func update_cell(cell: Cell, map: CellMapNode):
     for id in faces.keys():
-        cell.set_face_data({"id": id, "material": faces[id]})
+        if id != Cell.FACE.WALLS:
+            cell.set_face_data({"id": id, "material": faces[id]})
+
+func restore_cell(cell: Cell, data: Array) -> void:
+    cell.restore_face_data(data)
 
 
 func set_material(face: int, material: Material):

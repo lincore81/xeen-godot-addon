@@ -15,7 +15,7 @@ const set_brush_face = {
 
 static func make_shortcut(def, button: BaseButton = null) -> ShortCut:
     var ev := InputEventKey.new()
-    assert(def.key, "Unable to create shortcut, there is no key!")
+    assert(def.has("key"), "Unable to create shortcut, there is no key!")
     ev.scancode = def.key
     if def.get("ctrl", false):
         ev.control = true

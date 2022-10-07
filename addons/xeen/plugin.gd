@@ -23,7 +23,7 @@ func _enter_tree():
     add_spatial_gizmo_plugin(gizmo_plugin)
 
 func _ready():
-    editor.on_ready()
+    editor.on_ready(get_undo_redo())
     panel.connect("brush_material_selected", editor, "set_brush_material")
 
 func _on_panel_ready():
@@ -49,10 +49,10 @@ func _handle_click(_cam: Camera, ev: InputEventMouseButton):
     if is_lmb:
         lmb_down = not is_released
         if is_released and ev.control:
-            editor.try_clear_cell(get_undo_redo())
+            editor.try_clear_cell()
         elif is_released:
             var scene_root = get_editor_interface().get_edited_scene_root()
-            editor.try_put_cell(scene_root, get_undo_redo())
+            editor.try_put_cell()
 
 func unedit():
     editor.map = null

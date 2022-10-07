@@ -22,7 +22,7 @@ export(SORT) var sort_order := SORT.ASCENDING
 
 var actual_item_size := preferred_item_size
 var selected_resource_path: String
-var filter_re: RegEx
+var filter := ""
 
 # generated preview textures
 var previews: Dictionary
@@ -65,13 +65,14 @@ func _process(_d):
         _populate_grid()
 
 
-func set_filter(pattern: String) -> int:
-    if pattern == "":
-        filter_re = null
-        return OK
-    else:
-        filter_re = RegEx.new()
-        return filter_re.compile(pattern)
+func set_filter(pattern: String):
+    var has_changed := pattern != filter 
+    filter = pattern
+    print("filter set: pattern=%s, has_changed?=%s" % [pattern, str(has_changed)])
+    if has_changed and not generating_previews:
+        update()
+
+
 
 
 # must be called before calling update
@@ -92,8 +93,6 @@ func update():
     generating_previews = true
     _generate_previews()
     # the rest is done in _process once all previews are ready.
-
-
 
 
 # Step 1: Generate previews
@@ -121,8 +120,10 @@ func _try_get_preview(path: String) -> Texture:
 
 
 func _on_preview_invalidated(path: String):
-    previews_pending += 1
-    resource_preview.queue_resource_preview(path, self, "_on_preview_generated", [])
+    print("preview invalidated: %s" % path)
+    if previews.has(path):
+        previews_pending += 1
+        resource_preview.queue_resource_preview(path, self, "_on_preview_generated", [])
 
 
 #FIXME: sometimes this gets called for a resource outside the path
@@ -175,8 +176,11 @@ func _add_button(path: String, texture: Texture) -> void:
         controls[path] = btn
     # not setting the owner because children are created dynamically and
     # shouldn't be saved with the scene.
-    if filter_re == null or filter_re.search(path):
+    if filter == "" or filter in path:
+        print("Matches filter: %s" % path)
         add_child(btn)
+    else:
+        print("Doesn't match filter: %s" % path)
 
 
 func _recalc_column_count_and_size():

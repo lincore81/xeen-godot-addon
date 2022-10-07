@@ -2,9 +2,23 @@ This is a buggy mess right now.
 
 Enjoy!
 
+# Currently working on:
+- [ ] Move serialisation code outside the map node
+- [ ] Updated cells should be serialised
+- [ ] Standardise methods to change face materials and visibility 
+- [ ] Make it obvious what methods should only be used for marshalling
+
 # Issues
-- [ ] Fix linear 2 srgb shader https://github.com/tobspr/GLSL-Color-Spaces/blob/master/ColorSpaces.inc.glsl
-- [ ] Brush: New cells will always receive FACE.WALLS material instead of individual materials
+- [ ] (1) Updating cells currently circumvents serialisation
+- [ ] (2) There are multiple ways to update cells, there is no single class has the sole responsibility
+    - [ ] Refactor?!
+- [ ] (3) Updated previews aren't shown in the asset browser
+- [ ] (5) Fix linear 2 srgb shader https://github.com/tobspr/GLSL-Color-Spaces/blob/master/ColorSpaces.inc.glsl
+- [ ] (9) The cell picker code should also work in orthographic projection
+- [x] (1) Brush: New cells will always receive FACE.WALLS material instead of individual materials
+- [x] (3) Why do I get this error?: Unable to generate preview texture for resource at 'res://default_env.tres'
+    - Because my function gets a call whenever *any* resource has been invalidated.
+
 
 # Features
 ## Essential
@@ -19,19 +33,30 @@ Enjoy!
 - [x] The map works both at runtime and in the editor. It allows the implementation of grid-based player movement.
 - [x] I can select materials for each face in the GUI ("cell brush"). New cells will have those materials applied.
     - [x] Keyboard shortcuts implemented
-- [ ] I can paint multiple cells by clicking and dragging
-- [ ] I can set the cell brush materials by picking an existing cell instance (LMB+Shift perhaps?).
+    - [x] I can undo and redo changing materials
+- [x] I can select materials and scenes from an asset browser
+    - [x] I can filter the material list via a line input.
 - [ ] I can update existing cells to use the brush materials.
-- [ ] I can flip and rotate UV coordinates for each face.
+    - [ ] Clicking on an existing cell will update its materials to the brush materials.
+- [ ] I can paint multiple cells by clicking and dragging
 - [ ] I can enable a selection mode that allows me to click and drag to select a area of the map.
+- [ ] I can click outside of the selection to clear it and there is also a keyboard shortcut.
 - [ ] While in selection mode, I can hit enter to fill the selection with the current brush.
 - [ ] While in selection mode, I can hit 'x' or delete to remove all cells in the selection
 - [ ] I can cut, copy and paste the selected cells.
+- [ ] I can set the cell brush materials by picking an existing cell instance (LMB+Shift perhaps?).
+    - [ ] There is a tool button to switch to 'material picker mode'
+    - [ ] When I click on the button my cursor changes to indicate the tool mode
+    - [ ] Clicking on a cell sets my brush to the materials in that cell
+    - [ ] Holding a modifier key allows me to select the material of a single face
+- [ ] I can flip and rotate UV coordinates for each face.
 - [ ] I can rotate or flip the selection (as a whole)
 - [ ] I can drag the selection to move the cells.
-- [ ] I can click outside of the selection to clear it and there is also a keyboard shortcut.
 - [ ] I can resize and crop the map without losing all data.
+
+#### Cells and Faces
 - [ ] I can override which faces to show in the cell brush ("always visible", "always show", "auto")
+- [ ] I can set faces as passable or non-passable
 
 ### Advanced editing
 - [ ] I can add a cell object to a cell instance that can be accessed through the map class (doors, chests)

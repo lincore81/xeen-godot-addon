@@ -14,6 +14,7 @@ var brush := CellBrush.new()
 
 var cursor_in_bounds := false
 var interface: EditorInterface = null
+var undo: UndoRedo = null
 
 #func clear_selection():
 #    _selection.position = Vector3.ZERO 
@@ -30,22 +31,30 @@ var interface: EditorInterface = null
 #func _get_has_selection():
 #    return _selection.size.x > 0 or _selection.size.z > 0
 
-func on_ready():
+func on_ready(undo: UndoRedo):
+    self.undo = undo 
     set_default_brush_materials()
 
 
 
-func try_put_cell(owner: Node, undo: UndoRedo) -> bool:
+func try_put_cell() -> bool:
     if !cursor_in_bounds: return false
-    var empty = map.cell_at(cursor) == null
-    if empty: 
+    var cell = map.cell_at(cursor) 
+    if cell == null: 
         undo.create_action("put cell")
         undo.add_do_method(brush, "put_cell", cursor, map)
         undo.add_undo_method(brush, "clear_cell", cursor, map)
         undo.commit_action()
-    return empty
+    else:
+        # cell exists, therefore update it!
+        var celldata = cell.get_face_data()
+        undo.create_action("update cell")
+        undo.add_do_method(brush, "update_cell", cell, map)
+        undo.add_undo_method(brush, "restore_cell", cell, celldata)
+        undo.commit_action()
+    return cell == null
 
-func try_clear_cell(undo: UndoRedo) -> bool:
+func try_clear_cell() -> bool:
     if !cursor_in_bounds: return false
     var empty = map.cell_at(cursor)
     if empty != null:
@@ -85,7 +94,12 @@ func set_default_brush_materials():
     brush.set_material(Cell.FACE.WALLS, wall_mat)
 
 func set_brush_material(face: int, mat: Material):
-    brush.set_material(face, mat)
+    var old_mat := brush.get_material(face)
+    undo.create_action("set_brush_material")
+    undo.add_do_method(brush, "set_material", face, mat)
+    undo.add_undo_method(brush, "set_material", face, old_mat)
+    undo.commit_action()
+    #brush.set_material(face, mat)
 
 func _setmap(v: CellMapNode):
     map = v

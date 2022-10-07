@@ -97,16 +97,18 @@ func put_cell(pos: Vector3, cell_template: PackedScene, materials: Dictionary = 
 	if data == null:
 		push_error("No MapData resource!")
 		return null
-	var cell = cell_template.instance()
-	cell.set_meta("_edit_lock_", true)
-	add_child(cell, true)
-	cell.name = "Cell (%d,%d,%d)" % [pos.x, pos.y, pos.z]
-	cell.translation = pos
-	cells[pos] = cell
+	var curr_cell := cell_at(pos)
+	if curr_cell == null:
+		curr_cell = cell_template.instance()
+		curr_cell.set_meta("_edit_lock_", true)
+		add_child(curr_cell, true)
+		curr_cell.name = "Cell (%d,%d,%d)" % [pos.x, pos.y, pos.z]
+		curr_cell.translation = pos
+		cells[pos] = curr_cell
 	if update_faces: 
 		update_cell_faces(pos)
 	serialise()
-	return cell
+	return curr_cell
 
 
 func clear_cell(pos: Vector3, update_faces := true) -> bool:
