@@ -15,6 +15,7 @@ var is_dragging := false
 func _enter_tree():
     editor = XeenEditor.new()
     editor.panel = panel
+    panel.connect("ready", self, "_on_panel_ready")
     gizmo_plugin = GridGizmoPlugin.new(editor)
 
     add_control_to_dock(EditorPlugin.DOCK_SLOT_RIGHT_BR, panel)
@@ -22,9 +23,11 @@ func _enter_tree():
     add_spatial_gizmo_plugin(gizmo_plugin)
 
 func _ready():
-    panel.setup(get_editor_interface().get_resource_previewer(), editor.brush)
     editor.on_ready()
     panel.connect("brush_material_selected", editor, "set_brush_material")
+
+func _on_panel_ready():
+    panel.setup(get_editor_interface().get_resource_previewer(), editor.brush)
 
 
 func _exit_tree():

@@ -5,6 +5,7 @@ class_name BrushView
 export var placeholder: Texture = preload("res://addons/xeen/assets/textures/placeholder.png")
 
 var brush: CellBrush
+var ready := false
 
 signal face_selected(face)
 
@@ -19,9 +20,11 @@ onready var buttons := {
 }
 
 func _ready():
+    ready = true
     if brush: apply_brush()
     for face in buttons.keys():
         buttons[face].connect("pressed", self, "_on_btn_pressed", [face])
+    _set_button_shortcuts()
 
 
 func _on_btn_pressed(face: int):
@@ -32,7 +35,8 @@ func set_brush(brush: CellBrush):
     assert(brush != null, "Brush must not be null.")
     brush.connect("face_changed", self, "_on_brush_change")
     self.brush = brush
-    apply_brush()
+    if ready:
+        apply_brush()
 
 
 func apply_brush():
@@ -55,3 +59,8 @@ func _on_brush_change(face: int, mat: Material):
     assert(buttons.has(face), "Uh oh...")
     var tex := _get_texture(brush.get_material(face))
     buttons[face].icon = tex
+
+func _set_button_shortcuts():
+    for face in XeenKeybinds.set_brush_face.keys():
+        var def = XeenKeybinds.set_brush_face[face]
+        XeenKeybinds.make_shortcut(def, buttons[face])

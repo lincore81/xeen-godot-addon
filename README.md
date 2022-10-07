@@ -4,6 +4,7 @@ Enjoy!
 
 # Issues
 - [ ] Fix linear 2 srgb shader https://github.com/tobspr/GLSL-Color-Spaces/blob/master/ColorSpaces.inc.glsl
+- [ ] Brush: New cells will always receive FACE.WALLS material instead of individual materials
 
 # Features
 ## Essential
@@ -16,7 +17,8 @@ Enjoy!
 - [x] Walls between adjacent cell instances are automatically hidden.
 - [x] The map can be saved and reloaded
 - [x] The map works both at runtime and in the editor. It allows the implementation of grid-based player movement.
-- [ ] I can select materials for each face in the GUI ("cell brush"). New cells will have those materials applied.
+- [x] I can select materials for each face in the GUI ("cell brush"). New cells will have those materials applied.
+    - [x] Keyboard shortcuts implemented
 - [ ] I can paint multiple cells by clicking and dragging
 - [ ] I can set the cell brush materials by picking an existing cell instance (LMB+Shift perhaps?).
 - [ ] I can update existing cells to use the brush materials.
