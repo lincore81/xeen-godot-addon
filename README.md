@@ -3,21 +3,18 @@ This is a buggy mess right now.
 Enjoy!
 
 # Currently working on:
-- [ ] Move serialisation code outside the map node
-- [ ] Updated cells should be serialised
-- [ ] Standardise methods to change face materials and visibility 
-- [ ] Make it obvious what methods should only be used for marshalling
+- [ ] Standardise methods that change face materials and visibility 
+- [ ] Make Cell method names a bit clearer and clean the class up a bit
 
 # Issues
-- [ ] (1) Updating cells currently circumvents serialisation
 - [ ] (2) There are multiple ways to update cells, there is no single class has the sole responsibility
-    - [ ] Refactor?!
-- [ ] (3) Updated previews aren't shown in the asset browser
-- [ ] (5) Fix linear 2 srgb shader https://github.com/tobspr/GLSL-Color-Spaces/blob/master/ColorSpaces.inc.glsl
+- [ ] (4) Fix docgen.py to properly parse and write method parameters.
+- [ ] (5) Make editor panel responsive.
+- [ ] (5) Undoing changes to the brush seem a bit janky when FACE.WALLS is involved.
+- [ ] (6) Updated previews aren't shown in the asset browser
+- [ ] (6) Learn how theming works and make the editor panel use editor style conventions
+- [ ] (7) Fix linear 2 srgb shader https://github.com/tobspr/GLSL-Color-Spaces/blob/master/ColorSpaces.inc.glsl
 - [ ] (9) The cell picker code should also work in orthographic projection
-- [x] (1) Brush: New cells will always receive FACE.WALLS material instead of individual materials
-- [x] (3) Why do I get this error?: Unable to generate preview texture for resource at 'res://default_env.tres'
-    - Because my function gets a call whenever *any* resource has been invalidated.
 
 
 # Features
@@ -36,10 +33,11 @@ Enjoy!
     - [x] I can undo and redo changing materials
 - [x] I can select materials and scenes from an asset browser
     - [x] I can filter the material list via a line input.
-- [ ] I can update existing cells to use the brush materials.
-    - [ ] Clicking on an existing cell will update its materials to the brush materials.
+- [x] When I click on an existing cell, its materials will be set to the brush's materials.
 - [ ] I can paint multiple cells by clicking and dragging
-- [ ] I can enable a selection mode that allows me to click and drag to select a area of the map.
+
+#### Box Select
+- [ ] I can enable a selection mode that allows me to click and drag to select an area of the map.
 - [ ] I can click outside of the selection to clear it and there is also a keyboard shortcut.
 - [ ] While in selection mode, I can hit enter to fill the selection with the current brush.
 - [ ] While in selection mode, I can hit 'x' or delete to remove all cells in the selection
@@ -49,16 +47,20 @@ Enjoy!
     - [ ] When I click on the button my cursor changes to indicate the tool mode
     - [ ] Clicking on a cell sets my brush to the materials in that cell
     - [ ] Holding a modifier key allows me to select the material of a single face
-- [ ] I can flip and rotate UV coordinates for each face.
 - [ ] I can rotate or flip the selection (as a whole)
 - [ ] I can drag the selection to move the cells.
+
+#### Map Settings
 - [ ] I can resize and crop the map without losing all data.
+- [ ] I can press a button to clear the map
+- [ ] I can change the map resource in the GUI.
 
 #### Cells and Faces
+- [ ] I can flip and rotate UV coordinates for each face in the brush view.
 - [ ] I can override which faces to show in the cell brush ("always visible", "always show", "auto")
-- [ ] I can set faces as passable or non-passable
+- [ ] I can mark cell faces as passable for open doors and such
 
-### Advanced editing
+### Advanced Editing
 - [ ] I can add a cell object to a cell instance that can be accessed through the map class (doors, chests)
 - [ ] I can rotate and flip cell objects
 
@@ -67,12 +69,10 @@ Enjoy!
 - [x] I can change cell face materials and visibility at runtime. 
 - [ ] I can generate a simple move graph for astar.
 - [ ] I can generate a dijkstra map with custom goals.
-- [ ] I can mark cell faces as passable for open doors and such
 
 ## Nice to Have
 ### Editing
 - [ ] I can vertically translate all 8 vertices of a cell to create sloped floors and ceilings and to adjust the height
-- [ ] Cells create additional geometry to fill any resulting gaps (like in Delvers editor)
 - [ ] Cells, faces and cell brushes can be extended to allow custom functionality, but have a common interface
 - [ ] I can create full 3D maps (multiple layers)
 - [ ] I can toggle a setting to render back-faces semi-transparently.
@@ -83,3 +83,20 @@ Enjoy!
 ## Wishful thinking
 - [ ] Maps can interact with each other so the player can move between them seamlessly
 - [ ] I can mark cells as 'static', which optimises the geometry at runtime.
+- [ ] Cells create additional geometry to fill gaps between neighbours (like in Delver's editor)
+
+
+# Common Use-Cases and How to Enable Them
+
+## Doors
+- Doors consist of a door frame and the door itself. Ideally, the door can be animated.
+- The most straightforward implementation right now is via Cell Objects.
+    - Cell Objects need to be implemented and either referenced in the cell or the map.
+    - Common player actions like 'bump' or 'activate' need to be delegated to the cell object.
+    - When determining whether a given cell can be entered, cell objects need to be considered.
+- Another way to implement doors is to allow subclassing of cells/faces. This is arguably more work.
+
+## Mobs
+- The map or cells should know the location of a mob.
+- The map needs to provide data for astar and/or a dijkstra map
+- When determining cell passability, mobs need to be considered.

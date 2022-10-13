@@ -6,6 +6,7 @@
 [ext_resource path="res://addons/xeen/example/objects/player/player_spatial.gd" type="Script" id=4]
 
 [sub_resource type="Environment" id=1]
+ambient_light_color = Color( 1, 1, 1, 1 )
 
 [node name="Game" type="Spatial"]
 script = ExtResource( 3 )
@@ -20,6 +21,7 @@ script = ExtResource( 4 )
 [node name="Camera" type="Camera" parent="Player"]
 
 [node name="OmniLight" type="OmniLight" parent="Player"]
+visible = false
 light_color = Color( 1, 0.900333, 0.54, 1 )
 light_bake_mode = 0
 shadow_enabled = true
@@ -35,10 +37,12 @@ data = ExtResource( 2 )
 
 [node name="OmniLight" type="OmniLight" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8.5, 0.5, 5.5 )
+visible = false
 light_color = Color( 0.882353, 0.815686, 0.556863, 1 )
 shadow_enabled = true
 
 [node name="OmniLight2" type="OmniLight" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 0.5, 2.5 )
+visible = false
 light_color = Color( 0.882353, 0.815686, 0.556863, 1 )
 shadow_enabled = true

@@ -5,64 +5,70 @@ class_name XeenEditor
 #signal selection_changed(from, to, is_empty)
 #signal cursor_changed(new_pos, cursor_in_bounds)
 
-#var has_selection := false setget , _get_has_selection 
-#var _selection := AABB() 
 var cursor := Vector3()
 var map:  CellMapNode = null setget _setmap, _getmap
 var panel: XeenEditorPanel = null
 var brush := CellBrush.new()
 
 var cursor_in_bounds := false
-var interface: EditorInterface = null
 var undo: UndoRedo = null
-
-#func clear_selection():
-#    _selection.position = Vector3.ZERO 
-#    _selection.end = Vector3.ZERO 
-#    emit_signal("selection_changed", _selection.position, _selection.end, false)
-#   
-#func set_selection_from(pos: Vector3):
-#    _selection.position = pos.floor()
-#    _selection.size = Vector3.ZERO
-#
-#func set_selection_to(pos: Vector3):
-#    _selection.end = pos
-#
-#func _get_has_selection():
-#    return _selection.size.x > 0 or _selection.size.z > 0
 
 func on_ready(undo: UndoRedo):
     self.undo = undo 
     set_default_brush_materials()
 
-
-
 func try_put_cell() -> bool:
     if !cursor_in_bounds: return false
-    var cell = map.cell_at(cursor) 
+    var cell := map.cell_at(cursor) 
     if cell == null: 
         undo.create_action("put cell")
-        undo.add_do_method(brush, "put_cell", cursor, map)
-        undo.add_undo_method(brush, "clear_cell", cursor, map)
+        undo.add_do_method(self, "_do_put_cell")
+        undo.add_undo_method(self, "_undo_put_cell", cursor)
         undo.commit_action()
     else:
         # cell exists, therefore update it!
-        var celldata = cell.get_face_data()
+        var celldata := cell.serialise()
         undo.create_action("update cell")
-        undo.add_do_method(brush, "update_cell", cell, map)
-        undo.add_undo_method(brush, "restore_cell", cell, celldata)
+        undo.add_do_method(self, "_do_update_cell", cell)
+        undo.add_undo_method(self, "_undo_update_cell", cell, celldata)
         undo.commit_action()
     return cell == null
+
+func _do_put_cell():
+    var it := map.put_cell(cursor, brush.cell_template)
+    brush.paint(it)
+    map.serialise()
+
+func _undo_put_cell(pos: Vector3):
+    map.clear_cell(pos)
+    map.serialise()
+
+func _do_update_cell(cell: Cell):
+    brush.paint(cell)
+    map.serialise()
+
+func _undo_update_cell(cell: Cell, celldata: Dictionary):
+    cell.deserialise(celldata)
+    map.serialise()
 
 func try_clear_cell() -> bool:
     if !cursor_in_bounds: return false
     var empty = map.cell_at(cursor)
     if empty != null:
+        var cell := map.cell_at(cursor)
         undo.create_action("clear cell")
-        undo.add_do_method(brush, "clear_cell", cursor, map)
-        undo.add_undo_method(map, "put_cell", cursor, map)
+        undo.add_do_method(self, "_do_clear_cell")
+        undo.add_undo_method(self, "_undo_clear_cell", cursor, map, cell)
         undo.commit_action()
     return empty != null
+
+func _do_clear_cell():
+    map.clear_cell(cursor)
+    map.serialise()
+
+func _undo_clear_cell(pos: Vector3, _map: CellMapNode, _cell: Cell):
+    _map.put_existing_cell(pos, _cell)
+    map.serialise()
 
 func update_cursor(cam: Camera, mouse_pos: Vector2) -> void:
     """
@@ -85,13 +91,12 @@ func update_cursor(cam: Camera, mouse_pos: Vector2) -> void:
             
 
 func set_default_brush_materials():
-    print("setting default materials")
-    var ceil_mat = load("res://addons/xeen/assets/materials/ceiling.tres")
-    var floor_mat = load("res://addons/xeen/assets/materials/floor.tres")
-    var wall_mat = load("res://addons/xeen/assets/materials/wall.tres")
-    brush.set_material(Cell.FACE.TOP, ceil_mat)
-    brush.set_material(Cell.FACE.BOTTOM, floor_mat)
-    brush.set_material(Cell.FACE.WALLS, wall_mat)
+    var wall_mat = load("res://addons/xeen/assets/materials/urban/graywall.tres")
+    var floor_mat = load("res://addons/xeen/assets/materials/wood/creakywood.tres")
+    var ceil_mat = load("res://addons/xeen/assets/materials/bricks/bigbricks.tres")
+    brush.set_material(Units.FACE.TOP, ceil_mat)
+    brush.set_material(Units.FACE.BOTTOM, floor_mat)
+    brush.set_material(Units.FACE.WALLS, wall_mat)
 
 func set_brush_material(face: int, mat: Material):
     var old_mat := brush.get_material(face)
@@ -99,7 +104,6 @@ func set_brush_material(face: int, mat: Material):
     undo.add_do_method(brush, "set_material", face, mat)
     undo.add_undo_method(brush, "set_material", face, old_mat)
     undo.commit_action()
-    #brush.set_material(face, mat)
 
 func _setmap(v: CellMapNode):
     map = v

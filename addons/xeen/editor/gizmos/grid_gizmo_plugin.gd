@@ -14,6 +14,7 @@ func get_name():
 func has_gizmo(spatial):
     return spatial is CellMapNode
 
+
 func create_gizmo(spatial):
     if not has_gizmo(spatial):
         return null

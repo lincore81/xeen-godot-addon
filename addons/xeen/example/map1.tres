@@ -5,1400 +5,2658 @@
 [resource]
 script = ExtResource( 1 )
 size = Vector3( 10, 1, 10 )
-materials = [ "res://addons/xeen/assets/materials/ceiling.tres", "res://addons/xeen/assets/materials/floor.tres", "res://addons/xeen/assets/materials/wood_board2.tres", "res://addons/xeen/assets/materials/wall.tres", "res://addons/xeen/assets/materials/wood_board.tres" ]
+materials = [ "res://addons/xeen/assets/materials/bricks/bigbricks.tres", "res://addons/xeen/assets/materials/wood/creakywood.tres", "res://addons/xeen/assets/materials/urban/graywall.tres", "res://addons/xeen/assets/materials/industrial/support.tres", "res://addons/xeen/assets/materials/rocks/flatstones.tres" ]
 cells = {
-Vector3( 0, 0, 1 ): {
-"faces": {
+Vector3( 0, 0, 6 ): {
 1: {
-"id": 1,
+"fliph": false,
+"flipv": false,
 "material": 1,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
 "visible": true
 },
 2: {
-"id": 2,
+"fliph": false,
+"flipv": false,
 "material": 0,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
 "visible": true
 },
 4: {
-"id": 4,
-"material": 2,
-"visible": true
-},
-8: {
-"id": 8,
-"material": 2,
-"visible": true
-},
-16: {
-"id": 16,
-"material": 2,
-"visible": true
-},
-32: {
-"id": 32,
-"material": 1,
-"visible": false
-}
-}
-},
-Vector3( 0, 0, 4 ): {
-"faces": {
-1: {
-"id": 1,
-"material": 1,
-"visible": true
-},
-2: {
-"id": 2,
+"fliph": false,
+"flipv": false,
 "material": 0,
-"visible": true
-},
-4: {
-"id": 4,
-"material": 3,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
 "visible": true
 },
 8: {
-"id": 8,
-"material": 3,
-"visible": true
-},
-16: {
-"id": 16,
-"material": 3,
-"visible": true
-},
-32: {
-"id": 32,
-"material": 3,
-"visible": false
-}
-}
-},
-Vector3( 1, 0, 0 ): {
-"faces": {
-1: {
-"id": 1,
-"material": 1,
-"visible": true
-},
-2: {
-"id": 2,
+"fliph": false,
+"flipv": false,
 "material": 0,
-"visible": true
-},
-4: {
-"id": 4,
-"material": 2,
-"visible": true
-},
-8: {
-"id": 8,
-"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
 "visible": false
 },
 16: {
-"id": 16,
-"material": 2,
-"visible": true
-},
-32: {
-"id": 32,
-"material": 1,
-"visible": true
-}
-}
-},
-Vector3( 1, 0, 1 ): {
-"faces": {
-1: {
-"id": 1,
-"material": 1,
-"visible": true
-},
-2: {
-"id": 2,
+"fliph": false,
+"flipv": false,
 "material": 0,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
 "visible": true
-},
-4: {
-"id": 4,
-"material": 2,
-"visible": false
-},
-8: {
-"id": 8,
-"material": 2,
-"visible": true
-},
-16: {
-"id": 16,
-"material": 2,
-"visible": false
 },
 32: {
-"id": 32,
-"material": 1,
-"visible": false
-}
-}
-},
-Vector3( 1, 0, 4 ): {
-"faces": {
-1: {
-"id": 1,
-"material": 3,
-"visible": true
-},
-2: {
-"id": 2,
-"material": 4,
-"visible": true
-},
-4: {
-"id": 4,
-"material": 2,
-"visible": true
-},
-8: {
-"id": 8,
-"material": 2,
-"visible": false
-},
-16: {
-"id": 16,
-"material": 2,
-"visible": false
-},
-32: {
-"id": 32,
-"material": 2,
-"visible": false
-}
-}
-},
-Vector3( 1, 0, 5 ): {
-"faces": {
-1: {
-"id": 1,
-"material": 1,
-"visible": true
-},
-2: {
-"id": 2,
+"fliph": false,
+"flipv": false,
 "material": 0,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
+}
+},
+Vector3( 0, 0, 7 ): {
+1: {
+"fliph": false,
+"flipv": false,
+"material": 1,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+},
+2: {
+"fliph": false,
+"flipv": false,
+"material": 0,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
 "visible": true
 },
 4: {
-"id": 4,
-"material": 3,
+"fliph": false,
+"flipv": false,
+"material": 0,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
 "visible": false
 },
 8: {
-"id": 8,
-"material": 3,
-"visible": true
+"fliph": false,
+"flipv": false,
+"material": 0,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
 },
 16: {
-"id": 16,
-"material": 3,
+"fliph": false,
+"flipv": false,
+"material": 0,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
 "visible": true
 },
 32: {
-"id": 32,
-"material": 3,
+"fliph": false,
+"flipv": false,
+"material": 0,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
 "visible": false
 }
+},
+Vector3( 0, 0, 8 ): {
+1: {
+"fliph": false,
+"flipv": false,
+"material": 1,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+},
+2: {
+"fliph": false,
+"flipv": false,
+"material": 0,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+},
+4: {
+"fliph": false,
+"flipv": false,
+"material": 0,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
+},
+8: {
+"fliph": false,
+"flipv": false,
+"material": 0,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+},
+16: {
+"fliph": false,
+"flipv": false,
+"material": 0,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+},
+32: {
+"fliph": false,
+"flipv": false,
+"material": 0,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
+}
+},
+Vector3( 1, 0, 6 ): {
+1: {
+"fliph": false,
+"flipv": false,
+"material": 1,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+},
+2: {
+"fliph": false,
+"flipv": false,
+"material": 0,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+},
+4: {
+"fliph": false,
+"flipv": false,
+"material": 0,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+},
+8: {
+"fliph": false,
+"flipv": false,
+"material": 0,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
+},
+16: {
+"fliph": false,
+"flipv": false,
+"material": 0,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
+},
+32: {
+"fliph": false,
+"flipv": false,
+"material": 0,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
 }
 },
 Vector3( 1, 0, 7 ): {
-"faces": {
 1: {
-"id": 1,
+"fliph": false,
+"flipv": false,
 "material": 1,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
 "visible": true
 },
 2: {
-"id": 2,
+"fliph": false,
+"flipv": false,
 "material": 0,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
 "visible": true
 },
 4: {
-"id": 4,
-"material": 3,
-"visible": true
+"fliph": false,
+"flipv": false,
+"material": 0,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
 },
 8: {
-"id": 8,
-"material": 3,
+"fliph": false,
+"flipv": false,
+"material": 0,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
 "visible": false
 },
 16: {
-"id": 16,
-"material": 3,
-"visible": true
+"fliph": false,
+"flipv": false,
+"material": 0,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
 },
 32: {
-"id": 32,
-"material": 3,
+"fliph": false,
+"flipv": false,
+"material": 0,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
 "visible": false
-}
 }
 },
 Vector3( 1, 0, 8 ): {
-"faces": {
 1: {
-"id": 1,
+"fliph": false,
+"flipv": false,
 "material": 1,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
 "visible": true
 },
 2: {
-"id": 2,
+"fliph": false,
+"flipv": false,
 "material": 0,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
 "visible": true
 },
 4: {
-"id": 4,
-"material": 3,
-"visible": false
-},
-8: {
-"id": 8,
-"material": 3,
-"visible": true
-},
-16: {
-"id": 16,
-"material": 3,
-"visible": true
-},
-32: {
-"id": 32,
-"material": 3,
-"visible": true
-}
-}
-},
-Vector3( 2, 0, 1 ): {
-"faces": {
-1: {
-"id": 1,
-"material": 1,
-"visible": true
-},
-2: {
-"id": 2,
+"fliph": false,
+"flipv": false,
 "material": 0,
-"visible": true
-},
-4: {
-"id": 4,
-"material": 1,
-"visible": true
-},
-8: {
-"id": 8,
-"material": 1,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
 "visible": false
 },
+8: {
+"fliph": false,
+"flipv": false,
+"material": 0,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+},
 16: {
-"id": 16,
-"material": 1,
+"fliph": false,
+"flipv": false,
+"material": 0,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
 "visible": false
 },
 32: {
-"id": 32,
-"material": 1,
-"visible": true
-}
+"fliph": false,
+"flipv": false,
+"material": 0,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
 }
 },
 Vector3( 2, 0, 2 ): {
-"faces": {
 1: {
-"id": 1,
+"fliph": false,
+"flipv": false,
 "material": 1,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
 "visible": true
 },
 2: {
-"id": 2,
+"fliph": false,
+"flipv": false,
 "material": 0,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
 "visible": true
 },
 4: {
-"id": 4,
-"material": 3,
-"visible": false
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
 },
 8: {
-"id": 8,
-"material": 3,
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
 "visible": false
 },
 16: {
-"id": 16,
-"material": 3,
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
 "visible": true
 },
 32: {
-"id": 32,
-"material": 3,
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
 "visible": false
-}
 }
 },
 Vector3( 2, 0, 3 ): {
-"faces": {
 1: {
-"id": 1,
+"fliph": false,
+"flipv": false,
 "material": 1,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
 "visible": true
 },
 2: {
-"id": 2,
+"fliph": false,
+"flipv": false,
 "material": 0,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
 "visible": true
 },
 4: {
-"id": 4,
-"material": 3,
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
 "visible": false
 },
 8: {
-"id": 8,
-"material": 3,
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
 "visible": false
 },
 16: {
-"id": 16,
-"material": 3,
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
 "visible": true
 },
 32: {
-"id": 32,
-"material": 3,
-"visible": true
-}
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
 }
 },
 Vector3( 2, 0, 4 ): {
-"faces": {
 1: {
-"id": 1,
+"fliph": false,
+"flipv": false,
 "material": 1,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
 "visible": true
 },
 2: {
-"id": 2,
+"fliph": false,
+"flipv": false,
 "material": 0,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
 "visible": true
 },
 4: {
-"id": 4,
-"material": 3,
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
 "visible": false
 },
 8: {
-"id": 8,
-"material": 3,
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
 "visible": false
 },
 16: {
-"id": 16,
-"material": 3,
-"visible": false
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
 },
 32: {
-"id": 32,
-"material": 3,
-"visible": true
-}
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
 }
 },
 Vector3( 2, 0, 5 ): {
-"faces": {
 1: {
-"id": 1,
+"fliph": false,
+"flipv": false,
 "material": 1,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
 "visible": true
 },
 2: {
-"id": 2,
+"fliph": false,
+"flipv": false,
 "material": 0,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
 "visible": true
 },
 4: {
-"id": 4,
-"material": 3,
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
 "visible": false
 },
 8: {
-"id": 8,
-"material": 3,
-"visible": true
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
 },
 16: {
-"id": 16,
-"material": 3,
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+},
+32: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+}
+},
+Vector3( 2, 0, 6 ): {
+1: {
+"fliph": false,
+"flipv": false,
+"material": 1,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+},
+2: {
+"fliph": false,
+"flipv": false,
+"material": 0,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+},
+4: {
+"fliph": false,
+"flipv": false,
+"material": 0,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
+},
+8: {
+"fliph": false,
+"flipv": false,
+"material": 0,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
+},
+16: {
+"fliph": false,
+"flipv": false,
+"material": 0,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
 "visible": false
 },
 32: {
-"id": 32,
-"material": 3,
-"visible": false
-}
+"fliph": false,
+"flipv": false,
+"material": 0,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
 }
 },
 Vector3( 2, 0, 7 ): {
-"faces": {
 1: {
-"id": 1,
+"fliph": false,
+"flipv": false,
 "material": 1,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
 "visible": true
 },
 2: {
-"id": 2,
+"fliph": false,
+"flipv": false,
 "material": 0,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
 "visible": true
 },
 4: {
-"id": 4,
-"material": 1,
-"visible": true
+"fliph": false,
+"flipv": false,
+"material": 0,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
 },
 8: {
-"id": 8,
-"material": 1,
-"visible": true
+"fliph": false,
+"flipv": false,
+"material": 0,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
 },
 16: {
-"id": 16,
-"material": 1,
+"fliph": false,
+"flipv": false,
+"material": 0,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
 "visible": false
 },
 32: {
-"id": 32,
-"material": 1,
-"visible": false
+"fliph": false,
+"flipv": false,
+"material": 0,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
 }
+},
+Vector3( 2, 0, 8 ): {
+1: {
+"fliph": false,
+"flipv": false,
+"material": 1,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+},
+2: {
+"fliph": false,
+"flipv": false,
+"material": 0,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+},
+4: {
+"fliph": false,
+"flipv": false,
+"material": 0,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
+},
+8: {
+"fliph": false,
+"flipv": false,
+"material": 0,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+},
+16: {
+"fliph": false,
+"flipv": false,
+"material": 0,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
+},
+32: {
+"fliph": false,
+"flipv": false,
+"material": 0,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
 }
 },
 Vector3( 3, 0, 2 ): {
-"faces": {
 1: {
-"id": 1,
-"material": 3,
-"visible": true
-},
-2: {
-"id": 2,
-"material": 4,
-"visible": true
-},
-4: {
-"id": 4,
-"material": 2,
-"visible": true
-},
-8: {
-"id": 8,
-"material": 2,
-"visible": true
-},
-16: {
-"id": 16,
-"material": 2,
-"visible": false
-},
-32: {
-"id": 32,
-"material": 2,
-"visible": false
-}
-}
-},
-Vector3( 3, 0, 5 ): {
-"faces": {
-1: {
-"id": 1,
+"fliph": false,
+"flipv": false,
 "material": 1,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
 "visible": true
 },
 2: {
-"id": 2,
+"fliph": false,
+"flipv": false,
 "material": 0,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
 "visible": true
 },
 4: {
-"id": 4,
-"material": 3,
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
 "visible": true
 },
 8: {
-"id": 8,
-"material": 3,
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
 "visible": false
 },
 16: {
-"id": 16,
-"material": 3,
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
 "visible": false
 },
 32: {
-"id": 32,
-"material": 3,
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
 "visible": false
 }
-}
 },
-Vector3( 3, 0, 6 ): {
-"faces": {
+Vector3( 3, 0, 3 ): {
 1: {
-"id": 1,
+"fliph": false,
+"flipv": false,
 "material": 1,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
 "visible": true
 },
 2: {
-"id": 2,
+"fliph": false,
+"flipv": false,
 "material": 0,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
 "visible": true
 },
 4: {
-"id": 4,
-"material": 3,
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
 "visible": false
 },
 8: {
-"id": 8,
-"material": 3,
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
 "visible": false
 },
 16: {
-"id": 16,
-"material": 3,
-"visible": true
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
 },
 32: {
-"id": 32,
-"material": 3,
-"visible": true
-}
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
 }
 },
-Vector3( 3, 0, 7 ): {
-"faces": {
+Vector3( 3, 0, 4 ): {
 1: {
-"id": 1,
+"fliph": false,
+"flipv": false,
 "material": 1,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
 "visible": true
 },
 2: {
-"id": 2,
+"fliph": false,
+"flipv": false,
 "material": 0,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
 "visible": true
 },
 4: {
-"id": 4,
-"material": 3,
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
 "visible": false
 },
 8: {
-"id": 8,
-"material": 3,
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
 "visible": true
 },
 16: {
-"id": 16,
-"material": 3,
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
 "visible": false
 },
 32: {
-"id": 32,
-"material": 3,
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
 "visible": false
-}
 }
 },
 Vector3( 4, 0, 2 ): {
-"faces": {
 1: {
-"id": 1,
+"fliph": false,
+"flipv": false,
 "material": 1,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
 "visible": true
 },
 2: {
-"id": 2,
+"fliph": false,
+"flipv": false,
 "material": 0,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
 "visible": true
 },
 4: {
-"id": 4,
-"material": 3,
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
 "visible": true
 },
 8: {
-"id": 8,
-"material": 3,
-"visible": true
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
 },
 16: {
-"id": 16,
-"material": 3,
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
 "visible": false
 },
 32: {
-"id": 32,
-"material": 3,
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
 "visible": false
 }
-}
 },
-Vector3( 4, 0, 5 ): {
-"faces": {
+Vector3( 4, 0, 3 ): {
 1: {
-"id": 1,
+"fliph": false,
+"flipv": false,
 "material": 1,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
 "visible": true
 },
 2: {
-"id": 2,
+"fliph": false,
+"flipv": false,
 "material": 0,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
 "visible": true
 },
 4: {
-"id": 4,
-"material": 3,
-"visible": true
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
 },
 8: {
-"id": 8,
-"material": 3,
-"visible": true
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
 },
 16: {
-"id": 16,
-"material": 3,
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
 "visible": false
 },
 32: {
-"id": 32,
-"material": 3,
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
 "visible": false
 }
+},
+Vector3( 4, 0, 4 ): {
+1: {
+"fliph": false,
+"flipv": false,
+"material": 1,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+},
+2: {
+"fliph": false,
+"flipv": false,
+"material": 0,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+},
+4: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
+},
+8: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+},
+16: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
+},
+32: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
 }
 },
 Vector3( 4, 0, 7 ): {
-"faces": {
 1: {
-"id": 1,
+"fliph": false,
+"flipv": false,
 "material": 1,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
 "visible": true
 },
 2: {
-"id": 2,
+"fliph": false,
+"flipv": false,
 "material": 0,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
 "visible": true
 },
 4: {
-"id": 4,
-"material": 3,
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
 "visible": true
 },
 8: {
-"id": 8,
-"material": 3,
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
+},
+16: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+},
+32: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
+}
+},
+Vector3( 4, 0, 8 ): {
+1: {
+"fliph": false,
+"flipv": false,
+"material": 1,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+},
+2: {
+"fliph": false,
+"flipv": false,
+"material": 0,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+},
+4: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
+},
+8: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
+},
+16: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+},
+32: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
+}
+},
+Vector3( 4, 0, 9 ): {
+1: {
+"fliph": false,
+"flipv": false,
+"material": 1,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+},
+2: {
+"fliph": false,
+"flipv": false,
+"material": 0,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+},
+4: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
+},
+8: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
 "visible": true
 },
 16: {
-"id": 16,
-"material": 3,
-"visible": false
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
 },
 32: {
-"id": 32,
-"material": 3,
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
 "visible": false
-}
 }
 },
 Vector3( 5, 0, 2 ): {
-"faces": {
 1: {
-"id": 1,
+"fliph": false,
+"flipv": false,
 "material": 1,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
 "visible": true
 },
 2: {
-"id": 2,
+"fliph": false,
+"flipv": false,
 "material": 0,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
 "visible": true
 },
 4: {
-"id": 4,
-"material": 3,
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
 "visible": true
 },
 8: {
-"id": 8,
-"material": 3,
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
 "visible": false
 },
 16: {
-"id": 16,
-"material": 3,
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
 "visible": false
 },
 32: {
-"id": 32,
-"material": 3,
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
 "visible": false
-}
 }
 },
 Vector3( 5, 0, 3 ): {
-"faces": {
 1: {
-"id": 1,
+"fliph": false,
+"flipv": false,
 "material": 1,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
 "visible": true
 },
 2: {
-"id": 2,
+"fliph": false,
+"flipv": false,
 "material": 0,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
 "visible": true
 },
 4: {
-"id": 4,
+"fliph": false,
+"flipv": false,
 "material": 3,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
 "visible": false
 },
 8: {
-"id": 8,
+"fliph": false,
+"flipv": false,
 "material": 3,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
 "visible": false
 },
 16: {
-"id": 16,
+"fliph": false,
+"flipv": false,
 "material": 3,
-"visible": true
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
 },
 32: {
-"id": 32,
+"fliph": false,
+"flipv": false,
 "material": 3,
-"visible": true
-}
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
 }
 },
 Vector3( 5, 0, 4 ): {
-"faces": {
 1: {
-"id": 1,
+"fliph": false,
+"flipv": false,
 "material": 1,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
 "visible": true
 },
 2: {
-"id": 2,
+"fliph": false,
+"flipv": false,
 "material": 0,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
 "visible": true
 },
 4: {
-"id": 4,
+"fliph": false,
+"flipv": false,
 "material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
 "visible": false
 },
 8: {
-"id": 8,
+"fliph": false,
+"flipv": false,
 "material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
 "visible": false
 },
 16: {
-"id": 16,
+"fliph": false,
+"flipv": false,
 "material": 2,
-"visible": true
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
 },
 32: {
-"id": 32,
+"fliph": false,
+"flipv": false,
 "material": 2,
-"visible": true
-}
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
 }
 },
 Vector3( 5, 0, 5 ): {
-"faces": {
 1: {
-"id": 1,
+"fliph": false,
+"flipv": false,
 "material": 1,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
 "visible": true
 },
 2: {
-"id": 2,
+"fliph": false,
+"flipv": false,
 "material": 0,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
 "visible": true
 },
 4: {
-"id": 4,
-"material": 3,
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
 "visible": false
 },
 8: {
-"id": 8,
-"material": 3,
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
 "visible": false
 },
 16: {
-"id": 16,
-"material": 3,
-"visible": false
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
 },
 32: {
-"id": 32,
-"material": 3,
-"visible": false
-}
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
 }
 },
 Vector3( 5, 0, 6 ): {
-"faces": {
 1: {
-"id": 1,
+"fliph": false,
+"flipv": false,
 "material": 1,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
 "visible": true
 },
 2: {
-"id": 2,
+"fliph": false,
+"flipv": false,
 "material": 0,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
 "visible": true
 },
 4: {
-"id": 4,
+"fliph": false,
+"flipv": false,
 "material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
 "visible": false
 },
 8: {
-"id": 8,
+"fliph": false,
+"flipv": false,
 "material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
 "visible": false
 },
 16: {
-"id": 16,
+"fliph": false,
+"flipv": false,
 "material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
 "visible": true
 },
 32: {
-"id": 32,
+"fliph": false,
+"flipv": false,
 "material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
 "visible": true
-}
 }
 },
 Vector3( 5, 0, 7 ): {
-"faces": {
 1: {
-"id": 1,
+"fliph": false,
+"flipv": false,
 "material": 1,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
 "visible": true
 },
 2: {
-"id": 2,
+"fliph": false,
+"flipv": false,
 "material": 0,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
 "visible": true
 },
 4: {
-"id": 4,
-"material": 3,
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
 "visible": false
 },
 8: {
-"id": 8,
-"material": 3,
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
 "visible": false
 },
 16: {
-"id": 16,
-"material": 3,
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
 "visible": false
 },
 32: {
-"id": 32,
-"material": 3,
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
 "visible": false
-}
 }
 },
 Vector3( 5, 0, 8 ): {
-"faces": {
 1: {
-"id": 1,
+"fliph": false,
+"flipv": false,
 "material": 1,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
 "visible": true
 },
 2: {
-"id": 2,
+"fliph": false,
+"flipv": false,
 "material": 0,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
 "visible": true
 },
 4: {
-"id": 4,
-"material": 3,
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
 "visible": false
 },
 8: {
-"id": 8,
-"material": 3,
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
 "visible": false
 },
 16: {
-"id": 16,
-"material": 3,
-"visible": true
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
 },
 32: {
-"id": 32,
-"material": 3,
-"visible": true
-}
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
 }
 },
 Vector3( 5, 0, 9 ): {
-"faces": {
 1: {
-"id": 1,
+"fliph": false,
+"flipv": false,
 "material": 1,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
 "visible": true
 },
 2: {
-"id": 2,
+"fliph": false,
+"flipv": false,
 "material": 0,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
 "visible": true
 },
 4: {
-"id": 4,
-"material": 3,
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
 "visible": false
 },
 8: {
-"id": 8,
-"material": 3,
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
 "visible": true
 },
 16: {
-"id": 16,
-"material": 3,
-"visible": true
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
 },
 32: {
-"id": 32,
-"material": 3,
-"visible": true
-}
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
 }
 },
 Vector3( 6, 0, 2 ): {
-"faces": {
 1: {
-"id": 1,
+"fliph": false,
+"flipv": false,
 "material": 1,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
 "visible": true
 },
 2: {
-"id": 2,
+"fliph": false,
+"flipv": false,
 "material": 0,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
 "visible": true
 },
 4: {
-"id": 4,
-"material": 3,
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
 "visible": true
 },
 8: {
-"id": 8,
-"material": 3,
-"visible": true
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
 },
 16: {
-"id": 16,
-"material": 3,
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
 "visible": false
 },
 32: {
-"id": 32,
-"material": 3,
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
 "visible": false
 }
-}
 },
-Vector3( 6, 0, 5 ): {
-"faces": {
+Vector3( 6, 0, 3 ): {
 1: {
-"id": 1,
+"fliph": false,
+"flipv": false,
 "material": 1,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
 "visible": true
 },
 2: {
-"id": 2,
-"material": 0,
+"fliph": false,
+"flipv": false,
+"material": 4,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
 "visible": true
 },
 4: {
-"id": 4,
-"material": 3,
-"visible": true
+"fliph": false,
+"flipv": false,
+"material": 0,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
 },
 8: {
-"id": 8,
-"material": 3,
-"visible": true
+"fliph": false,
+"flipv": false,
+"material": 0,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
 },
 16: {
-"id": 16,
-"material": 3,
+"fliph": false,
+"flipv": false,
+"material": 0,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
 "visible": false
 },
 32: {
-"id": 32,
-"material": 3,
+"fliph": false,
+"flipv": false,
+"material": 0,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
 "visible": false
 }
+},
+Vector3( 6, 0, 4 ): {
+1: {
+"fliph": false,
+"flipv": false,
+"material": 1,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+},
+2: {
+"fliph": false,
+"flipv": false,
+"material": 0,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+},
+4: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
+},
+8: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+},
+16: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
+},
+32: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
 }
 },
 Vector3( 6, 0, 7 ): {
-"faces": {
 1: {
-"id": 1,
+"fliph": false,
+"flipv": false,
 "material": 1,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
 "visible": true
 },
 2: {
-"id": 2,
+"fliph": false,
+"flipv": false,
 "material": 0,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
 "visible": true
 },
 4: {
-"id": 4,
-"material": 3,
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
 "visible": true
 },
 8: {
-"id": 8,
-"material": 3,
-"visible": true
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
 },
 16: {
-"id": 16,
-"material": 3,
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
 "visible": false
 },
 32: {
-"id": 32,
-"material": 3,
-"visible": false
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
 }
+},
+Vector3( 6, 0, 8 ): {
+1: {
+"fliph": false,
+"flipv": false,
+"material": 1,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+},
+2: {
+"fliph": false,
+"flipv": false,
+"material": 0,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+},
+4: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
+},
+8: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
+},
+16: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
+},
+32: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+}
+},
+Vector3( 6, 0, 9 ): {
+1: {
+"fliph": false,
+"flipv": false,
+"material": 1,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+},
+2: {
+"fliph": false,
+"flipv": false,
+"material": 0,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+},
+4: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
+},
+8: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+},
+16: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
+},
+32: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
 }
 },
 Vector3( 7, 0, 2 ): {
-"faces": {
 1: {
-"id": 1,
+"fliph": false,
+"flipv": false,
 "material": 1,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
 "visible": true
 },
 2: {
-"id": 2,
+"fliph": false,
+"flipv": false,
 "material": 0,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
 "visible": true
 },
 4: {
-"id": 4,
-"material": 3,
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
 "visible": true
 },
 8: {
-"id": 8,
-"material": 3,
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
 "visible": false
 },
 16: {
-"id": 16,
-"material": 3,
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
 "visible": false
 },
 32: {
-"id": 32,
-"material": 3,
-"visible": false
-}
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
 }
 },
 Vector3( 7, 0, 3 ): {
-"faces": {
 1: {
-"id": 1,
+"fliph": false,
+"flipv": false,
 "material": 1,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
 "visible": true
 },
 2: {
-"id": 2,
+"fliph": false,
+"flipv": false,
 "material": 0,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
 "visible": true
 },
 4: {
-"id": 4,
-"material": 3,
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
 "visible": false
 },
 8: {
-"id": 8,
-"material": 3,
-"visible": true
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
 },
 16: {
-"id": 16,
-"material": 3,
-"visible": true
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
 },
 32: {
-"id": 32,
-"material": 3,
-"visible": false
-}
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
 }
 },
-Vector3( 7, 0, 5 ): {
-"faces": {
+Vector3( 7, 0, 4 ): {
 1: {
-"id": 1,
+"fliph": false,
+"flipv": false,
 "material": 1,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
 "visible": true
 },
 2: {
-"id": 2,
+"fliph": false,
+"flipv": false,
 "material": 0,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
 "visible": true
 },
 4: {
-"id": 4,
-"material": 3,
-"visible": true
-},
-8: {
-"id": 8,
-"material": 3,
-"visible": false
-},
-16: {
-"id": 16,
-"material": 3,
-"visible": false
-},
-32: {
-"id": 32,
-"material": 3,
-"visible": false
-}
-}
-},
-Vector3( 7, 0, 6 ): {
-"faces": {
-1: {
-"id": 1,
-"material": 1,
-"visible": true
-},
-2: {
-"id": 2,
-"material": 0,
-"visible": true
-},
-4: {
-"id": 4,
-"material": 3,
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
 "visible": false
 },
 8: {
-"id": 8,
-"material": 3,
-"visible": false
-},
-16: {
-"id": 16,
-"material": 3,
-"visible": true
-},
-32: {
-"id": 32,
-"material": 3,
-"visible": true
-}
-}
-},
-Vector3( 7, 0, 7 ): {
-"faces": {
-1: {
-"id": 1,
-"material": 1,
-"visible": true
-},
-2: {
-"id": 2,
-"material": 0,
-"visible": true
-},
-4: {
-"id": 4,
-"material": 3,
-"visible": false
-},
-8: {
-"id": 8,
-"material": 3,
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
 "visible": true
 },
 16: {
-"id": 16,
-"material": 3,
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
 "visible": false
 },
 32: {
-"id": 32,
-"material": 3,
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
 "visible": true
-}
-}
-},
-Vector3( 8, 0, 2 ): {
-"faces": {
-1: {
-"id": 1,
-"material": 1,
-"visible": true
-},
-2: {
-"id": 2,
-"material": 0,
-"visible": true
-},
-4: {
-"id": 4,
-"material": 3,
-"visible": true
-},
-8: {
-"id": 8,
-"material": 3,
-"visible": false
-},
-16: {
-"id": 16,
-"material": 3,
-"visible": false
-},
-32: {
-"id": 32,
-"material": 3,
-"visible": true
-}
-}
-},
-Vector3( 8, 0, 3 ): {
-"faces": {
-1: {
-"id": 1,
-"material": 1,
-"visible": true
-},
-2: {
-"id": 2,
-"material": 0,
-"visible": true
-},
-4: {
-"id": 4,
-"material": 3,
-"visible": false
-},
-8: {
-"id": 8,
-"material": 3,
-"visible": false
-},
-16: {
-"id": 16,
-"material": 3,
-"visible": false
-},
-32: {
-"id": 32,
-"material": 3,
-"visible": true
-}
-}
-},
-Vector3( 8, 0, 4 ): {
-"faces": {
-1: {
-"id": 1,
-"material": 1,
-"visible": true
-},
-2: {
-"id": 2,
-"material": 0,
-"visible": true
-},
-4: {
-"id": 4,
-"material": 3,
-"visible": false
-},
-8: {
-"id": 8,
-"material": 3,
-"visible": false
-},
-16: {
-"id": 16,
-"material": 3,
-"visible": true
-},
-32: {
-"id": 32,
-"material": 3,
-"visible": true
-}
-}
-},
-Vector3( 8, 0, 5 ): {
-"faces": {
-1: {
-"id": 1,
-"material": 1,
-"visible": true
-},
-2: {
-"id": 2,
-"material": 0,
-"visible": true
-},
-4: {
-"id": 4,
-"material": 3,
-"visible": false
-},
-8: {
-"id": 8,
-"material": 3,
-"visible": true
-},
-16: {
-"id": 16,
-"material": 3,
-"visible": false
-},
-32: {
-"id": 32,
-"material": 3,
-"visible": true
-}
 }
 }
 }

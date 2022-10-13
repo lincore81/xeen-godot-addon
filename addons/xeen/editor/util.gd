@@ -3,6 +3,7 @@ class_name XeenEditorUtil
 
 # Return a vector or false if no cell is under the courser.
 # Based on: https://github.com/DarkKilauea/godot-scene-map/blob/main/addons/scene_map/plugin.gd
+# TODO: Make it work in orthographic projection 
 static func pick_cell(global_transform: Transform, camera: Camera, point: Vector2) -> Array:
     #var frustum := camera.get_frustum()
     var from := camera.project_ray_origin(point)

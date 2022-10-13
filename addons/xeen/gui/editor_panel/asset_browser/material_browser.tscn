@@ -1,0 +1,115 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://addons/xeen/assets/fonts/NotoSans-Bold-Larger.tres" type="DynamicFont" id=1]
+[ext_resource path="res://addons/xeen/assets/icons/refresh.png" type="Texture" id=2]
+[ext_resource path="res://addons/xeen/gui/editor_panel/asset_browser/asset_browser.gd" type="Script" id=3]
+[ext_resource path="res://addons/xeen/assets/fonts/NotoSans-Regular-Smaller.tres" type="DynamicFont" id=4]
+[ext_resource path="res://addons/xeen/gui/editor_panel/asset_browser/sortbtn.gd" type="Script" id=5]
+[ext_resource path="res://addons/xeen/assets/icons/sort-alphabetical-ascending.png" type="Texture" id=6]
+[ext_resource path="res://addons/xeen/gui/editor_panel/asset_browser/material_view.gd" type="Script" id=7]
+[ext_resource path="res://addons/xeen/assets/icons/folder-edit.png" type="Texture" id=8]
+
+[sub_resource type="StyleBoxFlat" id=15]
+bg_color = Color( 0.117647, 0.121569, 0.156863, 1 )
+
+[node name="MaterialView" type="VBoxContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 7 )
+
+[node name="Header" type="Label" parent="."]
+margin_right = 1024.0
+margin_bottom = 36.0
+custom_fonts/font = ExtResource( 1 )
+text = "Materials"
+valign = 2
+
+[node name="Path" type="Label" parent="."]
+margin_top = 40.0
+margin_right = 1024.0
+margin_bottom = 54.0
+custom_colors/font_color = Color( 0.658824, 0.658824, 0.658824, 1 )
+text = "res://addons/xeen/assets/materials"
+
+[node name="FileDialog" type="FileDialog" parent="."]
+margin_top = 58.0
+margin_right = 500.0
+margin_bottom = 207.0
+rect_min_size = Vector2( 300, 105 )
+window_title = "Open a Directory"
+mode = 2
+access = 2
+
+[node name="Menu" type="HBoxContainer" parent="."]
+margin_top = 58.0
+margin_right = 1024.0
+margin_bottom = 106.0
+grow_horizontal = 0
+
+[node name="ChooseFolder" type="Button" parent="Menu"]
+margin_right = 48.0
+margin_bottom = 48.0
+rect_min_size = Vector2( 48, 48 )
+hint_tooltip = "Choose a folder."
+icon = ExtResource( 8 )
+flat = true
+expand_icon = true
+
+[node name="Refresh" type="Button" parent="Menu"]
+margin_left = 52.0
+margin_right = 100.0
+margin_bottom = 48.0
+rect_min_size = Vector2( 48, 48 )
+hint_tooltip = "Update list"
+icon = ExtResource( 2 )
+flat = true
+expand_icon = true
+
+[node name="Sort" type="Button" parent="Menu"]
+margin_left = 104.0
+margin_right = 152.0
+margin_bottom = 48.0
+rect_min_size = Vector2( 48, 48 )
+hint_tooltip = "Update list"
+icon = ExtResource( 6 )
+flat = true
+expand_icon = true
+script = ExtResource( 5 )
+
+[node name="VSeparator" type="VSeparator" parent="Menu"]
+margin_left = 156.0
+margin_right = 160.0
+margin_bottom = 48.0
+
+[node name="Filter" type="LineEdit" parent="Menu"]
+margin_left = 164.0
+margin_right = 404.0
+margin_bottom = 48.0
+rect_min_size = Vector2( 240, 0 )
+custom_fonts/font = ExtResource( 4 )
+custom_styles/normal = SubResource( 15 )
+clear_button_enabled = true
+placeholder_text = "Filter materials"
+caret_blink = true
+caret_blink_speed = 0.5
+__meta__ = {
+"_editor_description_": "TODO: Text should be padded by 8px"
+}
+
+[node name="Scrollable" type="ScrollContainer" parent="."]
+margin_top = 110.0
+margin_right = 1024.0
+margin_bottom = 600.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+follow_focus = true
+scroll_horizontal_enabled = false
+
+[node name="Browser" type="HFlowContainer" parent="Scrollable"]
+unique_name_in_owner = true
+margin_right = 1024.0
+margin_bottom = 490.0
+rect_min_size = Vector2( 0, 64 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource( 3 )

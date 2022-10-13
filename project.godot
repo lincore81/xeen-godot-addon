@@ -9,10 +9,10 @@
 config_version=4
 
 _global_script_classes=[ {
-"base": "GridContainer",
+"base": "HFlowContainer",
 "class": "AssetBrowser",
 "language": "GDScript",
-"path": "res://addons/xeen/gui/controls/asset_browser.gd"
+"path": "res://addons/xeen/gui/editor_panel/asset_browser/asset_browser.gd"
 }, {
 "base": "Reference",
 "class": "BitSet",
@@ -22,7 +22,7 @@ _global_script_classes=[ {
 "base": "GridContainer",
 "class": "BrushView",
 "language": "GDScript",
-"path": "res://addons/xeen/gui/brush_view.gd"
+"path": "res://addons/xeen/gui/editor_panel/brush_view/brush_view.gd"
 }, {
 "base": "Spatial",
 "class": "Cell",
@@ -39,6 +39,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://addons/xeen/map/cell_map_node.gd"
 }, {
+"base": "Resource",
+"class": "FaceInfo",
+"language": "GDScript",
+"path": "res://addons/xeen/datatypes/faceinfo.gd"
+}, {
 "base": "Spatial",
 "class": "GameScene",
 "language": "GDScript",
@@ -49,20 +54,20 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://addons/xeen/map/mapdata.gd"
 }, {
-"base": "TextureButton",
-"class": "MaterialButton",
+"base": "VBoxContainer",
+"class": "MaterialView",
 "language": "GDScript",
-"path": "res://addons/xeen/gui/controls/material_btn.gd"
-}, {
-"base": "TextureRect",
-"class": "MaterialThumbnail",
-"language": "GDScript",
-"path": "res://addons/xeen/gui/controls/texture_thumbnail.gd"
+"path": "res://addons/xeen/gui/editor_panel/asset_browser/material_view.gd"
 }, {
 "base": "Spatial",
 "class": "PlayerSpatial",
 "language": "GDScript",
 "path": "res://addons/xeen/example/objects/player/player_spatial.gd"
+}, {
+"base": "Button",
+"class": "SortButton",
+"language": "GDScript",
+"path": "res://addons/xeen/gui/editor_panel/asset_browser/sortbtn.gd"
 }, {
 "base": "Object",
 "class": "Units",
@@ -74,10 +79,10 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://addons/xeen/editor/editor.gd"
 }, {
-"base": "Control",
+"base": "PanelContainer",
 "class": "XeenEditorPanel",
 "language": "GDScript",
-"path": "res://addons/xeen/gui/editor_panel.gd"
+"path": "res://addons/xeen/gui/editor_panel/editor_panel.gd"
 }, {
 "base": "EditorPlugin",
 "class": "XeenEditorPlugin",
@@ -111,11 +116,12 @@ _global_script_class_icons={
 "Cell": "",
 "CellBrush": "",
 "CellMapNode": "",
+"FaceInfo": "",
 "GameScene": "",
 "MapData": "",
-"MaterialButton": "",
-"MaterialThumbnail": "",
+"MaterialView": "",
 "PlayerSpatial": "",
+"SortButton": "",
 "Units": "",
 "XeenEditor": "",
 "XeenEditorPanel": "",
@@ -140,6 +146,12 @@ enabled=PoolStringArray( "res://addons/xeen/plugin.cfg" )
 [global]
 
 scene=false
+
+[importer_defaults]
+
+texture={
+"flags/filter": false
+}
 
 [input]
 

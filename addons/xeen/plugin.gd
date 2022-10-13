@@ -2,13 +2,13 @@ tool
 extends EditorPlugin
 class_name XeenEditorPlugin
 
-const GridGizmoPlugin = preload("res://addons/xeen/editor/gizmos/grid_gizmo_plugin.gd")
-var panel = preload("res://addons/xeen/gui/editor_panel.tscn").instance()
+var panel = preload("res://addons/xeen/gui/editor_panel/editor_panel.tscn").instance()
 var cellmapnode_script: Script = preload("res://addons/xeen/map/cell_map_node.gd")
 
+
 var editor: XeenEditor = null
-var editing: CellMapNode = null
-var gizmo_plugin: GridGizmoPlugin = null
+var editing = null
+var gizmo_plugin: XeenMapGridGizmoPlugin = null
 var lmb_down := false
 var is_dragging := false
 
@@ -16,7 +16,7 @@ func _enter_tree():
     editor = XeenEditor.new()
     editor.panel = panel
     panel.connect("ready", self, "_on_panel_ready")
-    gizmo_plugin = GridGizmoPlugin.new(editor)
+    gizmo_plugin = XeenMapGridGizmoPlugin.new(editor)
 
     add_control_to_dock(EditorPlugin.DOCK_SLOT_RIGHT_BR, panel)
     add_custom_type("CellMap", "Spatial", cellmapnode_script, CellMapNode.ICON)
@@ -53,6 +53,8 @@ func _handle_click(_cam: Camera, ev: InputEventMouseButton):
         elif is_released:
             var scene_root = get_editor_interface().get_edited_scene_root()
             editor.try_put_cell()
+
+
 
 func unedit():
     editor.map = null

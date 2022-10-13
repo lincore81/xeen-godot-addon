@@ -1,0 +1,251 @@
+[gd_scene load_steps=19 format=2]
+
+[ext_resource path="res://addons/xeen/gui/editor_panel/brush_view/brush_view.gd" type="Script" id=1]
+[ext_resource path="res://addons/xeen/assets/fonts/NotoSans-Bold.tres" type="DynamicFont" id=2]
+[ext_resource path="res://addons/xeen/assets/fonts/NotoSans-Regular.tres" type="DynamicFont" id=3]
+[ext_resource path="res://addons/xeen/assets/textures/placeholder.png" type="Texture" id=4]
+
+[sub_resource type="InputEventKey" id=1]
+scancode = 16777357
+
+[sub_resource type="ShortCut" id=2]
+shortcut = SubResource( 1 )
+
+[sub_resource type="InputEventKey" id=3]
+scancode = 16777358
+
+[sub_resource type="ShortCut" id=4]
+shortcut = SubResource( 3 )
+
+[sub_resource type="InputEventKey" id=5]
+scancode = 16777354
+
+[sub_resource type="ShortCut" id=6]
+shortcut = SubResource( 5 )
+
+[sub_resource type="InputEventKey" id=7]
+scancode = 16777355
+
+[sub_resource type="ShortCut" id=8]
+shortcut = SubResource( 7 )
+
+[sub_resource type="InputEventKey" id=9]
+scancode = 16777356
+
+[sub_resource type="ShortCut" id=10]
+shortcut = SubResource( 9 )
+
+[sub_resource type="InputEventKey" id=11]
+scancode = 16777351
+
+[sub_resource type="ShortCut" id=12]
+shortcut = SubResource( 11 )
+
+[sub_resource type="InputEventKey" id=13]
+scancode = 16777352
+
+[sub_resource type="ShortCut" id=14]
+shortcut = SubResource( 13 )
+
+[node name="Brush" type="GridContainer"]
+margin_top = 60.0
+margin_right = 1010.0
+margin_bottom = 548.0
+columns = 3
+script = ExtResource( 1 )
+
+[node name="Ceiling_7" type="VSplitContainer" parent="."]
+margin_right = 128.0
+margin_bottom = 160.0
+dragger_visibility = 2
+
+[node name="Label" type="RichTextLabel" parent="Ceiling_7"]
+margin_right = 128.0
+margin_bottom = 32.0
+size_flags_vertical = 5
+custom_fonts/bold_font = ExtResource( 2 )
+custom_fonts/normal_font = ExtResource( 3 )
+bbcode_enabled = true
+bbcode_text = "[b]7[/b] Ceiling"
+text = "7 Ceiling"
+fit_content_height = true
+
+[node name="Button" type="Button" parent="Ceiling_7"]
+margin_top = 32.0
+margin_right = 128.0
+margin_bottom = 160.0
+rect_min_size = Vector2( 128, 128 )
+rect_pivot_offset = Vector2( 64, 75 )
+shortcut = SubResource( 2 )
+icon = ExtResource( 4 )
+expand_icon = true
+
+[node name="North_8" type="VSplitContainer" parent="."]
+margin_left = 132.0
+margin_right = 260.0
+margin_bottom = 160.0
+dragger_visibility = 2
+
+[node name="Label" type="RichTextLabel" parent="North_8"]
+margin_right = 128.0
+margin_bottom = 32.0
+size_flags_vertical = 5
+custom_fonts/bold_font = ExtResource( 2 )
+custom_fonts/normal_font = ExtResource( 3 )
+bbcode_enabled = true
+bbcode_text = "[b]8[/b] North"
+text = "8 North"
+fit_content_height = true
+
+[node name="Button" type="Button" parent="North_8"]
+margin_top = 32.0
+margin_right = 128.0
+margin_bottom = 160.0
+rect_min_size = Vector2( 128, 128 )
+rect_pivot_offset = Vector2( 64, 75 )
+shortcut = SubResource( 4 )
+icon = ExtResource( 4 )
+expand_icon = true
+
+[node name="Filler" type="Control" parent="."]
+margin_left = 264.0
+margin_right = 392.0
+margin_bottom = 160.0
+
+[node name="West_4" type="VSplitContainer" parent="."]
+margin_top = 164.0
+margin_right = 128.0
+margin_bottom = 324.0
+dragger_visibility = 2
+
+[node name="Label" type="RichTextLabel" parent="West_4"]
+margin_right = 128.0
+margin_bottom = 32.0
+size_flags_vertical = 5
+custom_fonts/bold_font = ExtResource( 2 )
+custom_fonts/normal_font = ExtResource( 3 )
+bbcode_enabled = true
+bbcode_text = "[b]4[/b] West"
+text = "4 West"
+fit_content_height = true
+
+[node name="Button" type="Button" parent="West_4"]
+margin_top = 32.0
+margin_right = 128.0
+margin_bottom = 160.0
+rect_min_size = Vector2( 128, 128 )
+rect_pivot_offset = Vector2( 64, 75 )
+shortcut = SubResource( 6 )
+icon = ExtResource( 4 )
+expand_icon = true
+
+[node name="Walls_5" type="VSplitContainer" parent="."]
+margin_left = 132.0
+margin_top = 164.0
+margin_right = 260.0
+margin_bottom = 324.0
+dragger_visibility = 2
+
+[node name="Label" type="RichTextLabel" parent="Walls_5"]
+margin_right = 128.0
+margin_bottom = 32.0
+size_flags_vertical = 5
+custom_fonts/bold_font = ExtResource( 2 )
+custom_fonts/normal_font = ExtResource( 3 )
+bbcode_enabled = true
+bbcode_text = "[b]5[/b] Walls"
+text = "5 Walls"
+fit_content_height = true
+
+[node name="Button" type="Button" parent="Walls_5"]
+margin_top = 32.0
+margin_right = 128.0
+margin_bottom = 160.0
+rect_min_size = Vector2( 128, 128 )
+rect_pivot_offset = Vector2( 64, 75 )
+shortcut = SubResource( 8 )
+icon = ExtResource( 4 )
+expand_icon = true
+
+[node name="East_6" type="VSplitContainer" parent="."]
+margin_left = 264.0
+margin_top = 164.0
+margin_right = 392.0
+margin_bottom = 324.0
+dragger_visibility = 2
+
+[node name="Label" type="RichTextLabel" parent="East_6"]
+margin_right = 128.0
+margin_bottom = 32.0
+size_flags_vertical = 5
+custom_fonts/bold_font = ExtResource( 2 )
+custom_fonts/normal_font = ExtResource( 3 )
+bbcode_enabled = true
+bbcode_text = "[b]6[/b] East"
+text = "6 East"
+fit_content_height = true
+
+[node name="Button" type="Button" parent="East_6"]
+margin_top = 32.0
+margin_right = 128.0
+margin_bottom = 160.0
+rect_min_size = Vector2( 128, 128 )
+rect_pivot_offset = Vector2( 64, 75 )
+shortcut = SubResource( 10 )
+icon = ExtResource( 4 )
+expand_icon = true
+
+[node name="Floor_1" type="VSplitContainer" parent="."]
+margin_top = 328.0
+margin_right = 128.0
+margin_bottom = 488.0
+dragger_visibility = 2
+
+[node name="Label" type="RichTextLabel" parent="Floor_1"]
+margin_right = 128.0
+margin_bottom = 32.0
+size_flags_vertical = 5
+custom_fonts/bold_font = ExtResource( 2 )
+custom_fonts/normal_font = ExtResource( 3 )
+bbcode_enabled = true
+bbcode_text = "[b]1[/b] Floor"
+text = "1 Floor"
+fit_content_height = true
+
+[node name="Button" type="Button" parent="Floor_1"]
+margin_top = 32.0
+margin_right = 128.0
+margin_bottom = 160.0
+rect_min_size = Vector2( 128, 128 )
+rect_pivot_offset = Vector2( 64, 75 )
+shortcut = SubResource( 12 )
+icon = ExtResource( 4 )
+expand_icon = true
+
+[node name="South_2" type="VSplitContainer" parent="."]
+margin_left = 132.0
+margin_top = 328.0
+margin_right = 260.0
+margin_bottom = 488.0
+dragger_visibility = 2
+
+[node name="Label" type="RichTextLabel" parent="South_2"]
+margin_right = 128.0
+margin_bottom = 32.0
+size_flags_vertical = 5
+custom_fonts/bold_font = ExtResource( 2 )
+custom_fonts/normal_font = ExtResource( 3 )
+bbcode_enabled = true
+bbcode_text = "[b]2[/b] South"
+text = "2 South"
+fit_content_height = true
+
+[node name="Button" type="Button" parent="South_2"]
+margin_top = 32.0
+margin_right = 128.0
+margin_bottom = 160.0
+rect_min_size = Vector2( 128, 128 )
+rect_pivot_offset = Vector2( 64, 75 )
+shortcut = SubResource( 14 )
+icon = ExtResource( 4 )
+expand_icon = true
