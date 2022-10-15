@@ -6,9 +6,7 @@ class_name XeenEditorPanel
 Handle UI stuff and relay actions upstairs
 """
 
-onready var cursor_label := $Margin/VBox/Info/CursorPosition as Label
-
-
+onready var cursor_label := get_node("%Info") as Label
 
 # shows all face materials currently on the cell brush
 onready var brush_view := get_node("%BrushView") as BrushView

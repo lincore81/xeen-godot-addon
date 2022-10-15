@@ -9,6 +9,7 @@ var cellmapnode_script: Script = preload("res://addons/xeen/map/cell_map_node.gd
 var editor: XeenEditor = null
 var editing = null
 var gizmo_plugin: XeenMapGridGizmoPlugin = null
+var map_inspector: XeenCellMapInspectorPlugin
 var lmb_down := false
 var is_dragging := false
 
@@ -17,10 +18,12 @@ func _enter_tree():
     editor.panel = panel
     panel.connect("ready", self, "_on_panel_ready")
     gizmo_plugin = XeenMapGridGizmoPlugin.new(editor)
+    map_inspector = XeenCellMapInspectorPlugin.new()
 
     add_control_to_dock(EditorPlugin.DOCK_SLOT_RIGHT_BR, panel)
     add_custom_type("CellMap", "Spatial", cellmapnode_script, CellMapNode.ICON)
     add_spatial_gizmo_plugin(gizmo_plugin)
+    add_inspector_plugin(map_inspector)
 
 func _ready():
     editor.on_ready(get_undo_redo())
@@ -34,26 +37,33 @@ func _exit_tree():
     remove_control_from_docks(panel)
     remove_custom_type("CellMap")
     remove_spatial_gizmo_plugin(gizmo_plugin)
+    remove_inspector_plugin(map_inspector)
 
 func forward_spatial_gui_input(cam: Camera, ev: InputEvent) -> bool:
     if !editing: return false
+
     if ev is InputEventMouseMotion:
-        editor.update_cursor(cam, ev.position)
+        if editor.update_cursor(cam, ev.position):
+            editor.draw()
     elif ev is InputEventMouseButton:
         return _handle_click(cam, ev as InputEventMouseButton)
+    elif ev is InputEventKey:
+        return _handle_keyboard_input(ev as InputEventKey)
     return false
 
-func _handle_click(_cam: Camera, ev: InputEventMouseButton):
+func _handle_click(_cam: Camera, ev: InputEventMouseButton) -> bool:
     var is_lmb := ev.button_index == BUTTON_LEFT
-    var is_released := not ev.pressed
-    if is_lmb:
-        lmb_down = not is_released
-        if is_released and ev.control:
-            editor.try_clear_cell()
-        elif is_released:
-            var scene_root = get_editor_interface().get_edited_scene_root()
-            editor.try_put_cell()
+    if not is_lmb: 
+        return false
+    if not ev.pressed:
+        editor.stop_drawing()
+    elif ev.pressed:
+        var mode = XeenEditor.DRAW_MODE.CLEAR if ev.control else XeenEditor.DRAW_MODE.PUT
+        editor.start_drawing(mode)
+    return true
 
+func _handle_keyboard_input(ev: InputEventKey) -> bool:
+    return false 
 
 
 func unedit():

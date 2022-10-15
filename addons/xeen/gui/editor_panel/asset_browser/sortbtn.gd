@@ -1,3 +1,4 @@
+tool
 extends Button
 class_name SortButton
 
@@ -9,8 +10,8 @@ var sort_ascending := true
 signal sort_order_changed(new_order)
 
 func _ready():
-    if not is_connected("pressed", self, "_on_pressed"):
-        connect("pressed", self, "_on_pressed")
+    connect("pressed", self, "_on_pressed")
+    print("sortnbtn _ready, connected?=", is_connected("pressed", self, "_on_pressed"))
     if not sort_ascending:
         sort_ascending = true
         _on_pressed()        

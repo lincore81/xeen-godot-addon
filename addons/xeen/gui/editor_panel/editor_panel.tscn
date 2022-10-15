@@ -1,10 +1,11 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://addons/xeen/assets/icons/select-mode.png" type="Texture" id=1]
 [ext_resource path="res://addons/xeen/gui/editor_panel/asset_browser/material_browser.tscn" type="PackedScene" id=2]
 [ext_resource path="res://addons/xeen/assets/fonts/NotoSans-Regular.tres" type="DynamicFont" id=3]
+[ext_resource path="res://addons/xeen/assets/icons/eyedropper.png" type="Texture" id=4]
 [ext_resource path="res://addons/xeen/assets/icons/brush-mode.png" type="Texture" id=5]
-[ext_resource path="res://addons/xeen/assets/icons/settings.png" type="Texture" id=6]
+[ext_resource path="res://addons/xeen/assets/icons/flood-fill.png" type="Texture" id=6]
 [ext_resource path="res://addons/xeen/gui/editor_panel/editor_panel.gd" type="Script" id=7]
 [ext_resource path="res://addons/xeen/gui/editor_panel/mode_group.tres" type="ButtonGroup" id=9]
 [ext_resource path="res://addons/xeen/gui/editor_panel/brush_view/brush_panel.tscn" type="PackedScene" id=11]
@@ -14,76 +15,116 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 7 )
 
-[node name="Margin" type="MarginContainer" parent="."]
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
 margin_left = 7.0
 margin_top = 7.0
 margin_right = 1017.0
-margin_bottom = 712.0
+margin_bottom = 741.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
 
-[node name="VBox" type="VBoxContainer" parent="Margin"]
+[node name="Info" type="Label" parent="VBoxContainer"]
+unique_name_in_owner = true
 margin_right = 1010.0
-margin_bottom = 705.0
-
-[node name="Info" type="HBoxContainer" parent="Margin/VBox"]
-margin_right = 1010.0
-margin_bottom = 31.0
-
-[node name="CursorPosition" type="Label" parent="Margin/VBox/Info"]
-margin_right = 121.0
-margin_bottom = 31.0
+margin_bottom = 32.0
+rect_min_size = Vector2( 0, 32 )
 custom_fonts/font = ExtResource( 3 )
 text = "Cursor: N/A"
 
-[node name="HSeparator2" type="HSeparator" parent="Margin/VBox"]
-margin_top = 35.0
+[node name="TabContainer" type="TabContainer" parent="VBoxContainer"]
+margin_top = 36.0
 margin_right = 1010.0
-margin_bottom = 39.0
+margin_bottom = 734.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+tab_align = 0
 
-[node name="Toolbar" type="HBoxContainer" parent="Margin/VBox"]
-margin_top = 43.0
-margin_right = 1010.0
-margin_bottom = 99.0
+[node name="Geometry" type="VBoxContainer" parent="VBoxContainer/TabContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 4.0
+margin_top = 32.0
+margin_right = -4.0
+margin_bottom = -4.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
 
-[node name="ToolButton" type="ToolButton" parent="Margin/VBox/Toolbar"]
+[node name="Toolbar" type="HBoxContainer" parent="VBoxContainer/TabContainer/Geometry"]
+margin_right = 1002.0
+margin_bottom = 56.0
+
+[node name="Brush" type="ToolButton" parent="VBoxContainer/TabContainer/Geometry/Toolbar"]
 margin_right = 60.0
 margin_bottom = 56.0
 rect_min_size = Vector2( 48, 48 )
+hint_tooltip = "Paint cells. Hold ctrl to remove cells."
 toggle_mode = true
 pressed = true
 group = ExtResource( 9 )
 icon = ExtResource( 5 )
 icon_align = 1
 
-[node name="ToolButton2" type="ToolButton" parent="Margin/VBox/Toolbar"]
+[node name="Select" type="ToolButton" parent="VBoxContainer/TabContainer/Geometry/Toolbar"]
 margin_left = 64.0
 margin_right = 124.0
 margin_bottom = 56.0
 rect_min_size = Vector2( 60, 0 )
+hint_tooltip = "Box select"
 toggle_mode = true
 group = ExtResource( 9 )
 icon = ExtResource( 1 )
 icon_align = 1
 
-[node name="ToolButton3" type="ToolButton" parent="Margin/VBox/Toolbar"]
+[node name="Fill" type="ToolButton" parent="VBoxContainer/TabContainer/Geometry/Toolbar"]
 margin_left = 128.0
 margin_right = 188.0
 margin_bottom = 56.0
+rect_min_size = Vector2( 60, 0 )
+hint_tooltip = "Flood fill connect cells with current brush."
 toggle_mode = true
 group = ExtResource( 9 )
 icon = ExtResource( 6 )
 icon_align = 1
 
-[node name="BrushView" parent="Margin/VBox" instance=ExtResource( 11 )]
-unique_name_in_owner = true
-margin_top = 103.0
-margin_bottom = 591.0
+[node name="Eyedropper" type="ToolButton" parent="VBoxContainer/TabContainer/Geometry/Toolbar"]
+margin_left = 192.0
+margin_right = 252.0
+margin_bottom = 56.0
+rect_min_size = Vector2( 60, 0 )
+hint_tooltip = "Set the brush materials to a cell's materials."
+toggle_mode = true
+group = ExtResource( 9 )
+icon = ExtResource( 4 )
+icon_align = 1
 
-[node name="MaterialView" parent="Margin/VBox" instance=ExtResource( 2 )]
+[node name="BrushView" parent="VBoxContainer/TabContainer/Geometry" instance=ExtResource( 11 )]
+unique_name_in_owner = true
+margin_right = 1002.0
+
+[node name="MaterialView" parent="VBoxContainer/TabContainer/Geometry" instance=ExtResource( 2 )]
 unique_name_in_owner = true
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 595.0
-margin_right = 1010.0
-margin_bottom = 705.0
+margin_top = 552.0
+margin_right = 1002.0
+margin_bottom = 662.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
+
+[node name="Objects" type="VBoxContainer" parent="VBoxContainer/TabContainer"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 4.0
+margin_top = 32.0
+margin_right = -4.0
+margin_bottom = -4.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="VBoxContainer/TabContainer/Objects"]
+margin_right = 1002.0
+margin_bottom = 48.0
+text = "Under construction...
+
+In future versions, you will be able to add objects to the map from this tab, at least I hope so ;)"

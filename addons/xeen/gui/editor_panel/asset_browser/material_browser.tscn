@@ -70,9 +70,10 @@ margin_left = 104.0
 margin_right = 152.0
 margin_bottom = 48.0
 rect_min_size = Vector2( 48, 48 )
-hint_tooltip = "Update list"
+hint_tooltip = "Change sort order"
 icon = ExtResource( 6 )
 flat = true
+icon_align = 1
 expand_icon = true
 script = ExtResource( 5 )
 
@@ -83,9 +84,10 @@ margin_bottom = 48.0
 
 [node name="Filter" type="LineEdit" parent="Menu"]
 margin_left = 164.0
-margin_right = 404.0
+margin_right = 1024.0
 margin_bottom = 48.0
 rect_min_size = Vector2( 240, 0 )
+size_flags_horizontal = 3
 custom_fonts/font = ExtResource( 4 )
 custom_styles/normal = SubResource( 15 )
 clear_button_enabled = true

@@ -55,15 +55,16 @@ func from_dict(dict: Dictionary):
     return self
 
 func equals(other: FaceInfo):
-    return (self.material == other.material
+    return (self.material.resource_path == other.material.resource_path
         and self.visibility_policy == other.visibility_policy
         and self.passability_policy == other.passability_policy
-        and self.visible == other.visible
-        and self.passable == other.passable
-        and self.rotaion == other.rotation
-        and self.fliph == other.fliph
-        and self.flipv == other.flipv
-        and str(self.uvscale) == str(other.uvscale))
+    )
+    #    and self.visible == other.visible
+    #    and self.passable == other.passable
+    #    and self.rotation == other.rotation
+    #    and self.fliph == other.fliph
+    #    and self.flipv == other.flipv
+    #    and str(self.uvscale) == str(other.uvscale))
 
 func _to_string():
     var mat = material.resource_path.split("/", false)[-1] if material else "null"

@@ -18,6 +18,7 @@ signal face_changed(face, info)
 
 
 func paint(cell: Cell):
+    assert(cell, "Cell is null!")
     for f in faces.keys():
         if f != Units.FACE.WALLS:
             cell.set_face_info(f, faces[f])
@@ -42,6 +43,18 @@ func get_material(face: int) -> Material:
         push_error("Invalid face: %d" % face)
         return null
 
+
+func matches_cell(cell: Cell):
+    for f in faces.keys():
+        if cell.has_face(f):
+            if str(faces[f].material) != str(cell.get_face_info(f).material):
+                return false
+    return true
+
+func use_faces_from_cell(cell: Cell):
+    for f in faces.keys():
+        if cell.has_face(f):
+            faces[f].from_info(cell.get_face_info(f))
 
 func get_faces() -> Dictionary:
     return faces

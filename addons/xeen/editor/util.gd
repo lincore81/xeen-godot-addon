@@ -1,3 +1,4 @@
+tool
 extends Reference
 class_name XeenEditorUtil
 
@@ -34,10 +35,6 @@ static func pick_cell(global_transform: Transform, camera: Camera, point: Vector
     return [true, pos]
 
 
-static func vector3_equals(a: Vector3, b: Vector3, include_y := true, epsilon := 0.0005) -> bool:
-    return (abs(a.x - b.x) <= epsilon 
-        and abs(a.y - b.y) <= epsilon if include_y else true
-        and abs(a.z - b.z))
 
 static func v(x, y, z):
     return Vector3(x, y, z)

@@ -76,8 +76,8 @@ func setup(preview: EditorResourcePreview):
     resource_preview.connect("preview_invalidated", self, "_on_preview_invalidated")
 
 func change_directory(dir: String):
-    var d = Directory.new()
-    if d.dir_exists(dir):
+    var directory = Directory.new()
+    if directory.dir_exists(dir):
         resource_path = dir
         emit_signal("directory_changed", dir)
         update_browser()
@@ -89,7 +89,7 @@ func change_sort_order(order: int):
         _sort_order = order
         _regen()
     else:
-        push_error("Sort order not implemented: %d" % order)
+        push_error("Sort order not implemented: %directory" % order)
 
 
 
@@ -133,7 +133,7 @@ func _try_get_preview(path: String) -> Texture:
     else:
         previews_pending += 1
         resource_preview.queue_resource_preview(path, self, "_on_preview_generated", [])
-        #print("generating preview, now pending: %d" % previews_pending)
+        #print("generating preview, now pending: %directory" % previews_pending)
         return placeholder
 
 
@@ -146,7 +146,7 @@ func _on_preview_invalidated(path: String):
 
 func _on_preview_generated(path: String, texture: Texture, _thumb, _user):
     previews_pending -= 1
-    #print("preview generated, still pending: %d" % previews_pending)
+    #print("preview generated, still pending: %directory" % previews_pending)
     if texture == null:
         push_error("Unable to generate preview texture for resource at '%s'" % path)
     else:
@@ -212,27 +212,29 @@ static func _join_paths(a: String, b: String) -> String:
 # TODO: Move to helper class
 # Expected callback signature: (path: String) -> void
 static func _iter_over_files(path: String, f: FuncRef, resource_type: String=""):
-    var dirs := [path]
-    var curr_path := path
-
-    while not dirs.empty():
-        var dirinfo = dirs.pop_back()
-        var d = Directory.new()
-        if d.open(dirinfo) == OK:
-            curr_path = dirinfo
-            d.list_dir_begin(true)
-            var item = d.get_next()
+    var todo := [path]
+    # Iterate over the given path (as directory) and any sub-directories that
+    # may be found.
+    while not todo.empty():
+        var curr_dir = todo.pop_back()
+        var directory = Directory.new()
+        if directory.open(curr_dir) == OK:
+            directory.list_dir_begin(true)
+            var item = directory.get_next()
+            # iterate over items in current directory:
             while item != "":
-                var abs_item = _join_paths(curr_path, item)
-                if d.current_is_dir():
-                    dirs.push_back(abs_item)
+                var item_path = _join_paths(curr_dir, item)
+                if directory.current_is_dir():
+                    todo.push_back(item_path)
                 else:
-                    var correct_type = resource_type == "" or ResourceLoader.exists(abs_item, resource_type)
+                    # FIXME: move to callback and find working algorithm to detect resource type.
+                    var correct_type = resource_type == "" or ResourceLoader.exists(item_path, resource_type)
+                    #print("Checking if resource=%s has type=%s: %s" % [item, resource_type, str(correct_type)])
                     if correct_type:
-                        f.call_func(abs_item)
-                item = d.get_next()
+                        f.call_func(item_path)
+                item = directory.get_next()
         else:
-            push_error("Unable to access directory '%s'" % dirinfo)
+            push_error("Unable to access directory '%s'" % curr_dir)
 
 
 func _on_button_pressed(button: TextureButton, path: String):
@@ -246,5 +248,5 @@ func _compare_paths(a: String, b: String) -> bool:
         SORT.DESCENDING:
             return b < a
         _:
-            push_error("sort order not implemented: %d" % _sort_order)
+            push_error("sort order not implemented: %directory" % _sort_order)
             return a <= b

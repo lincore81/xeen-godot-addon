@@ -2,19 +2,23 @@ This is a buggy mess right now.
 
 Enjoy!
 
-# Currently working on:
-- [ ] Standardise methods that change face materials and visibility 
-- [ ] Make Cell method names a bit clearer and clean the class up a bit
-
 # Issues
-- [ ] (2) There are multiple ways to update cells, there is no single class has the sole responsibility
 - [ ] (4) Fix docgen.py to properly parse and write method parameters.
-- [ ] (5) Make editor panel responsive.
 - [ ] (5) Undoing changes to the brush seem a bit janky when FACE.WALLS is involved.
 - [ ] (6) Updated previews aren't shown in the asset browser
-- [ ] (6) Learn how theming works and make the editor panel use editor style conventions
 - [ ] (7) Fix linear 2 srgb shader https://github.com/tobspr/GLSL-Color-Spaces/blob/master/ColorSpaces.inc.glsl
 - [ ] (9) The cell picker code should also work in orthographic projection
+
+
+# Milestones
+## 0.1
+- [ ] Basic editing features 
+- [ ] simple map settings
+- [ ] simple box select
+- [ ] simple toolbar
+- [ ] material browser & brush view (incl. basic face settings)
+- [ ] no memory leaks
+- [ ] tutorial
 
 
 # Features
@@ -35,34 +39,38 @@ Enjoy!
     - [x] I can filter the material list via a line input.
 - [x] When I click on an existing cell, its materials will be set to the brush's materials.
 - [ ] I can paint multiple cells by clicking and dragging
+- [ ] Holding a modifier key while left clicking paints the surrounding walls with the current brush.
 
-#### Box Select
+### Simple Box Select
 - [ ] I can enable a selection mode that allows me to click and drag to select an area of the map.
 - [ ] I can click outside of the selection to clear it and there is also a keyboard shortcut.
 - [ ] While in selection mode, I can hit enter to fill the selection with the current brush.
 - [ ] While in selection mode, I can hit 'x' or delete to remove all cells in the selection
 - [ ] I can cut, copy and paste the selected cells.
-- [ ] I can set the cell brush materials by picking an existing cell instance (LMB+Shift perhaps?).
-    - [ ] There is a tool button to switch to 'material picker mode'
-    - [ ] When I click on the button my cursor changes to indicate the tool mode
-    - [ ] Clicking on a cell sets my brush to the materials in that cell
-    - [ ] Holding a modifier key allows me to select the material of a single face
 - [ ] I can rotate or flip the selection (as a whole)
 - [ ] I can drag the selection to move the cells.
 
-#### Map Settings
+
+### Simple Map Settings
 - [ ] I can resize and crop the map without losing all data.
 - [ ] I can press a button to clear the map
 - [ ] I can change the map resource in the GUI.
+- [ ] I can create a new map resource in the GUI.
+
+
+### Advanced Editing
+- [ ] I can add a cell object to a cell instance that can be accessed through the map class (doors, chests)
+- [ ] I can rotate and flip cell objects
 
 #### Cells and Faces
 - [ ] I can flip and rotate UV coordinates for each face in the brush view.
 - [ ] I can override which faces to show in the cell brush ("always visible", "always show", "auto")
 - [ ] I can mark cell faces as passable for open doors and such
-
-### Advanced Editing
-- [ ] I can add a cell object to a cell instance that can be accessed through the map class (doors, chests)
-- [ ] I can rotate and flip cell objects
+- [ ] I can set the cell brush materials by picking an existing cell instance (LMB+Shift perhaps?).
+    - [ ] There is a tool button to switch to 'material picker mode'
+    - [ ] When I click on the button my cursor changes to indicate the tool mode
+    - [ ] Clicking on a cell sets my brush to the materials in that cell
+    - [ ] Holding a modifier key allows me to select the material of a single face
 
 ### Runtime
 - [x] I can determine if an actor can move from a cell to another (by direction)
@@ -86,9 +94,10 @@ Enjoy!
 - [ ] Cells create additional geometry to fill gaps between neighbours (like in Delver's editor)
 
 
-# Common Use-Cases and How to Enable Them
+# Brainstorm etc.
+## Common Use-Cases and How to Enable Them
 
-## Doors
+### Doors
 - Doors consist of a door frame and the door itself. Ideally, the door can be animated.
 - The most straightforward implementation right now is via Cell Objects.
     - Cell Objects need to be implemented and either referenced in the cell or the map.
@@ -96,7 +105,7 @@ Enjoy!
     - When determining whether a given cell can be entered, cell objects need to be considered.
 - Another way to implement doors is to allow subclassing of cells/faces. This is arguably more work.
 
-## Mobs
+### Mobs
 - The map or cells should know the location of a mob.
 - The map needs to provide data for astar and/or a dijkstra map
 - When determining cell passability, mobs need to be considered.
