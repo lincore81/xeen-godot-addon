@@ -40,12 +40,12 @@ static func v(x, y, z):
     return Vector3(x, y, z)
 
 static func create_wireframe_cube(origin: Vector3, size: Vector3 = Vector3.ONE) -> PoolVector3Array:
-    var x0 := origin.x
-    var y0 := origin.y
-    var z0 := origin.z
-    var x1 := origin.x + size.x
-    var y1 := origin.y + size.y
-    var z1 := origin.z + size.z
+    var x0 := min(origin.x, origin.x + size.x)
+    var y0 := min(origin.y, origin.y + size.y)
+    var z0 := min(origin.z, origin.z + size.z)
+    var x1 := max(origin.x, origin.x + size.x)
+    var y1 := max(origin.y, origin.y + size.y)
+    var z1 := max(origin.z, origin.z + size.z)
     var ls := PoolVector3Array()
 
     # bottom
@@ -82,3 +82,5 @@ static func create_wireframe_cube(origin: Vector3, size: Vector3 = Vector3.ONE) 
     
 static func get_mouse_button_state(ev: InputEventMouseButton) -> Array:
     return [ev.button_index, ev.pressed]
+
+             

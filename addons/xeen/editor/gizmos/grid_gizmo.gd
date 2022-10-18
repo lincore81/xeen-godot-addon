@@ -12,6 +12,8 @@ func redraw():
     draw_grid(node.size, global_origin, editor)
     if editor.cursor_in_bounds:
         draw_cursor(global_origin, editor)
+    if editor.current_tool == Units.TOOL.BOX_SELECT:
+        draw_selection(editor.selection)
 
 
 func draw_cursor(origin: Vector3, editor: XeenEditor):
@@ -23,6 +25,16 @@ func draw_cursor(origin: Vector3, editor: XeenEditor):
     var mat = get_plugin().get_material("main", self)
     add_lines(lines, mat, false, Color(1, 1, 1, 1))
 
+
+func draw_selection(selection: AABB):
+    #var volume := selection.size.x * selection.size.y * selection.size.z
+    if selection.size != Vector3.ZERO:
+        var lines := XeenEditorUtil.create_wireframe_cube(selection.position, selection.size)
+        var mat = get_plugin().get_material("main", self)
+        add_lines(lines, mat, false, Color(1, 1, 0, 1))
+    else:
+        return
+    
 
 func draw_grid(size: Vector3, origin: Vector3, editor: XeenEditor):
     var minor_lines := PoolVector3Array()

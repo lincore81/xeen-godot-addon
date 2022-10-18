@@ -20,7 +20,7 @@ var marshalling := false setget , _is_marshalling
 signal mapdata_changed(oldpath, newpath)
 
 func set_size(s: Vector3):
-	# todo: free cells outside of bounds
+	#TODO: free cells outside of bounds
 	size = s
 
 func _get_size():
@@ -53,9 +53,9 @@ func iterate_over_area(callback: FuncRef, bounds: AABB, skip_null = false, userd
 	"""
 	bounds = bounds.abs()
 	var x0 = max(0, bounds.position.x)
-	var x1 = min(size.x, bounds.end.x + 1)
+	var x1 = min(size.x, bounds.end.x)
 	var z0 = max(0, bounds.position.z)
-	var z1 = min(size.z, bounds.end.z + 1)
+	var z1 = min(size.z, bounds.end.z)
 	for x in range(x0, x1):
 		for z in range(z0, z1):
 			var v := Vector3(x, 0, z)
@@ -78,7 +78,7 @@ func put_cell(pos: Vector3, cell_template: PackedScene, update_visibility := tru
 		push_error("No MapData resource!")
 		return null
 	if cell_at(pos) != null:
-		push_error("There is already a cell here.")
+		push_error("There is already a cell here: %s" % str(pos))
 		return null
 	var cell := cell_template.instance() as Cell
 	cell.set_meta("_edit_lock_", true)
@@ -95,7 +95,7 @@ func put_existing_cell(pos: Vector3, cell: Cell, update_visibility := true, upda
 		push_error("No MapData resource!")
 		return false
 	if cell_at(pos) != null:
-		push_error("There is already a cell here.")
+		push_error("There is already a cell here: %s" % str(pos))
 		return false
 	if cell in get_children():
 		push_error("Cannot put own child on map")

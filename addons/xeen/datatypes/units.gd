@@ -9,6 +9,7 @@ enum VISIBILITY {AUTO, ALWAYS, NEVER}
 enum PASSABILITY {AUTO, ALWAYS, NEVER}
 enum ROTATION {NONE, QUARTER, HALF, THREE_THIRDS}
 
+enum TOOL {BRUSH, EYEDROPPER, BOX_SELECT}
 
 static func get_opposite_face(f: int) -> int:
 	match f:

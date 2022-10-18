@@ -4,10 +4,12 @@ class_name BrushView
 
 #export var placeholder: Texture = preload("res://addons/xeen/assets/textures/placeholder.png")
 export var empty: Texture = preload("res://addons/xeen/assets/textures/empty.png")
+export var error: Texture = preload("res://addons/xeen/assets/textures/placeholder.png")
 
 
 var brush: CellBrush
 var ready := false
+var previewer: EditorResourcePreview
 
 signal face_selected(face)
 
@@ -23,44 +25,46 @@ onready var buttons := {
 
 func _ready():
     ready = true
-    if brush: _apply_brush()
+    if brush: 
+        _apply_brush()
     for face in buttons.keys():
         buttons[face].connect("pressed", self, "_on_btn_pressed", [face])
     _setup_button_shortcuts()
 
+func setup(previewer: EditorResourcePreview):
+    print("setup")
+    self.previewer = previewer
 
 func _on_btn_pressed(face: int):
     emit_signal("face_selected", face)
 
-
 func set_brush(brush: CellBrush):
     assert(brush != null, "Brush must not be null.")
-    if self.brush != null and self.brush != brush:
-        self.brush.disconnect("face_changed", self, "on_brush_changed")
-
-    brush.connect("face_changed", self, "_on_brush_changed")
     self.brush = brush
     if ready:
         _apply_brush()
 
 
 func _apply_brush():
-    #print("applying brush")
     assert(brush, "No cell brush!")
-    if buttons:
-        for face in buttons.keys():
-            var tex := _get_material_texture(brush.get_material(face))
-            # TODO: Shader magic!
-            buttons[face].icon = tex
+    for face in buttons.keys():
+        var info := brush.get_face_info(face)
+        set_face(face, info)
 
 
-func _get_material_texture(material: SpatialMaterial) -> Texture:
-    return material.albedo_texture if material else empty
-
-func _on_brush_changed(face: int, info: FaceInfo):
+func set_face(face: int, info: FaceInfo, preview: Texture = null):
     assert(buttons.has(face), "Uh oh...")
-    var tex := _get_material_texture(info.material)
-    buttons[face].icon = tex
+    if not info.material: 
+        buttons[face].icon = empty
+    elif preview:
+        buttons[face].icon = preview 
+    elif previewer:
+        previewer.queue_resource_preview(info.material.resource_path, self, "_on_preview_generated", face)
+    else:
+        push_warning("preview and previewer are null, cannot create material preview")
+
+func _on_preview_generated(_path, texture: Texture, _thumb, face: int):
+    buttons[face].icon = texture if texture else error
 
 func _setup_button_shortcuts():
     for face in XeenKeybinds.set_brush_face.keys():

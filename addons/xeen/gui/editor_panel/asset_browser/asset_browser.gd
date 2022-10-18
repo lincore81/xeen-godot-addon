@@ -21,7 +21,7 @@ export var preferred_item_size := Vector2(96, 96)
 export(SORT) var _sort_order := SORT.ASCENDING 
 
 var actual_item_size := preferred_item_size
-var selected_resource_path: String
+var selected_resource_path := ""
 var filter := ""
 
 # generated preview textures
@@ -46,7 +46,7 @@ var previews_pending := 0
 # true if not all previews are ready yet.
 var generating_previews := false
 
-signal selection_changed(resource_path)
+signal selection_changed(resource_path, preview)
 signal directory_changed(directory)
 
 
@@ -89,7 +89,7 @@ func change_sort_order(order: int):
         _sort_order = order
         _regen()
     else:
-        push_error("Sort order not implemented: %directory" % order)
+        push_error("Sort order not implemented: %d" % order)
 
 
 
@@ -106,7 +106,6 @@ func update_browser():
     if not preferred_item_size or preferred_item_size.x == 0 or preferred_item_size.y == 0:
         push_warning("Preferred item size is null or at least one dimension is zero. Using default v")
         preferred_item_size = Vector2(64, 64)
-
     previews_pending = 0
     generating_previews = true
     _generate_previews()
@@ -239,7 +238,7 @@ static func _iter_over_files(path: String, f: FuncRef, resource_type: String="")
 
 func _on_button_pressed(button: TextureButton, path: String):
     selected_resource_path = path
-    emit_signal("selection_changed", path)
+    emit_signal("selection_changed", path, previews.get(path))
 
 func _compare_paths(a: String, b: String) -> bool:
     match _sort_order:

@@ -23,6 +23,16 @@ func paint(cell: Cell):
         if f != Units.FACE.WALLS:
             cell.set_face_info(f, faces[f])
 
+func set_face_info(face: int, info: FaceInfo):
+    if face == Units.FACE.WALLS:
+        for w in Units.WALLS:
+            set_face_info(w, info)
+    if face in faces:
+        faces[face] = info
+        emit_signal("face_changed", face, info)
+    else:
+        push_error("Invalid face: %d" % face)
+
 
 func set_material(face: int, material: Material):
     if face == Units.FACE.WALLS:
@@ -56,11 +66,16 @@ func use_faces_from_cell(cell: Cell):
         if cell.has_face(f):
             faces[f].from_info(cell.get_face_info(f))
 
+func get_face_info(face: int) -> FaceInfo:
+    return faces.get(face)
+
 func get_faces() -> Dictionary:
     return faces
 
 
-func set_faces(infos: Dictionary) -> void:
+func set_faces(infos: Dictionary, quiet := false) -> void:
     for f in infos.keys():
         if faces.has(f):
             faces[f] = infos[f].duplicate()
+            if not quiet: 
+                emit_signal("face_changed", f, faces[f])

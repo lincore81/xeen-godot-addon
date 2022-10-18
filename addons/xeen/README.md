@@ -3,11 +3,10 @@ This is a buggy mess right now.
 Enjoy!
 
 # Issues
-- [ ] (4) Fix docgen.py to properly parse and write method parameters.
-- [ ] (5) Undoing changes to the brush seem a bit janky when FACE.WALLS is involved.
-- [ ] (6) Updated previews aren't shown in the asset browser
-- [ ] (7) Fix linear 2 srgb shader https://github.com/tobspr/GLSL-Color-Spaces/blob/master/ColorSpaces.inc.glsl
-- [ ] (9) The cell picker code should also work in orthographic projection
+- [ ] (Priority 3, Easy) Make box fill/clear algorithm more efficient
+- [ ] (Priority 4, Easy) Fix docgen.py to properly parse and write method parameters.
+- [ ] (Priority 6, ?) Updated previews aren't shown in the asset browser
+- [ ] (Priority 9, ?) The cell picker code should also work in orthographic projection
 
 
 # Milestones
@@ -38,17 +37,18 @@ Enjoy!
 - [x] I can select materials and scenes from an asset browser
     - [x] I can filter the material list via a line input.
 - [x] When I click on an existing cell, its materials will be set to the brush's materials.
-- [ ] I can paint multiple cells by clicking and dragging
+- [x] I can paint multiple cells by clicking and dragging
 - [ ] Holding a modifier key while left clicking paints the surrounding walls with the current brush.
 
 ### Simple Box Select
-- [ ] I can enable a selection mode that allows me to click and drag to select an area of the map.
-- [ ] I can click outside of the selection to clear it and there is also a keyboard shortcut.
-- [ ] While in selection mode, I can hit enter to fill the selection with the current brush.
+- [x] I can enable a selection mode that allows me to click and drag to select an area of the map.
+- [x] I can click outside of the selection to clear it and there is also a keyboard shortcut.
+- [x] While in selection mode, I can hit enter to fill the selection with the current brush.
 - [ ] While in selection mode, I can hit 'x' or delete to remove all cells in the selection
 - [ ] I can cut, copy and paste the selected cells.
-- [ ] I can rotate or flip the selection (as a whole)
 - [ ] I can drag the selection to move the cells.
+    - Separate move tool?
+- [ ] I can rotate or flip the selection (as a whole)
 
 
 ### Simple Map Settings

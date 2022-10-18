@@ -4,8 +4,8 @@
 
 [resource]
 script = ExtResource( 1 )
-size = Vector3( 10, 1, 10 )
-materials = [ "res://addons/xeen/assets/materials/tech/bigsquares.tres", "res://addons/xeen/assets/materials/rocks/flatstones.tres", "res://addons/xeen/assets/materials/wood/creakywood.tres" ]
+size = Vector3( 20, 1, 20 )
+materials = [ "res://addons/xeen/assets/materials/tech/bigsquares.tres", "res://addons/xeen/assets/materials/rocks/flatstones.tres", "res://addons/xeen/assets/materials/wood/creakywood.tres", "res://addons/xeen/assets/materials/rocks/pathrocks.tres" ]
 cells = {
 Vector3( 1, 0, 1 ): {
 1: {
@@ -484,6 +484,482 @@ Vector3( 1, 0, 8 ): {
 }
 },
 Vector3( 1, 0, 9 ): {
+1: {
+"fliph": false,
+"flipv": false,
+"material": 1,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+},
+2: {
+"fliph": false,
+"flipv": false,
+"material": 0,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+},
+4: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
+},
+8: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+},
+16: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+},
+32: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
+}
+},
+Vector3( 1, 0, 11 ): {
+1: {
+"fliph": false,
+"flipv": false,
+"material": 1,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+},
+2: {
+"fliph": false,
+"flipv": false,
+"material": 0,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+},
+4: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+},
+8: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
+},
+16: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+},
+32: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
+}
+},
+Vector3( 1, 0, 12 ): {
+1: {
+"fliph": false,
+"flipv": false,
+"material": 1,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+},
+2: {
+"fliph": false,
+"flipv": false,
+"material": 0,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+},
+4: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
+},
+8: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
+},
+16: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+},
+32: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
+}
+},
+Vector3( 1, 0, 13 ): {
+1: {
+"fliph": false,
+"flipv": false,
+"material": 1,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+},
+2: {
+"fliph": false,
+"flipv": false,
+"material": 0,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+},
+4: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
+},
+8: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+},
+16: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+},
+32: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
+}
+},
+Vector3( 1, 0, 15 ): {
+1: {
+"fliph": false,
+"flipv": false,
+"material": 1,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+},
+2: {
+"fliph": false,
+"flipv": false,
+"material": 0,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+},
+4: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+},
+8: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
+},
+16: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+},
+32: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
+}
+},
+Vector3( 1, 0, 16 ): {
+1: {
+"fliph": false,
+"flipv": false,
+"material": 1,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+},
+2: {
+"fliph": false,
+"flipv": false,
+"material": 0,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+},
+4: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
+},
+8: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
+},
+16: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+},
+32: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
+}
+},
+Vector3( 1, 0, 17 ): {
+1: {
+"fliph": false,
+"flipv": false,
+"material": 1,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+},
+2: {
+"fliph": false,
+"flipv": false,
+"material": 0,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+},
+4: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
+},
+8: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
+},
+16: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+},
+32: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
+}
+},
+Vector3( 1, 0, 18 ): {
 1: {
 "fliph": false,
 "flipv": false,
@@ -1138,6 +1614,618 @@ Vector3( 2, 0, 9 ): {
 "rotation": 0,
 "uvscale": Vector2( 1, 1 ),
 "visibility_policy": 0,
+"visible": false
+},
+16: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
+},
+32: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
+}
+},
+Vector3( 2, 0, 10 ): {
+1: {
+"fliph": false,
+"flipv": false,
+"material": 1,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+},
+2: {
+"fliph": false,
+"flipv": false,
+"material": 0,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+},
+4: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
+},
+8: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
+},
+16: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+},
+32: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+}
+},
+Vector3( 2, 0, 11 ): {
+1: {
+"fliph": false,
+"flipv": false,
+"material": 1,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+},
+2: {
+"fliph": false,
+"flipv": false,
+"material": 0,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+},
+4: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
+},
+8: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
+},
+16: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
+},
+32: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+}
+},
+Vector3( 2, 0, 12 ): {
+1: {
+"fliph": false,
+"flipv": false,
+"material": 1,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+},
+2: {
+"fliph": false,
+"flipv": false,
+"material": 0,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+},
+4: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
+},
+8: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
+},
+16: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
+},
+32: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+}
+},
+Vector3( 2, 0, 13 ): {
+1: {
+"fliph": false,
+"flipv": false,
+"material": 1,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+},
+2: {
+"fliph": false,
+"flipv": false,
+"material": 0,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+},
+4: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
+},
+8: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
+},
+16: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
+},
+32: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+}
+},
+Vector3( 2, 0, 14 ): {
+1: {
+"fliph": false,
+"flipv": false,
+"material": 1,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+},
+2: {
+"fliph": false,
+"flipv": false,
+"material": 0,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+},
+4: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
+},
+8: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
+},
+16: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+},
+32: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+}
+},
+Vector3( 2, 0, 15 ): {
+1: {
+"fliph": false,
+"flipv": false,
+"material": 1,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+},
+2: {
+"fliph": false,
+"flipv": false,
+"material": 0,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+},
+4: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
+},
+8: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
+},
+16: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
+},
+32: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
+}
+},
+Vector3( 2, 0, 16 ): {
+1: {
+"fliph": false,
+"flipv": false,
+"material": 1,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+},
+2: {
+"fliph": false,
+"flipv": false,
+"material": 0,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+},
+4: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
+},
+8: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
+},
+16: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
+},
+32: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
+}
+},
+Vector3( 2, 0, 17 ): {
+1: {
+"fliph": false,
+"flipv": false,
+"material": 1,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+},
+2: {
+"fliph": false,
+"flipv": false,
+"material": 0,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+},
+4: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
+},
+8: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
+},
+16: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
+},
+32: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
+}
+},
+Vector3( 2, 0, 18 ): {
+1: {
+"fliph": false,
+"flipv": false,
+"material": 1,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+},
+2: {
+"fliph": false,
+"flipv": false,
+"material": 0,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+},
+4: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
+},
+8: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
 "visible": true
 },
 16: {
@@ -1707,7 +2795,347 @@ Vector3( 3, 0, 9 ): {
 "visible": true
 }
 },
+Vector3( 3, 0, 15 ): {
+1: {
+"fliph": false,
+"flipv": false,
+"material": 1,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+},
+2: {
+"fliph": false,
+"flipv": false,
+"material": 0,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+},
+4: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+},
+8: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
+},
+16: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
+},
+32: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+}
+},
+Vector3( 3, 0, 16 ): {
+1: {
+"fliph": false,
+"flipv": false,
+"material": 1,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+},
+2: {
+"fliph": false,
+"flipv": false,
+"material": 0,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+},
+4: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
+},
+8: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
+},
+16: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
+},
+32: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
+}
+},
+Vector3( 3, 0, 17 ): {
+1: {
+"fliph": false,
+"flipv": false,
+"material": 1,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+},
+2: {
+"fliph": false,
+"flipv": false,
+"material": 0,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+},
+4: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
+},
+8: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
+},
+16: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
+},
+32: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+}
+},
+Vector3( 3, 0, 18 ): {
+1: {
+"fliph": false,
+"flipv": false,
+"material": 1,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+},
+2: {
+"fliph": false,
+"flipv": false,
+"material": 0,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+},
+4: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
+},
+8: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+},
+16: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
+},
+32: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+}
+},
 Vector3( 4, 0, 1 ): {
+1: {
+"fliph": false,
+"flipv": false,
+"material": 1,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+},
+2: {
+"fliph": false,
+"flipv": false,
+"material": 0,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+},
+4: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+},
+8: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+},
+16: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
+},
+32: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
+}
+},
+Vector3( 4, 0, 16 ): {
 1: {
 "fliph": false,
 "flipv": false,
@@ -1779,7 +3207,7 @@ Vector3( 5, 0, 1 ): {
 1: {
 "fliph": false,
 "flipv": false,
-"material": 1,
+"material": 3,
 "passability_policy": 0,
 "passable": false,
 "rotation": 0,
@@ -1847,7 +3275,7 @@ Vector3( 5, 0, 2 ): {
 1: {
 "fliph": false,
 "flipv": false,
-"material": 1,
+"material": 3,
 "passability_policy": 0,
 "passable": false,
 "rotation": 0,
@@ -1915,7 +3343,7 @@ Vector3( 5, 0, 3 ): {
 1: {
 "fliph": false,
 "flipv": false,
-"material": 1,
+"material": 3,
 "passability_policy": 0,
 "passable": false,
 "rotation": 0,
@@ -1983,7 +3411,7 @@ Vector3( 5, 0, 4 ): {
 1: {
 "fliph": false,
 "flipv": false,
-"material": 1,
+"material": 3,
 "passability_policy": 0,
 "passable": false,
 "rotation": 0,
@@ -2051,7 +3479,7 @@ Vector3( 5, 0, 5 ): {
 1: {
 "fliph": false,
 "flipv": false,
-"material": 1,
+"material": 3,
 "passability_policy": 0,
 "passable": false,
 "rotation": 0,
@@ -2119,7 +3547,7 @@ Vector3( 5, 0, 6 ): {
 1: {
 "fliph": false,
 "flipv": false,
-"material": 1,
+"material": 3,
 "passability_policy": 0,
 "passable": false,
 "rotation": 0,
@@ -2187,7 +3615,7 @@ Vector3( 5, 0, 7 ): {
 1: {
 "fliph": false,
 "flipv": false,
-"material": 1,
+"material": 3,
 "passability_policy": 0,
 "passable": false,
 "rotation": 0,
@@ -2255,7 +3683,7 @@ Vector3( 5, 0, 8 ): {
 1: {
 "fliph": false,
 "flipv": false,
-"material": 1,
+"material": 3,
 "passability_policy": 0,
 "passable": false,
 "rotation": 0,
@@ -2323,7 +3751,483 @@ Vector3( 5, 0, 9 ): {
 1: {
 "fliph": false,
 "flipv": false,
-"material": 1,
+"material": 3,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+},
+2: {
+"fliph": false,
+"flipv": false,
+"material": 0,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+},
+4: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
+},
+8: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
+},
+16: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+},
+32: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+}
+},
+Vector3( 5, 0, 10 ): {
+1: {
+"fliph": false,
+"flipv": false,
+"material": 3,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+},
+2: {
+"fliph": false,
+"flipv": false,
+"material": 0,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+},
+4: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
+},
+8: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
+},
+16: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+},
+32: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+}
+},
+Vector3( 5, 0, 11 ): {
+1: {
+"fliph": false,
+"flipv": false,
+"material": 3,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+},
+2: {
+"fliph": false,
+"flipv": false,
+"material": 0,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+},
+4: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
+},
+8: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
+},
+16: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+},
+32: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+}
+},
+Vector3( 5, 0, 12 ): {
+1: {
+"fliph": false,
+"flipv": false,
+"material": 3,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+},
+2: {
+"fliph": false,
+"flipv": false,
+"material": 0,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+},
+4: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
+},
+8: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
+},
+16: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+},
+32: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
+}
+},
+Vector3( 5, 0, 13 ): {
+1: {
+"fliph": false,
+"flipv": false,
+"material": 3,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+},
+2: {
+"fliph": false,
+"flipv": false,
+"material": 0,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+},
+4: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
+},
+8: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
+},
+16: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+},
+32: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+}
+},
+Vector3( 5, 0, 14 ): {
+1: {
+"fliph": false,
+"flipv": false,
+"material": 3,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+},
+2: {
+"fliph": false,
+"flipv": false,
+"material": 0,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+},
+4: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
+},
+8: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
+},
+16: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+},
+32: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+}
+},
+Vector3( 5, 0, 15 ): {
+1: {
+"fliph": false,
+"flipv": false,
+"material": 3,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+},
+2: {
+"fliph": false,
+"flipv": false,
+"material": 0,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+},
+4: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
+},
+8: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
+},
+16: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+},
+32: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+}
+},
+Vector3( 5, 0, 16 ): {
+1: {
+"fliph": false,
+"flipv": false,
+"material": 3,
 "passability_policy": 0,
 "passable": false,
 "rotation": 0,
@@ -2373,7 +4277,7 @@ Vector3( 5, 0, 9 ): {
 "rotation": 0,
 "uvscale": Vector2( 1, 1 ),
 "visibility_policy": 0,
-"visible": true
+"visible": false
 },
 32: {
 "fliph": false,
@@ -2384,7 +4288,7 @@ Vector3( 5, 0, 9 ): {
 "rotation": 0,
 "uvscale": Vector2( 1, 1 ),
 "visibility_policy": 0,
-"visible": true
+"visible": false
 }
 },
 Vector3( 6, 0, 1 ): {
@@ -2456,6 +4360,142 @@ Vector3( 6, 0, 1 ): {
 }
 },
 Vector3( 6, 0, 5 ): {
+1: {
+"fliph": false,
+"flipv": false,
+"material": 1,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+},
+2: {
+"fliph": false,
+"flipv": false,
+"material": 0,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+},
+4: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+},
+8: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+},
+16: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
+},
+32: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
+}
+},
+Vector3( 6, 0, 12 ): {
+1: {
+"fliph": false,
+"flipv": false,
+"material": 1,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+},
+2: {
+"fliph": false,
+"flipv": false,
+"material": 0,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+},
+4: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+},
+8: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+},
+16: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
+},
+32: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
+}
+},
+Vector3( 6, 0, 16 ): {
 1: {
 "fliph": false,
 "flipv": false,
@@ -2986,6 +5026,142 @@ Vector3( 7, 0, 9 ): {
 "uvscale": Vector2( 1, 1 ),
 "visibility_policy": 0,
 "visible": true
+},
+32: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
+}
+},
+Vector3( 7, 0, 12 ): {
+1: {
+"fliph": false,
+"flipv": false,
+"material": 1,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+},
+2: {
+"fliph": false,
+"flipv": false,
+"material": 0,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+},
+4: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+},
+8: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+},
+16: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
+},
+32: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
+}
+},
+Vector3( 7, 0, 16 ): {
+1: {
+"fliph": false,
+"flipv": false,
+"material": 1,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+},
+2: {
+"fliph": false,
+"flipv": false,
+"material": 0,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+},
+4: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+},
+8: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+},
+16: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
 },
 32: {
 "fliph": false,
@@ -3611,6 +5787,278 @@ Vector3( 8, 0, 9 ): {
 "visible": false
 }
 },
+Vector3( 8, 0, 12 ): {
+1: {
+"fliph": false,
+"flipv": false,
+"material": 1,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+},
+2: {
+"fliph": false,
+"flipv": false,
+"material": 0,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+},
+4: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+},
+8: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+},
+16: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
+},
+32: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
+}
+},
+Vector3( 8, 0, 15 ): {
+1: {
+"fliph": false,
+"flipv": false,
+"material": 1,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+},
+2: {
+"fliph": false,
+"flipv": false,
+"material": 0,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+},
+4: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+},
+8: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
+},
+16: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+},
+32: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
+}
+},
+Vector3( 8, 0, 16 ): {
+1: {
+"fliph": false,
+"flipv": false,
+"material": 1,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+},
+2: {
+"fliph": false,
+"flipv": false,
+"material": 0,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+},
+4: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
+},
+8: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
+},
+16: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
+},
+32: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
+}
+},
+Vector3( 8, 0, 17 ): {
+1: {
+"fliph": false,
+"flipv": false,
+"material": 1,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+},
+2: {
+"fliph": false,
+"flipv": false,
+"material": 0,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+},
+4: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
+},
+8: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+},
+16: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+},
+32: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
+}
+},
 Vector3( 9, 0, 1 ): {
 1: {
 "fliph": false,
@@ -3948,7 +6396,7 @@ Vector3( 9, 0, 8 ): {
 "rotation": 0,
 "uvscale": Vector2( 1, 1 ),
 "visibility_policy": 0,
-"visible": true
+"visible": false
 }
 },
 Vector3( 9, 0, 9 ): {
@@ -3984,6 +6432,4358 @@ Vector3( 9, 0, 9 ): {
 "uvscale": Vector2( 1, 1 ),
 "visibility_policy": 0,
 "visible": false
+},
+8: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+},
+16: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
+},
+32: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+}
+},
+Vector3( 9, 0, 12 ): {
+1: {
+"fliph": false,
+"flipv": false,
+"material": 1,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+},
+2: {
+"fliph": false,
+"flipv": false,
+"material": 0,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+},
+4: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+},
+8: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+},
+16: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
+},
+32: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
+}
+},
+Vector3( 9, 0, 15 ): {
+1: {
+"fliph": false,
+"flipv": false,
+"material": 1,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+},
+2: {
+"fliph": false,
+"flipv": false,
+"material": 0,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+},
+4: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+},
+8: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
+},
+16: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
+},
+32: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
+}
+},
+Vector3( 9, 0, 16 ): {
+1: {
+"fliph": false,
+"flipv": false,
+"material": 1,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+},
+2: {
+"fliph": false,
+"flipv": false,
+"material": 0,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+},
+4: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
+},
+8: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
+},
+16: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
+},
+32: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
+}
+},
+Vector3( 9, 0, 17 ): {
+1: {
+"fliph": false,
+"flipv": false,
+"material": 1,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+},
+2: {
+"fliph": false,
+"flipv": false,
+"material": 0,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+},
+4: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
+},
+8: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+},
+16: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
+},
+32: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
+}
+},
+Vector3( 10, 0, 8 ): {
+1: {
+"fliph": false,
+"flipv": false,
+"material": 1,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+},
+2: {
+"fliph": false,
+"flipv": false,
+"material": 0,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+},
+4: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+},
+8: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+},
+16: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
+},
+32: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
+}
+},
+Vector3( 10, 0, 12 ): {
+1: {
+"fliph": false,
+"flipv": false,
+"material": 1,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+},
+2: {
+"fliph": false,
+"flipv": false,
+"material": 0,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+},
+4: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+},
+8: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+},
+16: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
+},
+32: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
+}
+},
+Vector3( 10, 0, 15 ): {
+1: {
+"fliph": false,
+"flipv": false,
+"material": 1,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+},
+2: {
+"fliph": false,
+"flipv": false,
+"material": 0,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+},
+4: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+},
+8: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
+},
+16: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
+},
+32: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
+}
+},
+Vector3( 10, 0, 16 ): {
+1: {
+"fliph": false,
+"flipv": false,
+"material": 1,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+},
+2: {
+"fliph": false,
+"flipv": false,
+"material": 0,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+},
+4: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
+},
+8: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
+},
+16: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
+},
+32: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
+}
+},
+Vector3( 10, 0, 17 ): {
+1: {
+"fliph": false,
+"flipv": false,
+"material": 1,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+},
+2: {
+"fliph": false,
+"flipv": false,
+"material": 0,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+},
+4: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
+},
+8: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+},
+16: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
+},
+32: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
+}
+},
+Vector3( 11, 0, 8 ): {
+1: {
+"fliph": false,
+"flipv": false,
+"material": 1,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+},
+2: {
+"fliph": false,
+"flipv": false,
+"material": 0,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+},
+4: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+},
+8: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+},
+16: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
+},
+32: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
+}
+},
+Vector3( 11, 0, 12 ): {
+1: {
+"fliph": false,
+"flipv": false,
+"material": 1,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+},
+2: {
+"fliph": false,
+"flipv": false,
+"material": 0,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+},
+4: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+},
+8: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+},
+16: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
+},
+32: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
+}
+},
+Vector3( 11, 0, 15 ): {
+1: {
+"fliph": false,
+"flipv": false,
+"material": 1,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+},
+2: {
+"fliph": false,
+"flipv": false,
+"material": 0,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+},
+4: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+},
+8: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
+},
+16: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
+},
+32: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+}
+},
+Vector3( 11, 0, 16 ): {
+1: {
+"fliph": false,
+"flipv": false,
+"material": 1,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+},
+2: {
+"fliph": false,
+"flipv": false,
+"material": 0,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+},
+4: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
+},
+8: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
+},
+16: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
+},
+32: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+}
+},
+Vector3( 11, 0, 17 ): {
+1: {
+"fliph": false,
+"flipv": false,
+"material": 1,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+},
+2: {
+"fliph": false,
+"flipv": false,
+"material": 0,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+},
+4: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
+},
+8: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+},
+16: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
+},
+32: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+}
+},
+Vector3( 12, 0, 8 ): {
+1: {
+"fliph": false,
+"flipv": false,
+"material": 1,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+},
+2: {
+"fliph": false,
+"flipv": false,
+"material": 0,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+},
+4: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+},
+8: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+},
+16: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
+},
+32: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
+}
+},
+Vector3( 12, 0, 12 ): {
+1: {
+"fliph": false,
+"flipv": false,
+"material": 1,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+},
+2: {
+"fliph": false,
+"flipv": false,
+"material": 0,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+},
+4: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+},
+8: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+},
+16: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
+},
+32: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
+}
+},
+Vector3( 13, 0, 6 ): {
+1: {
+"fliph": false,
+"flipv": false,
+"material": 1,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+},
+2: {
+"fliph": false,
+"flipv": false,
+"material": 0,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+},
+4: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+},
+8: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
+},
+16: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+},
+32: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
+}
+},
+Vector3( 13, 0, 7 ): {
+1: {
+"fliph": false,
+"flipv": false,
+"material": 1,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+},
+2: {
+"fliph": false,
+"flipv": false,
+"material": 0,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+},
+4: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
+},
+8: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
+},
+16: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+},
+32: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
+}
+},
+Vector3( 13, 0, 8 ): {
+1: {
+"fliph": false,
+"flipv": false,
+"material": 1,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+},
+2: {
+"fliph": false,
+"flipv": false,
+"material": 0,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+},
+4: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
+},
+8: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
+},
+16: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
+},
+32: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
+}
+},
+Vector3( 13, 0, 9 ): {
+1: {
+"fliph": false,
+"flipv": false,
+"material": 1,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+},
+2: {
+"fliph": false,
+"flipv": false,
+"material": 0,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+},
+4: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
+},
+8: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
+},
+16: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+},
+32: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
+}
+},
+Vector3( 13, 0, 10 ): {
+1: {
+"fliph": false,
+"flipv": false,
+"material": 1,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+},
+2: {
+"fliph": false,
+"flipv": false,
+"material": 0,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+},
+4: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
+},
+8: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
+},
+16: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+},
+32: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
+}
+},
+Vector3( 13, 0, 11 ): {
+1: {
+"fliph": false,
+"flipv": false,
+"material": 1,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+},
+2: {
+"fliph": false,
+"flipv": false,
+"material": 0,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+},
+4: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
+},
+8: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
+},
+16: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+},
+32: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
+}
+},
+Vector3( 13, 0, 12 ): {
+1: {
+"fliph": false,
+"flipv": false,
+"material": 1,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+},
+2: {
+"fliph": false,
+"flipv": false,
+"material": 0,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+},
+4: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
+},
+8: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+},
+16: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
+},
+32: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
+}
+},
+Vector3( 14, 0, 6 ): {
+1: {
+"fliph": false,
+"flipv": false,
+"material": 1,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+},
+2: {
+"fliph": false,
+"flipv": false,
+"material": 0,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+},
+4: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+},
+8: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
+},
+16: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
+},
+32: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
+}
+},
+Vector3( 14, 0, 7 ): {
+1: {
+"fliph": false,
+"flipv": false,
+"material": 1,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+},
+2: {
+"fliph": false,
+"flipv": false,
+"material": 0,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+},
+4: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
+},
+8: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
+},
+16: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
+},
+32: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
+}
+},
+Vector3( 14, 0, 8 ): {
+1: {
+"fliph": false,
+"flipv": false,
+"material": 1,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+},
+2: {
+"fliph": false,
+"flipv": false,
+"material": 0,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+},
+4: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
+},
+8: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
+},
+16: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
+},
+32: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
+}
+},
+Vector3( 14, 0, 9 ): {
+1: {
+"fliph": false,
+"flipv": false,
+"material": 1,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+},
+2: {
+"fliph": false,
+"flipv": false,
+"material": 0,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+},
+4: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
+},
+8: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
+},
+16: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
+},
+32: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
+}
+},
+Vector3( 14, 0, 10 ): {
+1: {
+"fliph": false,
+"flipv": false,
+"material": 1,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+},
+2: {
+"fliph": false,
+"flipv": false,
+"material": 0,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+},
+4: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
+},
+8: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
+},
+16: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
+},
+32: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
+}
+},
+Vector3( 14, 0, 11 ): {
+1: {
+"fliph": false,
+"flipv": false,
+"material": 1,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+},
+2: {
+"fliph": false,
+"flipv": false,
+"material": 0,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+},
+4: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
+},
+8: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
+},
+16: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
+},
+32: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
+}
+},
+Vector3( 14, 0, 12 ): {
+1: {
+"fliph": false,
+"flipv": false,
+"material": 1,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+},
+2: {
+"fliph": false,
+"flipv": false,
+"material": 0,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+},
+4: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
+},
+8: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+},
+16: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
+},
+32: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
+}
+},
+Vector3( 15, 0, 6 ): {
+1: {
+"fliph": false,
+"flipv": false,
+"material": 1,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+},
+2: {
+"fliph": false,
+"flipv": false,
+"material": 0,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+},
+4: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+},
+8: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
+},
+16: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
+},
+32: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
+}
+},
+Vector3( 15, 0, 7 ): {
+1: {
+"fliph": false,
+"flipv": false,
+"material": 1,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+},
+2: {
+"fliph": false,
+"flipv": false,
+"material": 0,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+},
+4: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
+},
+8: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
+},
+16: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
+},
+32: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
+}
+},
+Vector3( 15, 0, 8 ): {
+1: {
+"fliph": false,
+"flipv": false,
+"material": 1,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+},
+2: {
+"fliph": false,
+"flipv": false,
+"material": 0,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+},
+4: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
+},
+8: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
+},
+16: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
+},
+32: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
+}
+},
+Vector3( 15, 0, 9 ): {
+1: {
+"fliph": false,
+"flipv": false,
+"material": 1,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+},
+2: {
+"fliph": false,
+"flipv": false,
+"material": 0,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+},
+4: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
+},
+8: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
+},
+16: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
+},
+32: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
+}
+},
+Vector3( 15, 0, 10 ): {
+1: {
+"fliph": false,
+"flipv": false,
+"material": 1,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+},
+2: {
+"fliph": false,
+"flipv": false,
+"material": 0,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+},
+4: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
+},
+8: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
+},
+16: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
+},
+32: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
+}
+},
+Vector3( 15, 0, 11 ): {
+1: {
+"fliph": false,
+"flipv": false,
+"material": 1,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+},
+2: {
+"fliph": false,
+"flipv": false,
+"material": 0,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+},
+4: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
+},
+8: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
+},
+16: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
+},
+32: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
+}
+},
+Vector3( 15, 0, 12 ): {
+1: {
+"fliph": false,
+"flipv": false,
+"material": 1,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+},
+2: {
+"fliph": false,
+"flipv": false,
+"material": 0,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+},
+4: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
+},
+8: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+},
+16: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
+},
+32: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
+}
+},
+Vector3( 16, 0, 6 ): {
+1: {
+"fliph": false,
+"flipv": false,
+"material": 1,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+},
+2: {
+"fliph": false,
+"flipv": false,
+"material": 0,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+},
+4: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+},
+8: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
+},
+16: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
+},
+32: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
+}
+},
+Vector3( 16, 0, 7 ): {
+1: {
+"fliph": false,
+"flipv": false,
+"material": 1,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+},
+2: {
+"fliph": false,
+"flipv": false,
+"material": 0,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+},
+4: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
+},
+8: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
+},
+16: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
+},
+32: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
+}
+},
+Vector3( 16, 0, 8 ): {
+1: {
+"fliph": false,
+"flipv": false,
+"material": 1,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+},
+2: {
+"fliph": false,
+"flipv": false,
+"material": 0,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+},
+4: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
+},
+8: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
+},
+16: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
+},
+32: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
+}
+},
+Vector3( 16, 0, 9 ): {
+1: {
+"fliph": false,
+"flipv": false,
+"material": 1,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+},
+2: {
+"fliph": false,
+"flipv": false,
+"material": 0,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+},
+4: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
+},
+8: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
+},
+16: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
+},
+32: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
+}
+},
+Vector3( 16, 0, 10 ): {
+1: {
+"fliph": false,
+"flipv": false,
+"material": 1,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+},
+2: {
+"fliph": false,
+"flipv": false,
+"material": 0,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+},
+4: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
+},
+8: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
+},
+16: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
+},
+32: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
+}
+},
+Vector3( 16, 0, 11 ): {
+1: {
+"fliph": false,
+"flipv": false,
+"material": 1,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+},
+2: {
+"fliph": false,
+"flipv": false,
+"material": 0,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+},
+4: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
+},
+8: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
+},
+16: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
+},
+32: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
+}
+},
+Vector3( 16, 0, 12 ): {
+1: {
+"fliph": false,
+"flipv": false,
+"material": 1,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+},
+2: {
+"fliph": false,
+"flipv": false,
+"material": 0,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+},
+4: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
+},
+8: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
+},
+16: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
+},
+32: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
+}
+},
+Vector3( 16, 0, 13 ): {
+1: {
+"fliph": false,
+"flipv": false,
+"material": 1,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+},
+2: {
+"fliph": false,
+"flipv": false,
+"material": 0,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+},
+4: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
+},
+8: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+},
+16: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+},
+32: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
+}
+},
+Vector3( 17, 0, 5 ): {
+1: {
+"fliph": false,
+"flipv": false,
+"material": 1,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+},
+2: {
+"fliph": false,
+"flipv": false,
+"material": 0,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+},
+4: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+},
+8: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
+},
+16: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+},
+32: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
+}
+},
+Vector3( 17, 0, 6 ): {
+1: {
+"fliph": false,
+"flipv": false,
+"material": 1,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+},
+2: {
+"fliph": false,
+"flipv": false,
+"material": 0,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+},
+4: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
+},
+8: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
+},
+16: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
+},
+32: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
+}
+},
+Vector3( 17, 0, 7 ): {
+1: {
+"fliph": false,
+"flipv": false,
+"material": 1,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+},
+2: {
+"fliph": false,
+"flipv": false,
+"material": 0,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+},
+4: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
+},
+8: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
+},
+16: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
+},
+32: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
+}
+},
+Vector3( 17, 0, 8 ): {
+1: {
+"fliph": false,
+"flipv": false,
+"material": 1,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+},
+2: {
+"fliph": false,
+"flipv": false,
+"material": 0,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+},
+4: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
+},
+8: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
+},
+16: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
+},
+32: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
+}
+},
+Vector3( 17, 0, 9 ): {
+1: {
+"fliph": false,
+"flipv": false,
+"material": 1,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+},
+2: {
+"fliph": false,
+"flipv": false,
+"material": 0,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+},
+4: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
+},
+8: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
+},
+16: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
+},
+32: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
+}
+},
+Vector3( 17, 0, 10 ): {
+1: {
+"fliph": false,
+"flipv": false,
+"material": 1,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+},
+2: {
+"fliph": false,
+"flipv": false,
+"material": 0,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+},
+4: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
+},
+8: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
+},
+16: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
+},
+32: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
+}
+},
+Vector3( 17, 0, 11 ): {
+1: {
+"fliph": false,
+"flipv": false,
+"material": 1,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+},
+2: {
+"fliph": false,
+"flipv": false,
+"material": 0,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+},
+4: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
+},
+8: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
+},
+16: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
+},
+32: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
+}
+},
+Vector3( 17, 0, 12 ): {
+1: {
+"fliph": false,
+"flipv": false,
+"material": 1,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+},
+2: {
+"fliph": false,
+"flipv": false,
+"material": 0,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+},
+4: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
+},
+8: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
+},
+16: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
+},
+32: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
+}
+},
+Vector3( 17, 0, 13 ): {
+1: {
+"fliph": false,
+"flipv": false,
+"material": 1,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+},
+2: {
+"fliph": false,
+"flipv": false,
+"material": 0,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+},
+4: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
+},
+8: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+},
+16: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
+},
+32: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
+}
+},
+Vector3( 18, 0, 5 ): {
+1: {
+"fliph": false,
+"flipv": false,
+"material": 1,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+},
+2: {
+"fliph": false,
+"flipv": false,
+"material": 0,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+},
+4: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+},
+8: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
+},
+16: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
+},
+32: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+}
+},
+Vector3( 18, 0, 6 ): {
+1: {
+"fliph": false,
+"flipv": false,
+"material": 1,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+},
+2: {
+"fliph": false,
+"flipv": false,
+"material": 0,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+},
+4: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
+},
+8: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
+},
+16: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
+},
+32: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+}
+},
+Vector3( 18, 0, 7 ): {
+1: {
+"fliph": false,
+"flipv": false,
+"material": 1,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+},
+2: {
+"fliph": false,
+"flipv": false,
+"material": 0,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+},
+4: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
+},
+8: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
+},
+16: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
+},
+32: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+}
+},
+Vector3( 18, 0, 8 ): {
+1: {
+"fliph": false,
+"flipv": false,
+"material": 1,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+},
+2: {
+"fliph": false,
+"flipv": false,
+"material": 0,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+},
+4: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
+},
+8: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
+},
+16: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
+},
+32: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
+}
+},
+Vector3( 18, 0, 9 ): {
+1: {
+"fliph": false,
+"flipv": false,
+"material": 1,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+},
+2: {
+"fliph": false,
+"flipv": false,
+"material": 0,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+},
+4: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
+},
+8: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
+},
+16: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
+},
+32: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+}
+},
+Vector3( 18, 0, 10 ): {
+1: {
+"fliph": false,
+"flipv": false,
+"material": 1,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+},
+2: {
+"fliph": false,
+"flipv": false,
+"material": 0,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+},
+4: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
+},
+8: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
+},
+16: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
+},
+32: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+}
+},
+Vector3( 18, 0, 11 ): {
+1: {
+"fliph": false,
+"flipv": false,
+"material": 1,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+},
+2: {
+"fliph": false,
+"flipv": false,
+"material": 0,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+},
+4: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
+},
+8: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
+},
+16: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
+},
+32: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+}
+},
+Vector3( 18, 0, 12 ): {
+1: {
+"fliph": false,
+"flipv": false,
+"material": 1,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+},
+2: {
+"fliph": false,
+"flipv": false,
+"material": 0,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+},
+4: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
+},
+8: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
+},
+16: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
+},
+32: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+}
+},
+Vector3( 18, 0, 13 ): {
+1: {
+"fliph": false,
+"flipv": false,
+"material": 1,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+},
+2: {
+"fliph": false,
+"flipv": false,
+"material": 0,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+},
+4: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
+},
+8: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+},
+16: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": false
+},
+32: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+}
+},
+Vector3( 19, 0, 8 ): {
+1: {
+"fliph": false,
+"flipv": false,
+"material": 1,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+},
+2: {
+"fliph": false,
+"flipv": false,
+"material": 0,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
+},
+4: {
+"fliph": false,
+"flipv": false,
+"material": 2,
+"passability_policy": 0,
+"passable": false,
+"rotation": 0,
+"uvscale": Vector2( 1, 1 ),
+"visibility_policy": 0,
+"visible": true
 },
 8: {
 "fliph": false,

@@ -17,6 +17,7 @@ func _enter_tree():
     editor = XeenEditor.new()
     editor.panel = panel
     panel.connect("ready", self, "_on_panel_ready")
+    panel.connect("tool_selected", editor, "set_tool")
     gizmo_plugin = XeenMapGridGizmoPlugin.new(editor)
     map_inspector = XeenCellMapInspectorPlugin.new()
 
@@ -58,11 +59,19 @@ func _handle_click(_cam: Camera, ev: InputEventMouseButton) -> bool:
     if not ev.pressed:
         editor.stop_drawing()
     elif ev.pressed:
-        var mode = XeenEditor.DRAW_MODE.CLEAR if ev.control else XeenEditor.DRAW_MODE.PUT
-        editor.start_drawing(mode)
+        var primary = not ev.control
+        editor.start_drawing(primary)
     return true
 
 func _handle_keyboard_input(ev: InputEventKey) -> bool:
+    if XeenKeybinds.is_pressed(XeenKeybinds.SELECTION_FILL, ev):
+        editor.fill_selection()
+        editing.gizmo.redraw()
+        return true
+    elif XeenKeybinds.is_pressed(XeenKeybinds.SELECTION_CLEAR, ev):
+        editor.clear_selection()
+        editing.gizmo.redraw()
+        return true
     return false 
 
 

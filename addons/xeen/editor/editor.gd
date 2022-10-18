@@ -4,38 +4,64 @@ class_name XeenEditor
 
 #signal selection_changed(from, to, is_empty)
 #signal cursor_changed(new_pos, cursor_in_bounds)
-enum DRAW_MODE {PUT, CLEAR}
 
-var cursor := Vector3()
 var map:  CellMapNode = null setget _setmap, _getmap
-var panel: XeenEditorPanel = null
+var panel: XeenEditorPanel
 var brush := CellBrush.new()
-
+var cursor := Vector3()
 var cursor_in_bounds := false
 var undo: UndoRedo = null
-
 var is_drawing := false
-var draw_mode: int = DRAW_MODE.PUT
+var draw_mode: bool = true
 
+var selection := AABB()
+var draw_start := Vector3()
+
+var current_tool: int = Units.TOOL.BRUSH
+
+func clear_selection():
+    selection = AABB()
+
+func fill_selection():
+    if selection.size != Vector3.ZERO and current_tool == Units.TOOL.BOX_SELECT:
+        var f := funcref(self, "_fill_selected_cell")
+        map.iterate_over_area(f, selection, false)
+
+func _fill_selected_cell(_cell, pos: Vector3, _user) -> bool:
+    try_put_cell(Maybe.new(pos, false), "fill selection", UndoRedo.MERGE_ALL)
+    return true
 
 func on_ready(undo: UndoRedo):
     self.undo = undo 
     set_default_brush_materials()
 
+func is_tool_valid(t: int) -> bool:
+    return t == Units.TOOL.BRUSH \
+        or t == Units.TOOL.EYEDROPPER \
+        or t == Units.TOOL.BOX_SELECT
 
-func try_put_cell() -> bool:
+func set_tool(t: int):
+    if is_tool_valid(t):
+        current_tool = t
+    else:
+        push_error("Tool not implemented: %d" % current_tool)
+        return false
+
+func try_put_cell(_pos: Maybe = null, action := "", merge_mode := UndoRedo.MERGE_DISABLE) -> bool:
     if !cursor_in_bounds: return false
-    var pos := cursor
+    var pos := cursor if not _pos or _pos.is_none() else _pos.value()
     var cell := map.cell_at(pos) 
     if cell == null: 
-        undo.create_action("put cell")
+        if action == "": action = "put cell"
+        undo.create_action(action, merge_mode)
         undo.add_do_method(self, "_do_put_cell", pos)
         undo.add_undo_method(self, "_undo_put_cell", pos)
         undo.commit_action()
     elif not brush.matches_cell(cell):
         # cell exists, therefore update it!
         var celldata := cell.serialise()
-        undo.create_action("update cell")
+        if action == "": action = "update cell"
+        undo.create_action(action, merge_mode)
         undo.add_do_method(self, "_do_update_cell", cell)
         undo.add_undo_method(self, "_undo_update_cell", cell, celldata)
         undo.commit_action()
@@ -58,17 +84,26 @@ func _undo_update_cell(cell: Cell, celldata: Dictionary):
     cell.deserialise(celldata)
     map.serialise()
 
-func try_clear_cell() -> bool:
+func try_clear_cell(action := "", merge_mode := UndoRedo.MERGE_DISABLE) -> bool:
     if !cursor_in_bounds: return false
+    if action == "": action = "clear cell"
     var pos := cursor
     var empty = map.cell_at(pos)
     if empty != null:
         var cell := map.cell_at(pos)
-        undo.create_action("clear cell")
+        undo.create_action(action, merge_mode)
         undo.add_do_method(self, "_do_clear_cell", pos)
         undo.add_undo_method(self, "_undo_clear_cell", pos, map, cell)
         undo.commit_action()
     return empty != null
+
+func try_eyedropper():
+    if !cursor_in_bounds: return
+    var cell := map.cell_at(cursor)
+    if cell: 
+        for f in cell.get_face_ids():
+            var info := cell.get_face_info(f)
+            brush.set_face_info(f, info)
 
 func _do_clear_cell(pos: Vector3):
     map.clear_cell(pos)
@@ -99,41 +134,51 @@ func update_cursor(cam: Camera, mouse_pos: Vector2) -> bool:
         panel.update_cursor_pos(cursor, cursor_in_bounds)
     return updated_and_in_bounds 
             
-func start_drawing(draw_mode: int) -> bool:
+func start_drawing(active := true) -> bool:
     if not cursor_in_bounds or is_drawing:
         return false
-    self.draw_mode = draw_mode
+    if current_tool != Units.TOOL.BRUSH and current_tool !=\
+            Units.TOOL.EYEDROPPER and current_tool != Units.TOOL.BOX_SELECT:
+        push_error("Tool not implemented: %d" % current_tool)
+        return false
+    if current_tool == Units.TOOL.BOX_SELECT:
+        selection.position = cursor
+        selection.end = cursor
     is_drawing = true
-    print("start drawing")
+    draw_start = cursor
+    draw_mode = active
     draw()
     return true
 
+
 func stop_drawing():
     is_drawing = false
-    print("stop drawing")
-
 
 
 func draw():
     if not is_drawing or not cursor_in_bounds:
         return
-    match(draw_mode):
-        DRAW_MODE.PUT:
-            print("draw: put")
-            try_put_cell()
-        DRAW_MODE.CLEAR:
-            print("draw: clear")
-            try_clear_cell()
+    match current_tool:
+        Units.TOOL.BRUSH:
+            if draw_mode:
+                try_put_cell(null, "draw", UndoRedo.MERGE_ALL)
+            else:
+                try_clear_cell("erase", UndoRedo.MERGE_ALL)
+        Units.TOOL.EYEDROPPER:
+            try_eyedropper()
+        Units.TOOL.BOX_SELECT:
+            selection.position = draw_start
+            selection.end = cursor
+            selection = selection.abs()
+            selection.size += Vector3.ONE
+            
+            print(selection)
         _:
-            push_error("draw mode not implemented: %d" % draw_mode)
+            push_error("Tool not implemented: %d" % current_tool)
 
 func set_default_brush_materials():
-    var wall_mat = load("res://addons/xeen/assets/materials/urban/graywall.tres")
-    var floor_mat = load("res://addons/xeen/assets/materials/wood/creakywood.tres")
-    var ceil_mat = load("res://addons/xeen/assets/materials/bricks/bigbricks.tres")
-    brush.set_material(Units.FACE.TOP, ceil_mat)
-    brush.set_material(Units.FACE.BOTTOM, floor_mat)
-    brush.set_material(Units.FACE.WALLS, wall_mat)
+    for f in XeenConfig.DEFAULT_BRUSH_MATERIALS.keys():
+        brush.set_material(f, load(XeenConfig.DEFAULT_BRUSH_MATERIALS[f]))
 
 func set_brush_material(face: int, mat: Material):
     var old_mat := brush.get_material(face)

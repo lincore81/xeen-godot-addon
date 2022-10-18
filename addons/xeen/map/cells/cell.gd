@@ -23,10 +23,13 @@ func get_face_node(id: int) -> MeshInstance:
 		push_error("Invalid face id: %d" % id)
 		return null
 
+func get_face_ids() -> Array:
+	return face_info.keys()
+
 func has_face(id: int):
 	return face_info.has(id)
 
-func get_face_info(id: int):
+func get_face_info(id: int) -> FaceInfo:
 	if face_info.has(id):
 		return face_info[id].info
 	else:

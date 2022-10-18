@@ -14,7 +14,7 @@ onready var btn_folder := $Menu/ChooseFolder
 onready var label_path := $Path
 onready var file_dialog := $FileDialog
 
-signal material_chosen(path)
+signal material_chosen(path, preview)
 
 var _is_ready := false
 
@@ -26,12 +26,15 @@ func _ready():
     file_dialog.connect("confirmed", self, "_folder_selected")
     asset_browser.connect("selection_changed", self, "_on_material_chosen")
     asset_browser.connect("directory_changed", self, "_on_dir_changed")
+    _on_dir_changed(asset_browser.resource_path)
     _is_ready = true
-    label_path.text = asset_browser.resource_path
 
 
 func get_selection() -> String:
     return asset_browser.selected_resource_path
+
+func get_preview(path: String) -> Texture:
+    return asset_browser.previews.get(path)
 
 func setup(resource_preview: EditorResourcePreview):
     if _is_ready:
@@ -56,8 +59,11 @@ func _choose_folder():
 func _folder_selected():
     asset_browser.change_directory(file_dialog.current_dir)
 
-func _on_material_chosen(path):
+func _on_material_chosen(path, preview):
     emit_signal("material_chosen", path)
 
 func _on_dir_changed(dir):
+    label_path.hint_tooltip = dir
+    if len(dir) > 40:
+        dir = "..." + dir.substr(len(dir)-37)
     label_path.text = dir

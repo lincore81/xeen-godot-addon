@@ -38,7 +38,6 @@ margin_bottom = 207.0
 rect_min_size = Vector2( 300, 105 )
 window_title = "Open a Directory"
 mode = 2
-access = 2
 
 [node name="Menu" type="HBoxContainer" parent="."]
 margin_top = 58.0

@@ -13,6 +13,19 @@ const set_brush_face = {
     Units.FACE.WALLS:    {key = KEY_KP_5},
 }
 
+const SELECTION_CLEAR = {key = KEY_C}
+const SELECTION_FILL = {key = KEY_ENTER}
+const SELECTION_DELETE = {key = KEY_X}
+
+const TOOL_SELECT = {
+    Units.TOOL.BRUSH: {key = KEY_1},
+    Units.TOOL.BOX_SELECT: {key = KEY_2},
+    Units.TOOL.EYEDROPPER: {key = KEY_3},
+
+}
+
+
+
 
 # Create a shortcut from given dictionary. If a button is provided, its shortcut
 # field will be set to the created shortcut.
@@ -37,3 +50,10 @@ static func make_shortcut(def: Dictionary, button: BaseButton = null) -> ShortCu
         button.shortcut = it
     return it
     
+
+static func is_pressed(def: Dictionary, ev: InputEventKey) -> bool:
+    var matches_key = ev.scancode == def.get("key", -1)
+    var matches_mods = (ev.control == def.get("ctrl", false)
+            and ev.shift == def.get("shift", false)
+            and ev.alt == def.get("alt", false))
+    return matches_key and matches_mods
