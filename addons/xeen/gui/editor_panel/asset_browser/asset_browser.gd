@@ -4,7 +4,7 @@ class_name AssetBrowser
 
 enum SORT {ASCENDING, DESCENDING}
 
-export var resource_path := "res://addons/xeen/assets/materials"
+export var resource_path := "res://"
 
 # If true, also look in all sub directories of `resource_path`.
 export var recursive := true
@@ -23,6 +23,7 @@ export(SORT) var _sort_order := SORT.ASCENDING
 var actual_item_size := preferred_item_size
 var selected_resource_path := ""
 var filter := ""
+var filter_segments := []
 
 # generated preview textures
 var previews: Dictionary
@@ -33,6 +34,7 @@ var controls: Dictionary
 
 # must be provided by an EditorPlugin instance.
 var resource_preview: EditorResourcePreview
+var filesystem: EditorFileSystem
 
 # A sorted list of resource paths that determines the order resources appear in the grid.
 var paths: Array
@@ -50,11 +52,6 @@ signal selection_changed(resource_path, preview)
 signal directory_changed(directory)
 
 
-func _ready():
-    if resource_preview: update_browser()
-    #connect("resized", self, "_recalc_column_count_and_size")
-    #_recalc_column_count_and_size()
-
 
 func _process(_d):
     if generating_previews and previews_pending == 0:
@@ -65,15 +62,17 @@ func _process(_d):
 
 func set_filter(pattern: String):
     var has_changed := pattern != filter 
-    filter = pattern
-    #print("filter set: pattern=%s, has_changed?=%s" % [pattern, str(has_changed)])
-    if has_changed and not generating_previews:
-        update_browser()
+    if has_changed:
+        filter = pattern
+        filter_segments = filter.split("|", false)
+        if not generating_previews:
+            update_browser()
 
 # must be called before calling update
-func setup(preview: EditorResourcePreview):
+func setup(preview: EditorResourcePreview, filesystem: EditorFileSystem):
     resource_preview = preview
     resource_preview.connect("preview_invalidated", self, "_on_preview_invalidated")
+    self.filesystem = filesystem
 
 func change_directory(dir: String):
     var directory = Directory.new()
@@ -104,11 +103,12 @@ func update_browser():
         push_error("Need EditorResourcePreview instance in order to update the resource list")
         return
     if not preferred_item_size or preferred_item_size.x == 0 or preferred_item_size.y == 0:
-        push_warning("Preferred item size is null or at least one dimension is zero. Using default v")
+        push_warning("Preferred item size is null or at least one dimension is zero. Using defaults")
         preferred_item_size = Vector2(64, 64)
     previews_pending = 0
     generating_previews = true
     _generate_previews()
+    
     # the rest is done in _process once all previews are ready.
 
 
@@ -118,7 +118,7 @@ func _generate_previews():
     paths = []
     resource_path = "res://" if resource_path == "" else resource_path
     var f := funcref(self, "_try_get_preview")
-    _iter_over_files(resource_path, f, resource_class_name)
+    _iter_over_files(resource_path, f, filesystem, resource_class_name)
 
 
 func _try_get_preview(path: String) -> Texture:
@@ -126,8 +126,7 @@ func _try_get_preview(path: String) -> Texture:
     #print("try_get_preview: %s" % path)
     if previews.has(path):
         # If the preview is out of date, we'll update it later in a signal handler
-        resource_preview.check_for_invalidation(path)
-        #print("...preview already exists")
+        resource_preview.check_for_invalidation(path)    #print("...preview already exists")
         return previews[path] as Texture
     else:
         previews_pending += 1
@@ -195,7 +194,12 @@ func _add_button(path: String, texture: Texture) -> void:
         controls[path] = btn
     # not setting the owner because children are created dynamically and
     # shouldn't be saved with the scene.
-    if filter == "" or filter in path:
+    var ignore := false
+    for f in filter_segments:
+        if f in path:
+            ignore = true
+            break
+    if ignore or filter == "":
         #print("Matches filter: %s" % path)
         add_child(btn)
 
@@ -208,9 +212,9 @@ static func _join_paths(a: String, b: String) -> String:
     else:
         return a + '/' + b
 
-# TODO: Move to helper class
+# TODO: Consider moving to helper class
 # Expected callback signature: (path: String) -> void
-static func _iter_over_files(path: String, f: FuncRef, resource_type: String=""):
+static func _iter_over_files(path: String, f: FuncRef, filesystem: EditorFileSystem, resource_type: String=""):
     var todo := [path]
     # Iterate over the given path (as directory) and any sub-directories that
     # may be found.
@@ -224,17 +228,24 @@ static func _iter_over_files(path: String, f: FuncRef, resource_type: String="")
             while item != "":
                 var item_path = _join_paths(curr_dir, item)
                 if directory.current_is_dir():
-                    todo.push_back(item_path)
+                    if not _contains_gdignore(item_path) and item != ".git":
+                        todo.push_back(item_path)
                 else:
-                    # FIXME: move to callback and find working algorithm to detect resource type.
-                    var correct_type = resource_type == "" or ResourceLoader.exists(item_path, resource_type)
-                    #print("Checking if resource=%s has type=%s: %s" % [item, resource_type, str(correct_type)])
+                    # TODO: move to callback
+                    var type = filesystem.get_file_type(item_path)
+                    var correct_type = resource_type == type or resource_type == ""
+                    #print("iterating item_path=%s, type=%s" % [item_path, type])
                     if correct_type:
                         f.call_func(item_path)
                 item = directory.get_next()
+            directory.list_dir_end()
         else:
             push_error("Unable to access directory '%s'" % curr_dir)
 
+static func _contains_gdignore(full_path) -> bool:
+    var dir := Directory.new()
+    dir.open(full_path)
+    return dir.file_exists(_join_paths(full_path, ".gdignore"))
 
 func _on_button_pressed(button: TextureButton, path: String):
     selected_resource_path = path

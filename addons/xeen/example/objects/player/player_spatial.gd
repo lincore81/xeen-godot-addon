@@ -1,8 +1,5 @@
 extends Spatial
 class_name PlayerSpatial
-"""
-Take care of "player" movement, distinct from the player state aka party/characters.
-"""
 
 export var turn_speed := 0.2
 export var move_speed := 0.3

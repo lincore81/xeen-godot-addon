@@ -20,9 +20,9 @@ _global_script_classes=[ {
 "path": "res://addons/xeen/datatypes/bitset.gd"
 }, {
 "base": "GridContainer",
-"class": "BrushView",
+"class": "BrushPanel",
 "language": "GDScript",
-"path": "res://addons/xeen/gui/editor_panel/brush_view/brush_view.gd"
+"path": "res://addons/xeen/gui/editor_panel/brush_view/brush_panel.gd"
 }, {
 "base": "Spatial",
 "class": "Cell",
@@ -44,6 +44,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://addons/xeen/datatypes/faceinfo.gd"
 }, {
+"base": "PanelContainer",
+"class": "FacePanel",
+"language": "GDScript",
+"path": "res://addons/xeen/gui/editor_panel/brush_view/face_panel.gd"
+}, {
 "base": "Spatial",
 "class": "GameScene",
 "language": "GDScript",
@@ -55,9 +60,9 @@ _global_script_classes=[ {
 "path": "res://addons/xeen/map/mapdata.gd"
 }, {
 "base": "VBoxContainer",
-"class": "MaterialView",
+"class": "MaterialBrowser",
 "language": "GDScript",
-"path": "res://addons/xeen/gui/editor_panel/asset_browser/material_view.gd"
+"path": "res://addons/xeen/gui/editor_panel/asset_browser/material_browser.gd"
 }, {
 "base": "Object",
 "class": "Maybe",
@@ -127,14 +132,15 @@ _global_script_classes=[ {
 _global_script_class_icons={
 "AssetBrowser": "",
 "BitSet": "",
-"BrushView": "",
+"BrushPanel": "",
 "Cell": "",
 "CellBrush": "",
 "CellMapNode": "",
 "FaceInfo": "",
+"FacePanel": "",
 "GameScene": "",
 "MapData": "",
-"MaterialView": "",
+"MaterialBrowser": "",
 "Maybe": "",
 "PlayerSpatial": "",
 "SortButton": "",

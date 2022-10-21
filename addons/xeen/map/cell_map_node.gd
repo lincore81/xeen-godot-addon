@@ -1,9 +1,8 @@
 tool
 extends Spatial
 class_name CellMapNode
-"""
-Maintain references to the cells, allow checking for, iterating over, adding and removing cells.
-"""
+
+
 const ICON: Texture = preload("res://addons/xeen/map/cell_map_node.png")
 
 
@@ -46,11 +45,6 @@ func is_wall_passable(pos: Vector3, abs_dir: int):
 	return c.is_wall_passable(abs_dir) if c != null else false
 
 func iterate_over_area(callback: FuncRef, bounds: AABB, skip_null = false, userdata = null):
-	"""
-		Iterate over all cells within the given AABB (floored) until the
-		callback function returns false. Will not exceed map bounds.
-		callback signature: (Cell, Vector3, userdata: Variant) -> bool
-	"""
 	bounds = bounds.abs()
 	var x0 = max(0, bounds.position.x)
 	var x1 = min(size.x, bounds.end.x)
@@ -78,7 +72,9 @@ func put_cell(pos: Vector3, cell_template: PackedScene, update_visibility := tru
 		push_error("No MapData resource!")
 		return null
 	if cell_at(pos) != null:
-		push_error("There is already a cell here: %s" % str(pos))
+		# Not raising error to mitigate issue related to UndoRedo.MERGE_ALL: 
+		# https://github.com/godotengine/godot/issues/26118
+		#push_error("There is already a cell here: %s" % str(pos))
 		return null
 	var cell := cell_template.instance() as Cell
 	cell.set_meta("_edit_lock_", true)
@@ -95,7 +91,9 @@ func put_existing_cell(pos: Vector3, cell: Cell, update_visibility := true, upda
 		push_error("No MapData resource!")
 		return false
 	if cell_at(pos) != null:
-		push_error("There is already a cell here: %s" % str(pos))
+		# Not raising error to mitigate issue related to UndoRedo.MERGE_ALL: 
+		# https://github.com/godotengine/godot/issues/26118
+		#push_error("There is already a cell here: %s" % str(pos))
 		return false
 	if cell in get_children():
 		push_error("Cannot put own child on map")

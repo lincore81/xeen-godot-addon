@@ -9434,74 +9434,6 @@ Vector3( 16, 0, 12 ): {
 "rotation": 0,
 "uvscale": Vector2( 1, 1 ),
 "visibility_policy": 0,
-"visible": false
-},
-16: {
-"fliph": false,
-"flipv": false,
-"material": 2,
-"passability_policy": 0,
-"passable": false,
-"rotation": 0,
-"uvscale": Vector2( 1, 1 ),
-"visibility_policy": 0,
-"visible": false
-},
-32: {
-"fliph": false,
-"flipv": false,
-"material": 2,
-"passability_policy": 0,
-"passable": false,
-"rotation": 0,
-"uvscale": Vector2( 1, 1 ),
-"visibility_policy": 0,
-"visible": false
-}
-},
-Vector3( 16, 0, 13 ): {
-1: {
-"fliph": false,
-"flipv": false,
-"material": 1,
-"passability_policy": 0,
-"passable": false,
-"rotation": 0,
-"uvscale": Vector2( 1, 1 ),
-"visibility_policy": 0,
-"visible": true
-},
-2: {
-"fliph": false,
-"flipv": false,
-"material": 0,
-"passability_policy": 0,
-"passable": false,
-"rotation": 0,
-"uvscale": Vector2( 1, 1 ),
-"visibility_policy": 0,
-"visible": true
-},
-4: {
-"fliph": false,
-"flipv": false,
-"material": 2,
-"passability_policy": 0,
-"passable": false,
-"rotation": 0,
-"uvscale": Vector2( 1, 1 ),
-"visibility_policy": 0,
-"visible": false
-},
-8: {
-"fliph": false,
-"flipv": false,
-"material": 2,
-"passability_policy": 0,
-"passable": false,
-"rotation": 0,
-"uvscale": Vector2( 1, 1 ),
-"visibility_policy": 0,
 "visible": true
 },
 16: {
@@ -9513,75 +9445,7 @@ Vector3( 16, 0, 13 ): {
 "rotation": 0,
 "uvscale": Vector2( 1, 1 ),
 "visibility_policy": 0,
-"visible": true
-},
-32: {
-"fliph": false,
-"flipv": false,
-"material": 2,
-"passability_policy": 0,
-"passable": false,
-"rotation": 0,
-"uvscale": Vector2( 1, 1 ),
-"visibility_policy": 0,
 "visible": false
-}
-},
-Vector3( 17, 0, 5 ): {
-1: {
-"fliph": false,
-"flipv": false,
-"material": 1,
-"passability_policy": 0,
-"passable": false,
-"rotation": 0,
-"uvscale": Vector2( 1, 1 ),
-"visibility_policy": 0,
-"visible": true
-},
-2: {
-"fliph": false,
-"flipv": false,
-"material": 0,
-"passability_policy": 0,
-"passable": false,
-"rotation": 0,
-"uvscale": Vector2( 1, 1 ),
-"visibility_policy": 0,
-"visible": true
-},
-4: {
-"fliph": false,
-"flipv": false,
-"material": 2,
-"passability_policy": 0,
-"passable": false,
-"rotation": 0,
-"uvscale": Vector2( 1, 1 ),
-"visibility_policy": 0,
-"visible": true
-},
-8: {
-"fliph": false,
-"flipv": false,
-"material": 2,
-"passability_policy": 0,
-"passable": false,
-"rotation": 0,
-"uvscale": Vector2( 1, 1 ),
-"visibility_policy": 0,
-"visible": false
-},
-16: {
-"fliph": false,
-"flipv": false,
-"material": 2,
-"passability_policy": 0,
-"passable": false,
-"rotation": 0,
-"uvscale": Vector2( 1, 1 ),
-"visibility_policy": 0,
-"visible": true
 },
 32: {
 "fliph": false,
@@ -9627,7 +9491,7 @@ Vector3( 17, 0, 6 ): {
 "rotation": 0,
 "uvscale": Vector2( 1, 1 ),
 "visibility_policy": 0,
-"visible": false
+"visible": true
 },
 8: {
 "fliph": false,
@@ -10046,74 +9910,6 @@ Vector3( 17, 0, 12 ): {
 "rotation": 0,
 "uvscale": Vector2( 1, 1 ),
 "visibility_policy": 0,
-"visible": false
-},
-16: {
-"fliph": false,
-"flipv": false,
-"material": 2,
-"passability_policy": 0,
-"passable": false,
-"rotation": 0,
-"uvscale": Vector2( 1, 1 ),
-"visibility_policy": 0,
-"visible": false
-},
-32: {
-"fliph": false,
-"flipv": false,
-"material": 2,
-"passability_policy": 0,
-"passable": false,
-"rotation": 0,
-"uvscale": Vector2( 1, 1 ),
-"visibility_policy": 0,
-"visible": false
-}
-},
-Vector3( 17, 0, 13 ): {
-1: {
-"fliph": false,
-"flipv": false,
-"material": 1,
-"passability_policy": 0,
-"passable": false,
-"rotation": 0,
-"uvscale": Vector2( 1, 1 ),
-"visibility_policy": 0,
-"visible": true
-},
-2: {
-"fliph": false,
-"flipv": false,
-"material": 0,
-"passability_policy": 0,
-"passable": false,
-"rotation": 0,
-"uvscale": Vector2( 1, 1 ),
-"visibility_policy": 0,
-"visible": true
-},
-4: {
-"fliph": false,
-"flipv": false,
-"material": 2,
-"passability_policy": 0,
-"passable": false,
-"rotation": 0,
-"uvscale": Vector2( 1, 1 ),
-"visibility_policy": 0,
-"visible": false
-},
-8: {
-"fliph": false,
-"flipv": false,
-"material": 2,
-"passability_policy": 0,
-"passable": false,
-"rotation": 0,
-"uvscale": Vector2( 1, 1 ),
-"visibility_policy": 0,
 "visible": true
 },
 16: {
@@ -10137,74 +9933,6 @@ Vector3( 17, 0, 13 ): {
 "uvscale": Vector2( 1, 1 ),
 "visibility_policy": 0,
 "visible": false
-}
-},
-Vector3( 18, 0, 5 ): {
-1: {
-"fliph": false,
-"flipv": false,
-"material": 1,
-"passability_policy": 0,
-"passable": false,
-"rotation": 0,
-"uvscale": Vector2( 1, 1 ),
-"visibility_policy": 0,
-"visible": true
-},
-2: {
-"fliph": false,
-"flipv": false,
-"material": 0,
-"passability_policy": 0,
-"passable": false,
-"rotation": 0,
-"uvscale": Vector2( 1, 1 ),
-"visibility_policy": 0,
-"visible": true
-},
-4: {
-"fliph": false,
-"flipv": false,
-"material": 2,
-"passability_policy": 0,
-"passable": false,
-"rotation": 0,
-"uvscale": Vector2( 1, 1 ),
-"visibility_policy": 0,
-"visible": true
-},
-8: {
-"fliph": false,
-"flipv": false,
-"material": 2,
-"passability_policy": 0,
-"passable": false,
-"rotation": 0,
-"uvscale": Vector2( 1, 1 ),
-"visibility_policy": 0,
-"visible": false
-},
-16: {
-"fliph": false,
-"flipv": false,
-"material": 2,
-"passability_policy": 0,
-"passable": false,
-"rotation": 0,
-"uvscale": Vector2( 1, 1 ),
-"visibility_policy": 0,
-"visible": false
-},
-32: {
-"fliph": false,
-"flipv": false,
-"material": 2,
-"passability_policy": 0,
-"passable": false,
-"rotation": 0,
-"uvscale": Vector2( 1, 1 ),
-"visibility_policy": 0,
-"visible": true
 }
 },
 Vector3( 18, 0, 6 ): {
@@ -10239,7 +9967,7 @@ Vector3( 18, 0, 6 ): {
 "rotation": 0,
 "uvscale": Vector2( 1, 1 ),
 "visibility_policy": 0,
-"visible": false
+"visible": true
 },
 8: {
 "fliph": false,
@@ -10408,7 +10136,7 @@ Vector3( 18, 0, 8 ): {
 "rotation": 0,
 "uvscale": Vector2( 1, 1 ),
 "visibility_policy": 0,
-"visible": false
+"visible": true
 }
 },
 Vector3( 18, 0, 9 ): {
@@ -10648,142 +10376,6 @@ Vector3( 18, 0, 12 ): {
 "uvscale": Vector2( 1, 1 ),
 "visibility_policy": 0,
 "visible": false
-},
-8: {
-"fliph": false,
-"flipv": false,
-"material": 2,
-"passability_policy": 0,
-"passable": false,
-"rotation": 0,
-"uvscale": Vector2( 1, 1 ),
-"visibility_policy": 0,
-"visible": false
-},
-16: {
-"fliph": false,
-"flipv": false,
-"material": 2,
-"passability_policy": 0,
-"passable": false,
-"rotation": 0,
-"uvscale": Vector2( 1, 1 ),
-"visibility_policy": 0,
-"visible": false
-},
-32: {
-"fliph": false,
-"flipv": false,
-"material": 2,
-"passability_policy": 0,
-"passable": false,
-"rotation": 0,
-"uvscale": Vector2( 1, 1 ),
-"visibility_policy": 0,
-"visible": true
-}
-},
-Vector3( 18, 0, 13 ): {
-1: {
-"fliph": false,
-"flipv": false,
-"material": 1,
-"passability_policy": 0,
-"passable": false,
-"rotation": 0,
-"uvscale": Vector2( 1, 1 ),
-"visibility_policy": 0,
-"visible": true
-},
-2: {
-"fliph": false,
-"flipv": false,
-"material": 0,
-"passability_policy": 0,
-"passable": false,
-"rotation": 0,
-"uvscale": Vector2( 1, 1 ),
-"visibility_policy": 0,
-"visible": true
-},
-4: {
-"fliph": false,
-"flipv": false,
-"material": 2,
-"passability_policy": 0,
-"passable": false,
-"rotation": 0,
-"uvscale": Vector2( 1, 1 ),
-"visibility_policy": 0,
-"visible": false
-},
-8: {
-"fliph": false,
-"flipv": false,
-"material": 2,
-"passability_policy": 0,
-"passable": false,
-"rotation": 0,
-"uvscale": Vector2( 1, 1 ),
-"visibility_policy": 0,
-"visible": true
-},
-16: {
-"fliph": false,
-"flipv": false,
-"material": 2,
-"passability_policy": 0,
-"passable": false,
-"rotation": 0,
-"uvscale": Vector2( 1, 1 ),
-"visibility_policy": 0,
-"visible": false
-},
-32: {
-"fliph": false,
-"flipv": false,
-"material": 2,
-"passability_policy": 0,
-"passable": false,
-"rotation": 0,
-"uvscale": Vector2( 1, 1 ),
-"visibility_policy": 0,
-"visible": true
-}
-},
-Vector3( 19, 0, 8 ): {
-1: {
-"fliph": false,
-"flipv": false,
-"material": 1,
-"passability_policy": 0,
-"passable": false,
-"rotation": 0,
-"uvscale": Vector2( 1, 1 ),
-"visibility_policy": 0,
-"visible": true
-},
-2: {
-"fliph": false,
-"flipv": false,
-"material": 0,
-"passability_policy": 0,
-"passable": false,
-"rotation": 0,
-"uvscale": Vector2( 1, 1 ),
-"visibility_policy": 0,
-"visible": true
-},
-4: {
-"fliph": false,
-"flipv": false,
-"material": 2,
-"passability_policy": 0,
-"passable": false,
-"rotation": 0,
-"uvscale": Vector2( 1, 1 ),
-"visibility_policy": 0,
-"visible": true
 },
 8: {
 "fliph": false,

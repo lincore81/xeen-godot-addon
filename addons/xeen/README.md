@@ -1,11 +1,20 @@
-This is a buggy mess right now.
+![Logo](icon.png)
+
+# Xeen Map Editor
+This addon for the Godot Engine adds a grid based 3D map editor.
+
+![Editor](screenshots/editor1.png)
+![Runtime](screenshots/runtime1.png)
+
+
+If you want to use it, you can configure stuff in `addons/xeen/config`.
 
 Enjoy!
 
 # Issues
-- [ ] (Priority 3, Easy) Make box fill/clear algorithm more efficient
 - [ ] (Priority 4, Easy) Fix docgen.py to properly parse and write method parameters.
 - [ ] (Priority 6, ?) Updated previews aren't shown in the asset browser
+- [ ] (Priority 7, Easy) Make box fill/clear algorithm more efficient
 - [ ] (Priority 9, ?) The cell picker code should also work in orthographic projection
 
 

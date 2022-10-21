@@ -6,7 +6,7 @@
 [ext_resource path="res://addons/xeen/assets/fonts/NotoSans-Regular-Smaller.tres" type="DynamicFont" id=4]
 [ext_resource path="res://addons/xeen/gui/editor_panel/asset_browser/sortbtn.gd" type="Script" id=5]
 [ext_resource path="res://addons/xeen/assets/icons/sort-alphabetical-ascending.png" type="Texture" id=6]
-[ext_resource path="res://addons/xeen/gui/editor_panel/asset_browser/material_view.gd" type="Script" id=7]
+[ext_resource path="res://addons/xeen/gui/editor_panel/asset_browser/material_browser.gd" type="Script" id=7]
 [ext_resource path="res://addons/xeen/assets/icons/folder-edit.png" type="Texture" id=8]
 
 [sub_resource type="StyleBoxFlat" id=15]
@@ -55,6 +55,7 @@ flat = true
 expand_icon = true
 
 [node name="Refresh" type="Button" parent="Menu"]
+visible = false
 margin_left = 52.0
 margin_right = 100.0
 margin_bottom = 48.0
@@ -65,8 +66,8 @@ flat = true
 expand_icon = true
 
 [node name="Sort" type="Button" parent="Menu"]
-margin_left = 104.0
-margin_right = 152.0
+margin_left = 52.0
+margin_right = 100.0
 margin_bottom = 48.0
 rect_min_size = Vector2( 48, 48 )
 hint_tooltip = "Change sort order"
@@ -77,12 +78,12 @@ expand_icon = true
 script = ExtResource( 5 )
 
 [node name="VSeparator" type="VSeparator" parent="Menu"]
-margin_left = 156.0
-margin_right = 160.0
+margin_left = 104.0
+margin_right = 108.0
 margin_bottom = 48.0
 
 [node name="Filter" type="LineEdit" parent="Menu"]
-margin_left = 164.0
+margin_left = 112.0
 margin_right = 1024.0
 margin_bottom = 48.0
 rect_min_size = Vector2( 240, 0 )

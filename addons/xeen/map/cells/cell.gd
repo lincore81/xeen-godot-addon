@@ -1,9 +1,7 @@
 tool
 extends Spatial
 class_name Cell
-"""
-	Maintains references to walls, floor and ceiling and their state.
-"""
+
 
 
 onready var face_info: Dictionary = {

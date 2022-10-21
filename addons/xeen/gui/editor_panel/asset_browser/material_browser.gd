@@ -1,10 +1,6 @@
 tool
 extends VBoxContainer
-class_name MaterialView
-
-"""
-    Encapsulates the AssetBrowser and related controls.
-"""
+class_name MaterialBrowser
 
 onready var asset_browser := get_node("%Browser") as AssetBrowser
 onready var filter_input := $Menu/Filter 
@@ -14,9 +10,10 @@ onready var btn_folder := $Menu/ChooseFolder
 onready var label_path := $Path
 onready var file_dialog := $FileDialog
 
+var _is_ready := false
+
 signal material_chosen(path, preview)
 
-var _is_ready := false
 
 func _ready():
     btn_sort.connect("sort_order_changed", self, "_on_sort_order_changed")
@@ -26,8 +23,6 @@ func _ready():
     file_dialog.connect("confirmed", self, "_folder_selected")
     asset_browser.connect("selection_changed", self, "_on_material_chosen")
     asset_browser.connect("directory_changed", self, "_on_dir_changed")
-    _on_dir_changed(asset_browser.resource_path)
-    _is_ready = true
 
 
 func get_selection() -> String:
@@ -36,12 +31,18 @@ func get_selection() -> String:
 func get_preview(path: String) -> Texture:
     return asset_browser.previews.get(path)
 
-func setup(resource_preview: EditorResourcePreview):
-    if _is_ready:
-        asset_browser.setup(resource_preview)
-        asset_browser.update_browser()
-    else:
-        push_error("view is not ready yet, call again later.")
+func setup(resource_preview: EditorResourcePreview, filesystem: EditorFileSystem):
+    asset_browser.setup(resource_preview, filesystem)
+    # FIXME: find a EditorFileSystem signal to use instead of a timer.
+    var timer = Timer.new()
+    timer.connect("timeout",self,"_on_timer_timeout") 
+    add_child(timer)
+    timer.one_shot = true
+    timer.start(0.5)
+
+func _on_timer_timeout():
+    asset_browser.change_directory(XeenConfig.DEFAULT_MATERIAL_DIR)
+
 
 func _on_sort_order_changed(order: int):
     asset_browser.change_sort_order(order)
@@ -54,9 +55,10 @@ func _set_filter(s: String):
 
 func _choose_folder():
     file_dialog.current_dir = asset_browser.resource_path
-    file_dialog.popup_centered_minsize(Vector2(600, 400))
+    file_dialog.popup_centered(Vector2(1024, 600))
 
 func _folder_selected():
+    print("New path=%s" % file_dialog.current_dir)
     asset_browser.change_directory(file_dialog.current_dir)
 
 func _on_material_chosen(path, preview):

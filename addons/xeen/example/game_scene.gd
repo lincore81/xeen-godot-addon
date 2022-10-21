@@ -1,8 +1,5 @@
 extends Spatial
 class_name GameScene
-"""
-Manage the runtime game state.
-"""
 
 
 onready var player := $Player as PlayerSpatial

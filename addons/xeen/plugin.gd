@@ -14,79 +14,80 @@ var lmb_down := false
 var is_dragging := false
 
 func _enter_tree():
-    editor = XeenEditor.new()
-    editor.panel = panel
-    panel.connect("ready", self, "_on_panel_ready")
-    panel.connect("tool_selected", editor, "set_tool")
-    gizmo_plugin = XeenMapGridGizmoPlugin.new(editor)
-    map_inspector = XeenCellMapInspectorPlugin.new()
-
-    add_control_to_dock(EditorPlugin.DOCK_SLOT_RIGHT_BR, panel)
-    add_custom_type("CellMap", "Spatial", cellmapnode_script, CellMapNode.ICON)
-    add_spatial_gizmo_plugin(gizmo_plugin)
-    add_inspector_plugin(map_inspector)
+	editor = XeenEditor.new()
+	editor.panel = panel
+	panel.connect("ready", self, "_on_panel_ready")
+	panel.connect("tool_selected", editor, "set_tool")
+	gizmo_plugin = XeenMapGridGizmoPlugin.new(editor)
+	map_inspector = XeenCellMapInspectorPlugin.new()
+	add_control_to_dock(EditorPlugin.DOCK_SLOT_RIGHT_BR, panel)
+	add_custom_type("CellMap", "Spatial", cellmapnode_script, CellMapNode.ICON)
+	add_spatial_gizmo_plugin(gizmo_plugin)
+	add_inspector_plugin(map_inspector)
 
 func _ready():
-    editor.on_ready(get_undo_redo())
-    panel.connect("brush_material_selected", editor, "set_brush_material")
+	#get_editor_interface().get_resource_filesystem().scan()
+	editor.on_ready(get_undo_redo())
+	panel.connect("brush_material_selected", editor, "set_brush_material")
 
 func _on_panel_ready():
-    panel.setup(get_editor_interface().get_resource_previewer(), editor.brush)
+	var i = get_editor_interface()
+	panel.setup(i.get_resource_previewer(), i.get_resource_filesystem(), editor.brush)
 
 
 func _exit_tree():
-    remove_control_from_docks(panel)
-    remove_custom_type("CellMap")
-    remove_spatial_gizmo_plugin(gizmo_plugin)
-    remove_inspector_plugin(map_inspector)
+	remove_control_from_docks(panel)
+	remove_custom_type("CellMap")
+	remove_spatial_gizmo_plugin(gizmo_plugin)
+	remove_inspector_plugin(map_inspector)
 
 func forward_spatial_gui_input(cam: Camera, ev: InputEvent) -> bool:
-    if !editing: return false
+	if !editing: return false
 
-    if ev is InputEventMouseMotion:
-        if editor.update_cursor(cam, ev.position):
-            editor.draw()
-    elif ev is InputEventMouseButton:
-        return _handle_click(cam, ev as InputEventMouseButton)
-    elif ev is InputEventKey:
-        return _handle_keyboard_input(ev as InputEventKey)
-    return false
+	if ev is InputEventMouseMotion:
+		if editor.update_cursor(cam, ev.position):
+			editor.draw()
+	elif ev is InputEventMouseButton:
+		return _handle_click(cam, ev as InputEventMouseButton)
+	elif ev is InputEventKey:
+		return _handle_keyboard_input(ev as InputEventKey)
+	return false
 
 func _handle_click(_cam: Camera, ev: InputEventMouseButton) -> bool:
-    var is_lmb := ev.button_index == BUTTON_LEFT
-    if not is_lmb: 
-        return false
-    if not ev.pressed:
-        editor.stop_drawing()
-    elif ev.pressed:
-        var primary = not ev.control
-        editor.start_drawing(primary)
-    return true
+	var is_lmb := ev.button_index == BUTTON_LEFT
+	if not is_lmb: 
+		return false
+	if not ev.pressed:
+		editor.stop_drawing()
+	elif ev.pressed:
+		var primary = not ev.control
+		editor.start_drawing(primary)
+	return true
 
 func _handle_keyboard_input(ev: InputEventKey) -> bool:
-    if XeenKeybinds.is_pressed(XeenKeybinds.SELECTION_FILL, ev):
-        editor.fill_selection()
-        editing.gizmo.redraw()
-        return true
-    elif XeenKeybinds.is_pressed(XeenKeybinds.SELECTION_CLEAR, ev):
-        editor.clear_selection()
-        editing.gizmo.redraw()
-        return true
-    return false 
+	if XeenKeybinds.is_pressed(XeenKeybinds.SELECTION_FILL, ev):
+		editor.fill_selection()
+		editing.gizmo.redraw()
+		return true
+	elif XeenKeybinds.is_pressed(XeenKeybinds.SELECTION_CLEAR, ev):
+		editor.clear_selection()
+		editing.gizmo.redraw()
+		return true
+	return false 
 
 
 func unedit():
-    editor.map = null
-    editing = null
+	editor.map = null
+	editing = null
 
 func edit(obj: Object):
-    if obj is CellMapNode:
-        editing = obj as CellMapNode
-        assert(editing, "The given object not a CellMapNode.")
-        editor.map = editing
-        if not editing.is_connected("tree_exited", self, "unedit"):
-            editing.connect("tree_exited", self, "unedit")
-        print("Editing %s" % editing.name)
+	if obj is CellMapNode:
+		editing = obj as CellMapNode
+		assert(editing, "The given object not a CellMapNode.")
+		editor.map = editing
+		if not editing.is_connected("tree_exited", self, "unedit"):
+			editing.connect("tree_exited", self, "unedit")
+		print("Editing %s" % editing.name)
 
 func handles(obj: Object) -> bool:
-    return obj is CellMapNode or obj is Cell
+	return obj is CellMapNode or obj is Cell
