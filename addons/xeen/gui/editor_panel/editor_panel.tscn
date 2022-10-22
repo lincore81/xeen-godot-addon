@@ -2,7 +2,7 @@
 
 [ext_resource path="res://addons/xeen/assets/icons/select-mode.png" type="Texture" id=1]
 [ext_resource path="res://addons/xeen/gui/editor_panel/asset_browser/material_browser.tscn" type="PackedScene" id=2]
-[ext_resource path="res://addons/xeen/assets/fonts/NotoSans-Regular.tres" type="DynamicFont" id=3]
+[ext_resource path="res://addons/xeen/assets/fonts/noto-sans/NotoSans-Regular.tres" type="DynamicFont" id=3]
 [ext_resource path="res://addons/xeen/assets/icons/eyedropper.png" type="Texture" id=4]
 [ext_resource path="res://addons/xeen/assets/icons/brush-mode.png" type="Texture" id=5]
 [ext_resource path="res://addons/xeen/assets/icons/flood-fill.png" type="Texture" id=6]

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/empty.png-2a271a3eb06dd2de3de7f1334d61a656.stex"
+path="res://.import/invisible.png-94653f8e4a7f231110ddc1e405a74ef9.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://addons/xeen/assets/textures/empty.png"
-dest_files=[ "res://.import/empty.png-2a271a3eb06dd2de3de7f1334d61a656.stex" ]
+source_file="res://addons/xeen/assets/textures/base/invisible.png"
+dest_files=[ "res://.import/invisible.png-94653f8e4a7f231110ddc1e405a74ef9.stex" ]
 
 [params]
 
@@ -19,11 +19,11 @@ compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
-flags/repeat=0
+flags/repeat=true
 flags/filter=false
 flags/mipmaps=false
 flags/anisotropic=false
-flags/srgb=2
+flags/srgb=1
 process/fix_alpha_border=true
 process/premult_alpha=false
 process/HDR_as_SRGB=false
@@ -31,5 +31,5 @@ process/invert_color=false
 process/normal_map_invert_y=false
 stream=false
 size_limit=0
-detect_3d=true
+detect_3d=false
 svg/scale=1.0

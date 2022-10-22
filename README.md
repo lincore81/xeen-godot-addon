@@ -13,6 +13,7 @@ Enjoy!
 
 # Issues
 - [ ] (Priority 4, Easy) Fix docgen.py to properly parse and write method parameters.
+- [ ] (Priority 4, Easyish) rewrite shortcut code so it overrides editor keybinds
 - [ ] (Priority 6, ?) Updated previews aren't shown in the asset browser
 - [ ] (Priority 7, Easy) Make box fill/clear algorithm more efficient
 - [ ] (Priority 9, ?) The cell picker code should also work in orthographic projection

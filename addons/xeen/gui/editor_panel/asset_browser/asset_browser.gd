@@ -12,7 +12,7 @@ export var recursive := true
 export var resource_class_name := "SpatialMaterial"
 
 # The texture to use when a preview cannot be generated.
-export var placeholder: Texture = preload("res://addons/xeen/assets/textures/placeholder.png")
+export var placeholder: Texture = preload("res://addons/xeen/assets/textures/base/placeholder.png")
 
 # The size of the grid elements. Can be smaller if the grid is not wide enough.
 export var preferred_item_size := Vector2(96, 96)

@@ -5,9 +5,8 @@ class_name BrushPanel
 
 const PLACEHOLDER = -1
 
-#export var placeholder: Texture = preload("res://addons/xeen/assets/textures/placeholder.png")
-export var empty: Texture = preload("res://addons/xeen/assets/textures/empty.png")
-export var error: Texture = preload("res://addons/xeen/assets/textures/placeholder.png")
+export var empty: Texture = preload("res://addons/xeen/assets/textures/base/empty.png")
+export var error: Texture = preload("res://addons/xeen/assets/textures/base/placeholder.png")
 
 export var face_panel: PackedScene = preload("res://addons/xeen/gui/editor_panel/brush_view/face_panel.tscn")
 
@@ -27,7 +26,6 @@ func setup(previewer: EditorResourcePreview, layout: Array, cols: int = 3):
             add_child(Control.new())
         else:
             var p = face_panel.instance()
-            p.set_label(x.label) 
             var shortcut = x.get("shortcut", XeenKeybinds.set_brush_face.get(x.face, null))
             faces[x.face] = p
             p.setup(x.label, empty, shortcut)

@@ -98,7 +98,17 @@ func is_wall_passable(absdir: int) -> bool:
 func _apply_face_info(id: int, info: FaceInfo):
 	var node := face_info[id].node as MeshInstance
 	node.set_surface_material(0, info.material)
+
 	if info.visibility_policy != Units.VISIBILITY.AUTO:
 		node.visible = Units.visibility2bool(info.visibility_policy)
 	else:
 		node.visible = info.visible
+	if not Engine.editor_hint and info.material:
+		var invisible := false
+		for s in XeenConfig.INVISIBLE_MATERIALS:
+			if s in info.material.resource_path:
+				invisible = true
+				break
+		if invisible:
+			print("invisible!")
+			node.visible = false

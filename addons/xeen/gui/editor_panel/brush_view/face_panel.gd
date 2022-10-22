@@ -3,9 +3,9 @@ extends PanelContainer
 class_name FacePanel
 
 onready var btn_material := get_node("%Button") as Button
-onready var label := get_node("%Label") as Label
 onready var btn_visible := get_node("%Visible") as Button
 onready var btn_passable := get_node("%Passable") as Button
+onready var label := get_node("%Label") as Label
 
 var _is_ready := false
 
@@ -24,7 +24,7 @@ func setup(label: String, preview: Texture, shortcut: Dictionary):
         connect("ready", self, "setup", [label, preview, shortcut])
 
 func set_label(text: String):
-    label.text = text
+    label.text = text.to_upper()
 
 func set_shortcut(def: Dictionary):
     XeenKeybinds.make_shortcut(def, btn_material)
