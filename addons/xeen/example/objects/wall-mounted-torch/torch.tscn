@@ -1,0 +1,85 @@
+[gd_scene load_steps=14 format=2]
+
+[ext_resource path="res://addons/xeen/example/objects/wall-mounted-torch/model/wall-mounted-torch.glb" type="PackedScene" id=1]
+[ext_resource path="res://addons/xeen/example/objects/wall-mounted-torch/fire-particle-mat.tres" type="Material" id=2]
+[ext_resource path="res://addons/xeen/example/objects/wall-mounted-torch/torch-crackle.ogg" type="AudioStream" id=3]
+[ext_resource path="res://addons/xeen/example/objects/wall-mounted-torch/torch-light.gd" type="Script" id=4]
+
+[sub_resource type="Gradient" id=6]
+
+[sub_resource type="GradientTexture" id=7]
+gradient = SubResource( 6 )
+
+[sub_resource type="Gradient" id=2]
+offsets = PoolRealArray( 0, 0.0393013, 0.187773, 0.480349, 0.777293, 1 )
+colors = PoolColorArray( 1, 1, 1, 0, 1, 1, 1, 1, 0.951172, 0.830139, 0.113757, 1, 0.763184, 0, 0, 1, 0.746486, 0, 0, 0.954622, 0.253906, 0.253906, 0.253906, 0.364706 )
+
+[sub_resource type="GradientTexture" id=3]
+gradient = SubResource( 2 )
+
+[sub_resource type="Curve" id=8]
+_data = [ Vector2( 0, 0 ), 0.0, 5.72727, 0, 0, Vector2( 0.194444, 1 ), -0.22028, -0.22028, 0, 0, Vector2( 1, 0.154545 ), -2.39746, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=9]
+curve = SubResource( 8 )
+
+[sub_resource type="ParticlesMaterial" id=1]
+lifetime_randomness = 0.2
+emission_shape = 1
+emission_sphere_radius = 0.1
+direction = Vector3( 0, 1, 0 )
+spread = 5.0
+gravity = Vector3( 0, 0, 0 )
+initial_velocity = 0.5
+initial_velocity_random = 0.68
+scale = 0.2
+scale_random = 0.46
+scale_curve = SubResource( 9 )
+color_ramp = SubResource( 3 )
+color_initial_ramp = SubResource( 7 )
+
+[sub_resource type="SphereMesh" id=10]
+material = ExtResource( 2 )
+radius = 0.1
+height = 0.2
+radial_segments = 4
+rings = 4
+
+[sub_resource type="Gradient" id=11]
+interpolation_mode = 2
+colors = PoolColorArray( 0.921875, 0.702772, 0.446533, 1, 0.78125, 0.432444, 0.375366, 1 )
+
+[node name="Torch" type="Spatial"]
+
+[node name="wall-mounted-torch" parent="." instance=ExtResource( 1 )]
+transform = Transform( -0.2, 0, -3.01992e-08, 0, 0.2, 0, 3.01992e-08, 0, -0.2, 0.5, 0.5, -7.45058e-09 )
+
+[node name="Particles" type="Particles" parent="wall-mounted-torch"]
+transform = Transform( 1.89982, 0, 1.13687e-13, 0, 1.89982, 0, -1.13687e-13, 0, 1.89982, 0, 0.684503, -0.43926 )
+amount = 200
+lifetime = 1.4
+visibility_aabb = AABB( -1, -2, -1, 2, 4, 2 )
+draw_order = 2
+process_material = SubResource( 1 )
+draw_pass_1 = SubResource( 10 )
+
+[node name="FlickeringOmniLight" type="OmniLight" parent="wall-mounted-torch"]
+transform = Transform( -5, 0, 7.5498e-07, 0, 5, 0, -7.5498e-07, 0, -5, 0, 1, -0.5 )
+light_color = Color( 0.776471, 0.631373, 0.356863, 1 )
+shadow_enabled = true
+shadow_color = Color( 0.0588235, 0, 0.0745098, 1 )
+shadow_bias = 0.1
+omni_range = 3.0
+omni_attenuation = 3.24901
+script = ExtResource( 4 )
+colour_variation = SubResource( 11 )
+max_range_variation = 0.1
+max_energy_variation = 0.05
+max_duration = 0.5
+max_position_variation = Vector3( 0.04, 0.01, 0.04 )
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="wall-mounted-torch"]
+transform = Transform( 5, 0, 1.7053e-13, 0, 5, 0, -1.7053e-13, 0, 5, 0, 0.758859, -0.618386 )
+stream = ExtResource( 3 )
+unit_size = 0.5
+autoplay = true

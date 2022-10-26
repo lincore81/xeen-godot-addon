@@ -27,15 +27,6 @@ func paint(cell: Cell):
 		if f != Units.FACE.WALLS:
 			cell.set_face_info(f, faces[f])
 
-func set_face_info(face: int, info: FaceInfo):
-	if face == Units.FACE.WALLS:
-		for w in Units.WALLS:
-			set_face_info(w, info)
-	if face in faces:
-		faces[face] = info
-		emit_signal("face_changed", face, info)
-	else:
-		push_error("Invalid face: %d" % face)
 
 
 func set_material(face: int, material: Material):
@@ -45,6 +36,7 @@ func set_material(face: int, material: Material):
 	if face in faces:
 		var info := faces[face] as FaceInfo
 		info.material = material
+		_derive_face_properties_from_material(info)
 		emit_signal("face_changed", face, info)
 	else:
 		push_error("Invalid face: %d" % face)
@@ -70,12 +62,22 @@ func use_faces_from_cell(cell: Cell):
 		if cell.has_face(f):
 			faces[f].from_info(cell.get_face_info(f))
 
+func set_face_info(face: int, info: FaceInfo):
+	if face == Units.FACE.WALLS:
+		for w in Units.WALLS:
+			set_face_info(w, info)
+	if face in faces:
+		faces[face] = info
+		_derive_face_properties_from_material(info)
+		emit_signal("face_changed", face, info)
+	else:
+		push_error("Invalid face: %d" % face)
+
 func get_face_info(face: int) -> FaceInfo:
 	return faces.get(face)
 
 func get_faces() -> Dictionary:
 	return faces
-
 
 func set_faces(infos: Dictionary, quiet := false) -> void:
 	for f in infos.keys():
@@ -83,3 +85,16 @@ func set_faces(infos: Dictionary, quiet := false) -> void:
 			faces[f] = infos[f].duplicate()
 			if not quiet: 
 				emit_signal("face_changed", f, faces[f])
+
+func _derive_face_properties_from_material(info: FaceInfo):
+	if info.material:
+		var path := info.material.resource_path
+		#var invisible := XeenEditorUtil.contains_any_substr(path, XeenConfig.INVISIBLE_MATERIALS)
+		var passable := XeenEditorUtil.contains_any_substr(path, XeenConfig.PASSABLE_MATERIALS)
+		var decorative := XeenEditorUtil.contains_any_substr(path, XeenConfig.DECORATIVE_MATERIALS)
+		#print("derived face properties: invis=%s, passable=%s, decorative=%s" % [str(invisible), str(passable), str(decorative)])
+		#info.visibility_policy = Units.VISIBILITY.NEVER if invisible else Units.VISIBILITY.AUTO
+		info.passability_policy = Units.PASSABILITY.ALWAYS if passable else Units.PASSABILITY.AUTO
+		if decorative:
+			info.visibility_policy = Units.VISIBILITY.ALWAYS
+			info.passability_policy = Units.PASSABILITY.ALWAYS

@@ -55,14 +55,12 @@ func try_put_cell(_pos: Maybe = null, action := "", merge_mode := UndoRedo.MERGE
 	var cell := map.cell_at(pos) 
 	if cell == null: 
 		if action == "": action = "put cell"
-		print(action, " ", pos)
 		undo.create_action(action, merge_mode)
 		undo.add_do_method(self, "_do_put_cell", pos)
 		undo.add_undo_method(self, "_undo_put_cell", pos)
 		undo.commit_action()
 	elif not brush.matches_cell(cell):
 		# cell exists, therefore update it!
-		print("exists, ", action, " ", pos)
 		var celldata := cell.serialise()
 		if action == "": action = "update cell"
 		undo.create_action(action, merge_mode)
@@ -91,7 +89,6 @@ func try_clear_cell(action := "", merge_mode := UndoRedo.MERGE_DISABLE) -> bool:
 	if action == "": action = "clear cell"
 	var pos := cursor
 	var empty = map.cell_at(pos)
-	print(action, " ", pos)
 	if empty != null:
 		var cell := map.cell_at(pos)
 		undo.create_action(action, merge_mode)

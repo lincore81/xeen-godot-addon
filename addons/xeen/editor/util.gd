@@ -81,3 +81,10 @@ static func create_wireframe_cube(origin: Vector3, size: Vector3 = Vector3.ONE) 
 
 static func get_mouse_button_state(ev: InputEventMouseButton) -> Array:
 	return [ev.button_index, ev.pressed]
+
+
+static func contains_any_substr(substr: String, strarr: Array) -> bool:
+	for s in strarr:
+		if s in substr:
+			return true
+	return false

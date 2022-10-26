@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/spooky-dungeon.ogg-c6e080c71d892a7c6dc8e2513eac23c8.oggstr"
+
+[deps]
+
+source_file="res://addons/xeen/example/music/spooky-dungeon.ogg"
+dest_files=[ "res://.import/spooky-dungeon.ogg-c6e080c71d892a7c6dc8e2513eac23c8.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

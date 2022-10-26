@@ -1,6 +1,7 @@
 docs/
 mockups/
 .token
+.blend1
 
 # Godot 4+ specific ignores
 .godot/

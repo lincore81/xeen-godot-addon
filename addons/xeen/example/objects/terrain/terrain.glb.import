@@ -2,12 +2,12 @@
 
 importer="scene"
 type="PackedScene"
-path="res://.import/terrain.glb-fb6f2525a0b48d813783d63f845eee6e.scn"
+path="res://.import/terrain.glb-bd37addfb360213efae3112d0bcee74f.scn"
 
 [deps]
 
-source_file="res://addons/xeen/assets/models/terrain/terrain.glb"
-dest_files=[ "res://.import/terrain.glb-fb6f2525a0b48d813783d63f845eee6e.scn" ]
+source_file="res://addons/xeen/example/objects/terrain/terrain.glb"
+dest_files=[ "res://.import/terrain.glb-bd37addfb360213efae3112d0bcee74f.scn" ]
 
 [params]
 

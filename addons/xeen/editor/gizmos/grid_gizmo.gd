@@ -17,11 +17,20 @@ func redraw():
 
 
 func draw_cursor(origin: Vector3, editor: XeenEditor):
-	var p = Vector3(\
-		int(editor.cursor.x) + origin.x,\
-		int(editor.cursor.y) + origin.y + 0.01,\
+	var p := Vector3(
+		int(editor.cursor.x) + origin.x,
+		int(editor.cursor.y) + origin.y + 0.01,
 		int(editor.cursor.z) + origin.z)
 	var lines = XeenEditorUtil.create_wireframe_cube(p)
+
+	var right := Vector3.RIGHT * 0.2
+	var forward := Vector3.FORWARD * 0.2
+	var center := p + Vector3(0.5, 0.5, 0.5)
+	lines.append(center - right)
+	lines.append(center + forward)
+	lines.append(center + forward)
+	lines.append(center + right)
+
 	var mat = get_plugin().get_material("main", self)
 	add_lines(lines, mat, false, Color(1, 1, 1, 1))
 

@@ -31,7 +31,6 @@ func setup(previewer: EditorResourcePreview, layout: Array, cols: int = 3):
             p.setup(x.label, empty, shortcut)
             p.connect("material_pressed", self, "_on_btn_pressed", [x.face])
             add_child(p)
-    print(faces)
     is_setup = true
     #if brush: _apply_brush()
 

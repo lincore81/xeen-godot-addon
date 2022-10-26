@@ -119,6 +119,7 @@ func clear_cell(pos: Vector3, update_neighbours := true) -> Cell:
 		return null
 
 # TAG:2D
+# TODO: Move to seperate class?
 func update_face_visibility(pos: Vector3, removed := false, update_neighbours := true):
 	var neighbours := get_cardinal_neighbours(pos)
 	var visible := {

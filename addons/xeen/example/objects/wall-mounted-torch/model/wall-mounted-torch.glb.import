@@ -2,12 +2,12 @@
 
 importer="scene"
 type="PackedScene"
-path="res://.import/tree.glb-5a6fa4d3069b64e054588a89a56c8fc2.scn"
+path="res://.import/wall-mounted-torch.glb-5464e92de6a3d803f178fa6330fdd61c.scn"
 
 [deps]
 
-source_file="res://addons/xeen/assets/models/tree/tree.glb"
-dest_files=[ "res://.import/tree.glb-5a6fa4d3069b64e054588a89a56c8fc2.scn" ]
+source_file="res://addons/xeen/example/objects/wall-mounted-torch/model/wall-mounted-torch.glb"
+dest_files=[ "res://.import/wall-mounted-torch.glb-5464e92de6a3d803f178fa6330fdd61c.scn" ]
 
 [params]
 
