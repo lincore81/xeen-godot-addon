@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/mob.png-ab1bd6d55723fa1764ab496a8c59b6b1.stex"
+path="res://.import/mob.png-d62f2e8d306aeafd331f15baca7e48e3.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://addons/xeen/assets/icons/mob.png"
-dest_files=[ "res://.import/mob.png-ab1bd6d55723fa1764ab496a8c59b6b1.stex" ]
+source_file="res://addons/xeen/example/objects/groblin/mob.png"
+dest_files=[ "res://.import/mob.png-d62f2e8d306aeafd331f15baca7e48e3.stex" ]
 
 [params]
 

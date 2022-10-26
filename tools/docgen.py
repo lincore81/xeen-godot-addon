@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """ 
-Generate a *rudimentary* documentation of a gdscript project.
+Generate a *rudimentary* documentation of a gdscript project. There are probably
+a million better ways to do this, but I'm too lazy to learn about them.
 
 (c) 2022 by lincore81
 
@@ -32,6 +33,8 @@ OTHER DEALINGS IN THE SOFTWARE.
 For more information, please refer to <http://unlicense.org/>
 """
 
+# TODO: Clean up this mess ;)
+
 import os
 #import argparse
 import re
@@ -43,8 +46,8 @@ ignore_list = [
 
 project_name = "Xeen Map Editor"
 extension = ".gd"
-
-output = "~/projects/godot/xeen/addons/xeen/docs/reference.md"
+output = os.path.expanduser("~/projects/godot/xeen/addons/xeen/docs/reference.md")
+basedir = os.path.expanduser("~/projects/godot/xeen/addons/xeen")
 
 re_extends = re.compile("^extends\s+(?P<extends>\w+)", re.MULTILINE)
 re_class_name = re.compile("^\s*class_name\s+(?P<classname>\w+)", re.MULTILINE)
@@ -62,20 +65,21 @@ def find_script_files(base_dir):
                 filelist.append(fullname)
     return filelist
 
-def parse_params(params):
-    params = params.strip()
-    if params == "":
-        return []
-    result = []
-    for param in params.split(","):
-        match = re_param.search(param.strip())
-        if match:
-            result.append({
-                "name": match.group("name"),
-                "type": match.group("type"),
-                "default": match.group("default"),
-            })
-    return result
+#def parse_params(params):
+#    params = params.strip()
+#    if params == "":
+#        return []
+#    result = []
+#    for param in params.split(","):
+#        match = re_param.search(param.strip())
+#        if match:
+#            result.append({
+#                "name": match.group("name"),
+#                "type": match.group("type"),
+#                "default": match.group("default"),
+#            })
+#    return result
+#
 
 def generate_doc(path, content):
     doc = {"funcs": {}, "path": path}
@@ -92,7 +96,7 @@ def generate_doc(path, content):
             funcdef = {
                 "static": not not match.group("static"),
                 "name": match.group("funcname"),
-                "params": parse_params(match.group("params")),
+                "params": match.group("params"),
                 "returns": match.group("returns"),
             }
             doc["funcs"][funcdef["name"]] = funcdef
@@ -103,48 +107,43 @@ def generate_doc(path, content):
 def write_func_md(funcdef):
     static = "static " if funcdef["static"] else ""
     returns = "-> %s" % funcdef["returns"] if funcdef["returns"] else ""
-    return "`%s%s %s %s`" % (static, funcdef["name"], funcdef["params"], returns)
+    return "`%s%s(%s) %s`" % (static, funcdef["name"], funcdef["params"], returns)
 
 def write_script_md(scriptdef):
     classname = scriptdef
     md = """
-### %s
-*extends:* %s
-*file:* %s
+# %s
 
-#### Methods
+- *extends:* %s
+- *file:* %s
+
 """ % (scriptdef.get("class"), scriptdef.get("extends"), scriptdef.get("path"))
     return md + "\n\n".join([write_func_md(f) for f in scriptdef["funcs"].values()])
 
-def write_files_md(docs):
-    return "\n".join(["- %s" % path for path in docs.keys()])
+#def write_toc_md(docs):
+#    return "\n".join(["- [%s (%s)](#%s)" % (doc["class"], doc["path"], doc["class"].replace(" ", "-").lower()) for doc in docs.values()])
 
-def write_scripts_md(docs):
+def write_classes_md(docs):
     return "\n\n".join([write_script_md(x) for x in docs.values()])
 
 def write_docs_md(docs):
-    return """
-# %s 
+    return """%% %s
 
-## Files
-%s
-
-## Classes
-%s""" % (project_name, write_files_md(docs), write_scripts_md(docs))
+%s""" % (project_name, write_classes_md(docs))
 
 
 
 def main():
-    base_dir = os.path.expanduser("~/projects/godot/xeen/addons/xeen/")
-    scripts = find_script_files(base_dir)
+    scripts = find_script_files(basedir)
     docs = {}
     for s in scripts:
         with open(s, "r") as f:
             content = f.read()
-        relative_file = s.removeprefix(base_dir)
+        relative_file = s.removeprefix(basedir)
         docs[relative_file] = generate_doc(relative_file, content)
     md = write_docs_md(docs)
-    with open(os.path.expanduser(output), "w", encoding="utf-8") as f:
+    with open(output, "w", encoding="utf-8") as f:
         f.write(md)
 
-main()
+if __name__ == "__main__": 
+    main()

@@ -1,0 +1,9 @@
+#!/bin/bash 
+
+SCRIPT=$(readlink -f "$0")
+SCRIPTPATH=$(dirname "$SCRIPT")
+OUTPUT_DIR=$(readlink -f "${SCRIPTPATH}/../addons/xeen/docs")
+
+python3 ${SCRIPTPATH}/docgen.py
+cd ${OUTPUT_DIR}
+pandoc reference.md --toc -sc reference.css -o reference.html
