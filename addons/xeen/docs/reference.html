@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Xeen Map Editor</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <link rel="stylesheet" href="reference.css" />
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Xeen Map Editor</h1>
+</header>
+<nav id="TOC" role="doc-toc">
+<ul>
+<li><a href="#xeeneditorplugin"
+id="toc-xeeneditorplugin">XeenEditorPlugin</a></li>
+<li><a href="#xeeneditorutil"
+id="toc-xeeneditorutil">XeenEditorUtil</a></li>
+<li><a href="#xeeneditor" id="toc-xeeneditor">XeenEditor</a></li>
+<li><a href="#cellbrush" id="toc-cellbrush">CellBrush</a></li>
+<li><a href="#xeenmapgridgizmoplugin"
+id="toc-xeenmapgridgizmoplugin">XeenMapGridGizmoPlugin</a></li>
+<li><a href="#xeenmapgridgizmo"
+id="toc-xeenmapgridgizmo">XeenMapGridGizmo</a></li>
+<li><a href="#mapdata" id="toc-mapdata">MapData</a></li>
+<li><a href="#cellmapnode" id="toc-cellmapnode">CellMapNode</a></li>
+<li><a href="#xeencellmapinspectorplugin"
+id="toc-xeencellmapinspectorplugin">XeenCellMapInspectorPlugin</a></li>
+<li><a href="#cell" id="toc-cell">Cell</a></li>
+<li><a href="#units" id="toc-units">Units</a></li>
+<li><a href="#bitset" id="toc-bitset">BitSet</a></li>
+<li><a href="#faceinfo" id="toc-faceinfo">FaceInfo</a></li>
+<li><a href="#maybe" id="toc-maybe">Maybe</a></li>
+<li><a href="#xeeneditorpanel"
+id="toc-xeeneditorpanel">XeenEditorPanel</a></li>
+<li><a href="#materialbrowser"
+id="toc-materialbrowser">MaterialBrowser</a></li>
+<li><a href="#sortbutton" id="toc-sortbutton">SortButton</a></li>
+<li><a href="#assetbrowser" id="toc-assetbrowser">AssetBrowser</a></li>
+<li><a href="#brushpanel" id="toc-brushpanel">BrushPanel</a></li>
+<li><a href="#facepanel" id="toc-facepanel">FacePanel</a></li>
+<li><a href="#xeenconfig" id="toc-xeenconfig">XeenConfig</a></li>
+<li><a href="#xeenkeybinds" id="toc-xeenkeybinds">XeenKeybinds</a></li>
+<li><a href="#gamescene" id="toc-gamescene">GameScene</a></li>
+<li><a href="#playerspatial"
+id="toc-playerspatial">PlayerSpatial</a></li>
+<li><a href="#torch-light.gd"
+id="toc-torch-light.gd">torch-light.gd</a></li>
+</ul>
+</nav>
+<h1 id="xeeneditorplugin">XeenEditorPlugin</h1>
+<ul>
+<li><em>extends:</em> EditorPlugin</li>
+<li><em>file:</em> /plugin.gd</li>
+</ul>
+<p><code>forward_spatial_gui_input(cam: Camera, ev: InputEvent) -&gt; bool</code></p>
+<p><code>unedit()</code></p>
+<p><code>edit(obj: Object)</code></p>
+<p><code>handles(obj: Object) -&gt; bool</code></p>
+<h1 id="xeeneditorutil">XeenEditorUtil</h1>
+<ul>
+<li><em>extends:</em> Reference</li>
+<li><em>file:</em> /editor/util.gd</li>
+</ul>
+<p><code>static pick_cell(global_transform: Transform, camera: Camera, point: Vector2) -&gt; Array</code></p>
+<p><code>static v(x, y, z)</code></p>
+<p><code>static create_wireframe_cube(origin: Vector3, size: Vector3 = Vector3.ONE) -&gt; PoolVector3Array</code></p>
+<p><code>static get_mouse_button_state(ev: InputEventMouseButton) -&gt; Array</code></p>
+<p><code>static contains_any_substr(substr: String, strarr: Array) -&gt; bool</code></p>
+<h1 id="xeeneditor">XeenEditor</h1>
+<ul>
+<li><em>extends:</em> Object</li>
+<li><em>file:</em> /editor/editor.gd</li>
+</ul>
+<p><code>clear_selection()</code></p>
+<p><code>fill_selection()</code></p>
+<p><code>on_ready(undo: UndoRedo)</code></p>
+<p><code>is_tool_valid(t: int) -&gt; bool</code></p>
+<p><code>set_tool(t: int)</code></p>
+<p><code>try_put_cell(_pos: Maybe = null, action := "", merge_mode := UndoRedo.MERGE_DISABLE) -&gt; bool</code></p>
+<p><code>try_clear_cell(action := "", merge_mode := UndoRedo.MERGE_DISABLE) -&gt; bool</code></p>
+<p><code>try_eyedropper()</code></p>
+<p><code>update_cursor(cam: Camera, mouse_pos: Vector2) -&gt; bool</code></p>
+<p><code>start_drawing(active := true) -&gt; bool</code></p>
+<p><code>stop_drawing()</code></p>
+<p><code>draw()</code></p>
+<p><code>set_default_brush_materials()</code></p>
+<p><code>set_brush_material(face: int, mat: Material)</code></p>
+<h1 id="cellbrush">CellBrush</h1>
+<ul>
+<li><em>extends:</em> Resource</li>
+<li><em>file:</em> /editor/brush.gd</li>
+</ul>
+<p><code>paint(cell: Cell)</code></p>
+<p><code>set_material(face: int, material: Material)</code></p>
+<p><code>get_material(face: int) -&gt; Material</code></p>
+<p><code>matches_cell(cell: Cell)</code></p>
+<p><code>use_faces_from_cell(cell: Cell)</code></p>
+<p><code>set_face_info(face: int, info: FaceInfo)</code></p>
+<p><code>get_face_info(face: int) -&gt; FaceInfo</code></p>
+<p><code>get_faces() -&gt; Dictionary</code></p>
+<p><code>set_faces(infos: Dictionary, quiet := false) -&gt; void</code></p>
+<h1 id="xeenmapgridgizmoplugin">XeenMapGridGizmoPlugin</h1>
+<ul>
+<li><em>extends:</em> EditorSpatialGizmoPlugin</li>
+<li><em>file:</em> /editor/gizmos/grid_gizmo_plugin.gd</li>
+</ul>
+<p><code>get_name()</code></p>
+<p><code>has_gizmo(spatial)</code></p>
+<p><code>create_gizmo(spatial)</code></p>
+<h1 id="xeenmapgridgizmo">XeenMapGridGizmo</h1>
+<ul>
+<li><em>extends:</em> EditorSpatialGizmo</li>
+<li><em>file:</em> /editor/gizmos/grid_gizmo.gd</li>
+</ul>
+<p><code>redraw()</code></p>
+<p><code>draw_cursor(origin: Vector3, editor: XeenEditor)</code></p>
+<p><code>draw_selection(selection: AABB)</code></p>
+<p><code>draw_grid(size: Vector3, origin: Vector3, editor: XeenEditor)</code></p>
+<h1 id="mapdata">MapData</h1>
+<ul>
+<li><em>extends:</em> Resource</li>
+<li><em>file:</em> /map/mapdata.gd</li>
+</ul>
+<p><code>is_empty() -&gt; bool</code></p>
+<p><code>clear()</code></p>
+<p><code>static iter_over_cell_data(data: MapData, callback: FuncRef, context = null)</code></p>
+<p><code>static write_to_disk(data: MapData)</code></p>
+<p><code>static restore_cell(mapdata: MapData, pos: Vector3, cell: Cell)</code></p>
+<p><code>static store_cell(mapdata: MapData, pos: Vector3, cell)</code></p>
+<h1 id="cellmapnode">CellMapNode</h1>
+<ul>
+<li><em>extends:</em> Spatial</li>
+<li><em>file:</em> /map/cell_map_node.gd</li>
+</ul>
+<p><code>set_size(s: Vector3)</code></p>
+<p><code>get_bounds() -&gt; AABB</code></p>
+<p><code>is_wall_passable(pos: Vector3, abs_dir: int)</code></p>
+<p><code>iterate_over_area(callback: FuncRef, bounds: AABB, skip_null = false, userdata = null)</code></p>
+<p><code>get_cardinal_neighbours(pos: Vector3) -&gt; Dictionary</code></p>
+<p><code>put_cell(pos: Vector3, cell_template: PackedScene, update_visibility := true, update_neighbours := true) -&gt; Cell</code></p>
+<p><code>put_existing_cell(pos: Vector3, cell: Cell, update_visibility := true, update_neighbours := true) -&gt; bool</code></p>
+<p><code>clear_cell(pos: Vector3, update_neighbours := true) -&gt; Cell</code></p>
+<p><code>update_face_visibility(pos: Vector3, removed := false, update_neighbours := true)</code></p>
+<p><code>cell_at(pos: Vector3) -&gt; Cell</code></p>
+<p><code>in_bounds(pos: Vector3)</code></p>
+<p><code>deserialise()</code></p>
+<p><code>serialise()</code></p>
+<h1 id="xeencellmapinspectorplugin">XeenCellMapInspectorPlugin</h1>
+<ul>
+<li><em>extends:</em> EditorInspectorPlugin</li>
+<li><em>file:</em> /map/inspector/map_inspector_plugin.gd</li>
+</ul>
+<p><code>can_handle(object)</code></p>
+<p><code>parse_property(object, type, path, hint, hint_text, usage)</code></p>
+<h1 id="cell">Cell</h1>
+<ul>
+<li><em>extends:</em> Spatial</li>
+<li><em>file:</em> /map/cells/cell.gd</li>
+</ul>
+<p><code>get_face_node(id: int) -&gt; MeshInstance</code></p>
+<p><code>get_face_ids() -&gt; Array</code></p>
+<p><code>has_face(id: int)</code></p>
+<p><code>get_face_info(id: int) -&gt; FaceInfo</code></p>
+<p><code>set_face_info(id: int, info: FaceInfo)</code></p>
+<p><code>update_auto_visibility(id: int, visible: bool)</code></p>
+<p><code>serialise() -&gt; Dictionary</code></p>
+<p><code>deserialise(data: Dictionary) -&gt; void</code></p>
+<p><code>is_wall_passable(absdir: int) -&gt; bool</code></p>
+<h1 id="units">Units</h1>
+<ul>
+<li><em>extends:</em> Object</li>
+<li><em>file:</em> /datatypes/units.gd</li>
+</ul>
+<p><code>static get_opposite_face(f: int) -&gt; int</code></p>
+<p><code>static visibility2bool(val: int) -&gt; bool</code></p>
+<p><code>static absdir2str(absdir) -&gt; String</code></p>
+<p><code>static absdir2face(absdir) -&gt; int</code></p>
+<p><code>static reldir2str(absdir) -&gt; String</code></p>
+<p><code>static move2absdir(move: Vector3) -&gt; int</code></p>
+<p><code>static face2str(id: int) -&gt; String</code></p>
+<h1 id="bitset">BitSet</h1>
+<ul>
+<li><em>extends:</em> Reference</li>
+<li><em>file:</em> /datatypes/bitset.gd</li>
+</ul>
+<p><code>has(bit: int) -&gt; bool</code></p>
+<p><code>setbit(bit: int) -&gt; void</code></p>
+<p><code>clearbit(bit: int) -&gt; void</code></p>
+<p><code>togglebit(bit: int) -&gt; void</code></p>
+<p><code>toarray() -&gt; Array</code></p>
+<p><code>tostr() -&gt; String</code></p>
+<h1 id="faceinfo">FaceInfo</h1>
+<ul>
+<li><em>extends:</em> Resource</li>
+<li><em>file:</em> /datatypes/faceinfo.gd</li>
+</ul>
+<p><code>from_info(other: FaceInfo) -&gt; FaceInfo</code></p>
+<p><code>to_dict() -&gt; Dictionary</code></p>
+<p><code>from_dict(dict: Dictionary)</code></p>
+<p><code>equals(other: FaceInfo)</code></p>
+<h1 id="maybe">Maybe</h1>
+<ul>
+<li><em>extends:</em> Object</li>
+<li><em>file:</em> /datatypes/maybe.gd</li>
+</ul>
+<p><code>is_some()</code></p>
+<p><code>is_none()</code></p>
+<p><code>value(default := null)</code></p>
+<h1 id="xeeneditorpanel">XeenEditorPanel</h1>
+<ul>
+<li><em>extends:</em> PanelContainer</li>
+<li><em>file:</em> /gui/editor_panel/editor_panel.gd</li>
+</ul>
+<p><code>setup(resource_preview: EditorResourcePreview, filesystem: EditorFileSystem, brush: CellBrush)</code></p>
+<p><code>update_cursor_pos(pos: Vector3, in_bounds: bool)</code></p>
+<h1 id="materialbrowser">MaterialBrowser</h1>
+<ul>
+<li><em>extends:</em> VBoxContainer</li>
+<li><em>file:</em>
+/gui/editor_panel/asset_browser/material_browser.gd</li>
+</ul>
+<p><code>get_selection() -&gt; String</code></p>
+<p><code>get_preview(path: String) -&gt; Texture</code></p>
+<p><code>setup(resource_preview: EditorResourcePreview, filesystem: EditorFileSystem)</code></p>
+<h1 id="sortbutton">SortButton</h1>
+<ul>
+<li><em>extends:</em> Button</li>
+<li><em>file:</em> /gui/editor_panel/asset_browser/sortbtn.gd</li>
+</ul>
+<h1 id="assetbrowser">AssetBrowser</h1>
+<ul>
+<li><em>extends:</em> HFlowContainer</li>
+<li><em>file:</em> /gui/editor_panel/asset_browser/asset_browser.gd</li>
+</ul>
+<p><code>set_filter(pattern: String)</code></p>
+<p><code>setup(preview: EditorResourcePreview, filesystem: EditorFileSystem)</code></p>
+<p><code>change_directory(dir: String)</code></p>
+<p><code>change_sort_order(order: int)</code></p>
+<p><code>update_browser()</code></p>
+<h1 id="brushpanel">BrushPanel</h1>
+<ul>
+<li><em>extends:</em> GridContainer</li>
+<li><em>file:</em> /gui/editor_panel/brush_view/brush_panel.gd</li>
+</ul>
+<p><code>setup(previewer: EditorResourcePreview, layout: Array, cols: int = 3)</code></p>
+<p><code>set_brush(brush: CellBrush)</code></p>
+<p><code>set_face(face: int, info: FaceInfo, preview: Texture = null)</code></p>
+<h1 id="facepanel">FacePanel</h1>
+<ul>
+<li><em>extends:</em> PanelContainer</li>
+<li><em>file:</em> /gui/editor_panel/brush_view/face_panel.gd</li>
+</ul>
+<p><code>setup(label: String, preview: Texture, shortcut: Dictionary)</code></p>
+<p><code>set_label(text: String)</code></p>
+<p><code>set_shortcut(def: Dictionary)</code></p>
+<p><code>set_material_preview(preview: Texture)</code></p>
+<h1 id="xeenconfig">XeenConfig</h1>
+<ul>
+<li><em>extends:</em> Object</li>
+<li><em>file:</em> /config/config.gd</li>
+</ul>
+<h1 id="xeenkeybinds">XeenKeybinds</h1>
+<ul>
+<li><em>extends:</em> Object</li>
+<li><em>file:</em> /config/keybinds.gd</li>
+</ul>
+<p><code>static make_shortcut(def: Dictionary, button: BaseButton = null) -&gt; ShortCut</code></p>
+<p><code>static is_pressed(def: Dictionary, ev: InputEventKey) -&gt; bool</code></p>
+<h1 id="gamescene">GameScene</h1>
+<ul>
+<li><em>extends:</em> Spatial</li>
+<li><em>file:</em> /example/game_scene.gd</li>
+</ul>
+<h1 id="playerspatial">PlayerSpatial</h1>
+<ul>
+<li><em>extends:</em> Spatial</li>
+<li><em>file:</em> /example/objects/player/player_spatial.gd</li>
+</ul>
+<p><code>get_map_position() -&gt; Vector3</code></p>
+<p><code>is_moving()</code></p>
+<p><code>move(target: Vector3)</code></p>
+<p><code>turn(right := true)</code></p>
+<p><code>move_progress()</code></p>
+<h1 id="torch-light.gd">torch-light.gd</h1>
+<ul>
+<li><em>extends:</em> OmniLight</li>
+<li><em>file:</em>
+/example/objects/wall-mounted-torch/torch-light.gd</li>
+</ul>
+</body>
+</html>

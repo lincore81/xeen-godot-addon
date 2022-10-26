@@ -12,7 +12,6 @@ If you want to use it, you can configure stuff in `addons/xeen/config`.
 Enjoy!
 
 # Issues
-- [ ] (Priority 4, Easy) Fix docgen.py to properly parse and write method parameters.
 - [ ] (Priority 4, Easyish) rewrite shortcut code so it overrides editor keybinds
 - [ ] (Priority 6, ?) Previews aren't updated in the asset browser
 - [ ] (Priority 7, Easy) Make box fill/clear algorithm more efficient
